@@ -2,7 +2,12 @@
   "buildPath": "code",
   "detector": {
     "ignoreRules": [],
-    "ignoreFiles": [],
+    "ignoreFiles": [
+      ".impeccable/mocks/decision/assigned.html",
+      ".impeccable/mocks/decision/model-pick.html",
+      ".impeccable/mocks/decision/challenger-ticket-wallet.html",
+      ".impeccable/mocks/decision/canon.html"
+    ],
     "ignoreValues": [
       {
         "rule": "repeating-stripes-gradient",
