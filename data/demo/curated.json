@@ -1,0 +1,2584 @@
+{
+"_meta": {
+"source": "Risk Radar curated company map (DATA.companies/deps/prod/anchors/lenses in risk-radar/index.html), exported 2026-10-20",
+"note": "deps = share of cost base by input; prod = share of revenue by product sold; estimates from annual reports and segment disclosures"
+},
+"deps": {
+"reliance": {
+"crude": 0.5,
+"natgas": 0.04
+},
+"bhartiairtel": {
+"elec": 0.05,
+"diesel": 0.03,
+"chips": 0.02,
+"copper": 0.01
+},
+"hul": {
+"palm": 0.12,
+"plastics": 0.06,
+"tea": 0.05,
+"sodaash": 0.02,
+"milk": 0.02
+},
+"itc": {
+"tobacco": 0.08,
+"wheat": 0.06,
+"pulp": 0.05,
+"palm": 0.03,
+"plastics": 0.03,
+"milk": 0.02
+},
+"lt": {
+"steel": 0.12,
+"cement": 0.08,
+"diesel": 0.04,
+"copper": 0.03,
+"alum": 0.02
+},
+"sunpharma": {
+"api": 0.18,
+"plastics": 0.03
+},
+"maruti": {
+"steel": 0.14,
+"plastics": 0.07,
+"alum": 0.05,
+"chips": 0.05,
+"copper": 0.03,
+"pallad": 0.02,
+"natrub": 0.01
+},
+"mm": {
+"steel": 0.13,
+"plastics": 0.06,
+"chips": 0.05,
+"alum": 0.04,
+"copper": 0.03,
+"natrub": 0.01
+},
+"ultratech": {
+"coal": 0.12,
+"petcoke": 0.1,
+"limestone": 0.06,
+"diesel": 0.06,
+"elec": 0.06
+},
+"ntpc": {
+"coal": 0.55,
+"natgas": 0.03
+},
+"titan": {
+"gold": 0.55,
+"diamonds": 0.08
+},
+"adaniports": {
+"diesel": 0.05,
+"elec": 0.03
+},
+"tatamotors": {
+"steel": 0.12,
+"chips": 0.06,
+"plastics": 0.06,
+"alum": 0.05,
+"copper": 0.03,
+"lithium": 0.02,
+"pallad": 0.02,
+"natrub": 0.01
+},
+"tatasteel": {
+"metcoal": 0.25,
+"elec": 0.06,
+"ironore": 0.05,
+"natgas": 0.02
+},
+"jswsteel": {
+"metcoal": 0.25,
+"ironore": 0.22,
+"elec": 0.06
+},
+"hindalco": {
+"alum": 0.2,
+"coal": 0.15,
+"bauxite": 0.05
+},
+"nestleindia": {
+"milk": 0.18,
+"wheat": 0.05,
+"palm": 0.04,
+"sugar": 0.04,
+"cocoa": 0.04,
+"coffee": 0.03,
+"plastics": 0.04
+},
+"asianpaints": {
+"tio2": 0.18,
+"plastics": 0.15,
+"diesel": 0.02
+},
+"coalindia": {
+"diesel": 0.08,
+"elec": 0.02
+},
+"powergrid": {
+"alum": 0.03,
+"steel": 0.03
+},
+"adanient": {
+"coal": 0.15,
+"diesel": 0.03,
+"poly": 0.03
+},
+"ongc": {
+"diesel": 0.04,
+"steel": 0.03
+},
+"interglobe": {
+"jet": 0.38,
+"elec": 0.01
+},
+"iocl": {
+"dubai": 0.7,
+"crude": 0.04,
+"natgas": 0.02,
+"elec": 0.02
+},
+"bpcl": {
+"dubai": 0.72,
+"crude": 0.04,
+"elec": 0.02
+},
+"gail": {
+"lng": 0.3,
+"apmgas": 0.18,
+"elec": 0.05,
+"ethylene": 0.04
+},
+"petronet": {
+"lng": 0.72,
+"elec": 0.03
+},
+"gujgas": {
+"lng": 0.42,
+"apmgas": 0.22,
+"elec": 0.03
+},
+"igl": {
+"apmgas": 0.42,
+"lng": 0.18,
+"elec": 0.03
+},
+"tatapower": {
+"coal": 0.3,
+"drybulk": 0.05,
+"poly": 0.04,
+"elec": 0.02
+},
+"adanipower": {
+"coal": 0.48,
+"drybulk": 0.08,
+"elec": 0.02
+},
+"oilindia": {
+"diesel": 0.05,
+"steel": 0.04,
+"elec": 0.03
+},
+"vedanta": {
+"alumina": 0.11,
+"coal": 0.14,
+"elec": 0.09,
+"bauxite": 0.04,
+"caustic": 0.03
+},
+"hindzinc": {
+"coal": 0.1,
+"elec": 0.08,
+"diesel": 0.05
+},
+"nalco": {
+"coal": 0.17,
+"elec": 0.14,
+"caustic": 0.06,
+"diesel": 0.03
+},
+"sail": {
+"metcoal": 0.27,
+"elec": 0.06,
+"ferroalloy": 0.03,
+"ironore": 0.02
+},
+"jindalsteel": {
+"metcoal": 0.23,
+"ironore": 0.11,
+"elec": 0.06
+},
+"apollotyre": {
+"natrub": 0.23,
+"carbonblack": 0.11,
+"sbr": 0.09,
+"crude": 0.02,
+"container": 0.02
+},
+"mrf": {
+"natrub": 0.25,
+"carbonblack": 0.11,
+"sbr": 0.08,
+"crude": 0.02
+},
+"balkrishna": {
+"natrub": 0.21,
+"carbonblack": 0.12,
+"sbr": 0.08,
+"container": 0.04
+},
+"coromandel": {
+"dap": 0.19,
+"ammonia": 0.15,
+"sulphur": 0.1,
+"potash": 0.08,
+"drybulk": 0.04
+},
+"chambal": {
+"natgas": 0.38,
+"potash": 0.06,
+"dap": 0.05
+},
+"srf": {
+"fluorspar": 0.13,
+"methanol": 0.05,
+"elec": 0.06,
+"pta": 0.05,
+"crude": 0.03
+},
+"tatachem": {
+"coal": 0.13,
+"elec": 0.1,
+"limestone": 0.05,
+"natgas": 0.05
+},
+"deepaknitrite": {
+"benzene": 0.21,
+"propylene": 0.08,
+"methanol": 0.05,
+"elec": 0.04
+},
+"upl": {
+"benzene": 0.07,
+"methanol": 0.05,
+"phenol": 0.04,
+"elec": 0.03,
+"container": 0.03
+},
+"pidilite": {
+"vam": 0.15,
+"plastics": 0.06,
+"crude": 0.03,
+"elec": 0.02
+},
+"bergerpaints": {
+"tio2": 0.16,
+"plastics": 0.13,
+"crude": 0.02,
+"elec": 0.02
+},
+"britannia": {
+"wheat": 0.15,
+"palm": 0.1,
+"sugar": 0.08,
+"milk": 0.07,
+"plastics": 0.05
+},
+"marico": {
+"copra": 0.21,
+"palm": 0.08,
+"crude": 0.04,
+"plastics": 0.06
+},
+"godrejcp": {
+"palm": 0.19,
+"plastics": 0.06,
+"sodaash": 0.03,
+"crude": 0.02
+},
+"awl": {
+"palm": 0.4,
+"soyoil": 0.17,
+"sunoil": 0.08,
+"plastics": 0.04,
+"drybulk": 0.03
+},
+"tataconsumer": {
+"tea": 0.17,
+"coffee": 0.08,
+"plastics": 0.04,
+"sugar": 0.03
+},
+"varunbev": {
+"sugar": 0.15,
+"plastics": 0.14,
+"alum": 0.05,
+"elec": 0.04
+},
+"balrampur": {
+"coal": 0.04,
+"elec": 0.03,
+"diesel": 0.02
+},
+"polycab": {
+"copper": 0.41,
+"alum": 0.09,
+"pvc": 0.1,
+"plastics": 0.04
+},
+"havells": {
+"copper": 0.19,
+"alum": 0.08,
+"plastics": 0.08,
+"steel": 0.06
+},
+"dixon": {
+"chips": 0.21,
+"plastics": 0.1,
+"copper": 0.06,
+"steel": 0.04
+},
+"motherson": {
+"plastics": 0.17,
+"copper": 0.1,
+"alum": 0.06,
+"steel": 0.05,
+"chips": 0.04
+},
+"bharatforge": {
+"steel": 0.34,
+"elec": 0.07,
+"natgas": 0.03,
+"container": 0.02
+},
+"exide": {
+"lead": 0.56,
+"plastics": 0.07,
+"elec": 0.03,
+"lithium": 0.02
+},
+"amararaja": {
+"lead": 0.54,
+"plastics": 0.07,
+"lithium": 0.03,
+"elec": 0.03
+},
+"bajajauto": {
+"steel": 0.15,
+"alum": 0.09,
+"plastics": 0.06,
+"natrub": 0.03,
+"chips": 0.03,
+"copper": 0.02
+},
+"heromoto": {
+"steel": 0.16,
+"alum": 0.08,
+"plastics": 0.06,
+"natrub": 0.03,
+"chips": 0.02
+},
+"ambuja": {
+"petcoke": 0.11,
+"coal": 0.1,
+"diesel": 0.06,
+"elec": 0.06,
+"limestone": 0.05
+},
+"gesco": {
+"bunker": 0.21,
+"elec": 0.01
+},
+"concor": {
+"diesel": 0.13,
+"elec": 0.06,
+"container": 0.03
+},
+"welspunliving": {
+"cotton": 0.4,
+"elec": 0.05,
+"plastics": 0.03,
+"container": 0.04
+},
+"vardhman": {
+"cotton": 0.53,
+"elec": 0.09,
+"plastics": 0.02
+},
+"jkpaper": {
+"pulp": 0.29,
+"coal": 0.1,
+"elec": 0.08,
+"caustic": 0.04
+},
+"waaree": {
+"poly": 0.33,
+"alum": 0.08,
+"silver": 0.05,
+"sodaash": 0.03,
+"container": 0.02
+},
+"cipla": {
+"api": 0.19,
+"plastics": 0.03,
+"elec": 0.02
+},
+"aurobindo": {
+"api": 0.23,
+"plastics": 0.03,
+"elec": 0.03
+},
+"kalyan": {
+"gold": 0.71,
+"diamonds": 0.05
+},
+"supremeind": {
+"pvc": 0.46,
+"plastics": 0.1,
+"elec": 0.03
+}
+},
+"prod": {
+"ongc": {
+"crude": 0.7,
+"natgas": 0.15
+},
+"coalindia": {
+"coal": 0.85
+},
+"tatasteel": {
+"steel": 0.8
+},
+"jswsteel": {
+"steel": 0.8
+},
+"hindalco": {
+"alum": 0.45
+},
+"oilindia": {
+"crude": 0.62,
+"natgas": 0.22
+},
+"vedanta": {
+"alum": 0.3,
+"zinc": 0.18,
+"crude": 0.08,
+"silver": 0.04,
+"ironore": 0.04
+},
+"hindzinc": {
+"zinc": 0.62,
+"silver": 0.18,
+"lead": 0.12
+},
+"nalco": {
+"alumina": 0.38,
+"alum": 0.52
+},
+"sail": {
+"steel": 0.88
+},
+"jindalsteel": {
+"steel": 0.82
+},
+"tatachem": {
+"sodaash": 0.55
+},
+"balrampur": {
+"sugar": 0.6,
+"ethanol": 0.28
+},
+"gesco": {
+"crudetanker": 0.45,
+"drybulk": 0.25
+}
+},
+"anchors": {
+"reliance": "O2C is the largest segment and crude the dominant cost (AR FY25). India imports 88.6% of its crude (PPAC).",
+"bhartiairtel": "Network energy (grid + tower diesel) is a disclosed cost line; imported electronics embed chip exposure.",
+"hul": "AR flags palm-oil derivatives and crude-linked chemicals as key input-cost drivers; India is the world's largest palm importer.",
+"itc": "AR names leaf tobacco, wheat, paperboard pulp, and edible oils as principal inputs; shares estimated.",
+"lt": "Steel and cement are the largest bought-out EPC materials (AR commentary); contracts often carry escalation clauses.",
+"sunpharma": "India imports ≥70% of many APIs/KSMs from China (Dept of Pharmaceuticals, 2026); in-house API plants partially offset.",
+"maruti": "Raw materials ≈ 75% of net sales (AR); steel largest. 2021 chip shortage forced production cuts.",
+"mm": "Estimated: AR names steel, aluminum, and semiconductors as key inputs; cost shares not disclosed.",
+"ultratech": "Energy (coal/petcoke) plus freight (diesel) ≈ half of cement cost (AR commentary); captive limestone.",
+"ntpc": "Fuel ≈ 60% of expenses but regulated tariffs pass fuel costs through to DISCOMs (AR).",
+"titan": "Jewellery ≈ 90% of revenue (AR); gold dominant. Record $72B national gold imports FY2025-26; duty 6%→15% w.e.f. 13 May 2026.",
+"adaniports": "Fuel and power are the main commodity inputs; low overall intensity.",
+"tatamotors": "Steel largest input (AR); JLR lost ~100k units to the 2021 chip shortage; EVs add lithium exposure.",
+"tatasteel": "Captive mines cover ~100% of Indian iron-ore needs; coking coal ~85% imported (Ministry of Steel). Produces steel — partly a price beneficiary.",
+"jswsteel": "Limited captive ore — buys iron ore domestically, imports most coking coal (AR). Produces steel.",
+"hindalco": "Smelters run on captive coal power; Novelis largely passes aluminum prices through (AR). Produces aluminum.",
+"nestleindia": "AR: fresh milk is the largest raw material; cocoa and coffee cost pressure flagged in FY2024-25.",
+"asianpaints": "Raw materials ≈ 55-60% of revenue (AR); TiO2 and crude-linked monomers dominate; TiO2 substantially imported.",
+"coalindia": "World's largest coal miner; diesel for mining equipment is the main input. Produces coal — beneficiary of coal spikes.",
+"powergrid": "Conductor metals matter for capex, not opex; regulated returns limit commodity risk.",
+"adanient": "Coal trading (IRM) legacy business; solar module manufacturing adds polysilicon exposure.",
+"ongc": "India's largest oil and gas producer — net beneficiary of energy price spikes; realizations track Brent.",
+"interglobe": "Fuel is the largest single line in an Indian carrier's cost base, typically 35-40% of operating cost (DGCA and company disclosure). Aircraft leases, a large share of maintenance and much of the spares bill are USD-denominated against almost entirely INR revenue - so a rupee move hits the P&L and the lease liability at the same time. Cost shares estimated from disclosed operating-cost breakdown.",
+"iocl": "Crude is essentially the entire cost base of a refiner. India's basket is roughly three-quarters Dubai/Oman-linked sour crude, so the correct benchmark is Dubai, not Brent or WTI. Retail fuel prices are administratively smoothed, which means the refining margin and the marketing margin move on different clocks.",
+"bpcl": "Same structure as IOC: crude-dominated cost base, Dubai-linked basket, administratively smoothed retail pricing. LPG under-recovery is a government-receivable timing exposure rather than a market one.",
+"gail": "GAIL's gas book mixes long-term oil-indexed LNG contracts (including US Henry-Hub-linked volumes), domestic administered APM gas, and spot JKM cargoes. Those are three different pricing regimes inside one portfolio, and each needs a different hedge. The petrochemical arm adds a gas-to-polymer spread on top.",
+"petronet": "Long-term Qatari and Australian contracts on Brent-slope pricing plus spot JKM cargoes. The tolling model insulates a large share of earnings, but the marketing margin on own-account cargoes carries direct price and volume risk - Indian buyers step away above roughly $10-12/MMBtu.",
+"gujgas": "Gujarat Gas serves an industrial customer base - Morbi ceramics above all - that switches to propane or coal gasifiers when spot LNG runs hot. So the exposure is not just cost but volume: a price spike destroys the demand it was meant to be passed through to.",
+"igl": "IGL's margin depends on how much cheap administered APM gas it is allocated versus how much it must buy at market rates. That allocation has been cut repeatedly, and each cut is a direct margin event with no market instrument against it.",
+"tatapower": "The Mundra imported-coal plant has been the recurring loss centre because the tariff was bid on a coal price assumption Indonesia later legislated away. The renewables and solar-manufacturing arms carry a polysilicon and module-cost exposure instead.",
+"adanipower": "Predominantly imported-coal generation, so landed cost is the entire story: seaborne coal price, calorific grade, ocean freight and the rupee, against PPAs whose fuel pass-through is contested and slow.",
+"oilindia": "An upstream producer, so it is long crude and gas - a price spike is an earnings gain, not a cost. The windfall levy on domestic crude, imposed and withdrawn episodically since 2022, is the policy risk that cuts the other way.",
+"vedanta": "A basket of long positions - aluminium, zinc, silver, oil, iron ore - against a short position in coal and power. That makes group-level commodity risk a net exposure across correlated markets rather than a sum of individual ones, which is exactly the case a copula model is for.",
+"hindzinc": "One of the world's lowest-cost zinc producers, and structurally long three metals at once - zinc, lead and by-product silver. Silver has become a material share of earnings as solar demand lifted the price.",
+"nalco": "Integrated from captive bauxite through alumina to metal, which makes it one of the few Indian smelters insulated from alumina price spikes - and a beneficiary of them, since it exports surplus alumina.",
+"sail": "Integrated blast-furnace producer with captive iron ore, so the exposure concentrates almost entirely in imported coking coal - roughly 85% Australian-origin - and in the rupee that pays for it.",
+"jindalsteel": "Partially integrated - captive coal and some iron ore - but still a large coking-coal importer. Spot iron ore purchases add a second unhedged input on top.",
+"apollotyre": "Roughly half the raw material bill is rubber - natural and synthetic - with carbon black adding another tenth. Natural rubber is the rare Indian input with a genuinely well-matched offshore hedge in SICOM TSR20, and European operations add a EUR leg.",
+"mrf": "The largest Indian tyre maker by revenue with the same rubber-plus-carbon-black cost structure. Historically conservative on derivatives, which makes the unhedged input exposure larger in absolute rupee terms than any peer.",
+"balkrishna": "An export business - the large majority of sales are outside India, mostly Europe - so it is short USD-priced inputs and long EUR and USD receivables. That partial natural offset is rarely quantified, and the residual is what should actually be hedged.",
+"coromandel": "A phosphatic fertiliser maker squeezed between internationally set input costs - phosphoric acid, ammonia, sulphur, all imported and USD-priced - and a domestically controlled maximum retail price, with a Nutrient Based Subsidy that adjusts on a lag. When world prices spike, the company funds the gap until the subsidy catches up.",
+"chambal": "A urea producer, so roughly 25-28 MMBtu of natural gas per tonne is the cost base - but gas is supplied under a pooled administered mechanism and urea sells at a statutorily fixed farmgate price with subsidy covering the gap. Almost every economic variable is administered, which changes the nature of the risk entirely.",
+"srf": "Fluorspar sits at the head of the fluorochemicals chain and India has essentially no domestic supply - it comes from China, Mexico, South Africa and Vietnam with no hedge available. The refrigerant business also carries a Kigali HFC phase-down schedule that is a demand risk, not a cost one.",
+"tatachem": "A soda ash producer - so it is long the price, with energy as the dominant input. Global operations in the UK, US and Kenya add currency and energy-regime exposure in three more jurisdictions.",
+"deepaknitrite": "Benzene is the dominant input and prices off FOB Korea assessments with no derivative available. The phenol-acetone plant substituted a large share of India's imports, which turned an import-cost exposure into a domestic-spread exposure.",
+"upl": "A global agrochemicals business with revenue in dozens of currencies, manufacturing concentrated in India and China, and a Latin American receivables book that carries both FX and credit risk on a long collection cycle.",
+"pidilite": "Vinyl acetate monomer is the single largest input and India imports 100% of it, from a global market with very little redundancy - plant outages in Taiwan, the US or Saudi Arabia have moved the price by multiples. There is no derivative anywhere in the world for VAM.",
+"bergerpaints": "Titanium dioxide is typically the largest single raw material in a paint formulation and India imports the majority. Anti-dumping duty on Chinese TiO2 cuts against paint makers - it protects domestic pigment producers and raises the coating industry's cost.",
+"britannia": "A four-commodity basket - wheat, palm oil, sugar and dairy - of which only palm has any hedging venue and that one is offshore, MYR-denominated and periodically suspended domestically. Wheat and sugar are policy-priced; dairy is unhedgeable.",
+"marico": "Copra is the largest single input and there is no copra derivative anywhere in the world. Marico buys a very large share of India's edible-grade copra, so it is exposed to the price and large enough to move it - a rare combination that makes procurement timing itself a market-impact problem.",
+"godrejcp": "Palm oil and its derivatives dominate the soap cost base, and the company also owns palm plantations in Indonesia - so it sits on both sides of the same commodity, an internal offset that group treasury should be netting rather than hedging twice.",
+"awl": "Effectively a physical commodity trading business with a consumer brand attached. Edible oil is around 60% import-dependent for India, the inventory position is large relative to margin, and SEBI's suspension of agricultural derivatives removed the domestic hedging venue for years.",
+"tataconsumer": "Tea is bought at auction with enormous quality dispersion, so there is no single price to hedge. Coffee is different - it is liquid on ICE, and the group has both a plantation side that is long and a roasting side that is short, an internal offset rarely netted.",
+"varunbev": "Sugar and PET resin are the two dominant inputs, with aluminium cans a growing third as packaging mix shifts. Sugar is policy-priced in India, PET tracks PTA and crude, and aluminium is fully hedgeable on MCX - three inputs with three completely different risk characters.",
+"balrampur": "A sugar mill whose economics are now set almost entirely by government: the Fair and Remunerative Price for cane on the input side, the minimum selling price and export quota for sugar, and the notified procurement price for ethanol by feedstock route. Ethanol has become the dominant earnings driver and it is 100% administratively priced.",
+"polycab": "Copper alone is over 40% of the cost base - one of the highest single-commodity intensities in Indian manufacturing - and MCX offers a liquid INR contract against it. The order book is typically priced with a copper pass-through, which means the real exposure is the lag between purchase and repricing, not the price level.",
+"havells": "A diversified electricals portfolio where copper and aluminium drive the cable and motor lines while plastics and steel drive appliances. Consumer-facing pricing means pass-through is slower than in the industrial cable business.",
+"dixon": "Contract manufacturing on thin margins, which makes input availability a bigger risk than input price - a component shortage stops a line, and unbuilt units are lost revenue rather than expensive cost. Most components are imported and USD-priced against INR customer contracts.",
+"motherson": "Operations in dozens of countries make this one of the most complex FX books among Indian-listed companies, with polymer and copper inputs bought locally in each region. Most customer contracts carry raw-material pass-through clauses, so the exposure is the lag and the clause coverage, not the price.",
+"bharatforge": "Alloy and special steel is the dominant input with no usable Indian hedge, and a large export book into Europe and North America creates EUR and USD receivables against an INR cost base.",
+"exide": "Lead is roughly 60-65% of a lead-acid battery's material cost - among the highest single-input intensities of any listed Indian manufacturer - and MCX offers a liquid INR-denominated lead contract. Recycled lead supplies over half of Indian demand, which adds an informal-sector ESG and regulatory dimension to the supply chain.",
+"amararaja": "The same lead-dominated cost structure as Exide, with a lithium gigafactory programme layering a second, completely different commodity risk on top - one that has no usable hedge and is priced CIF China.",
+"bajajauto": "A metal-intensive cost base with a substantial export book into Africa and Latin America - so it carries emerging-market currency risk on receivables alongside USD-linked input costs, and those markets are exactly where currency crises happen.",
+"heromoto": "The largest two-wheeler maker by volume with a domestic-heavy revenue base and a metal-intensive cost structure. Price sensitivity in the mass segment limits how much input inflation can be passed on.",
+"ambuja": "Cement itself is unhedgeable and regionally priced. The hedgeable part of the P&L is entirely upstream - petcoke and imported coal, both USD, plus diesel freight and power. The fuel-mix switch between coal and petcoke is a real option with a calculable threshold.",
+"gesco": "A shipowner is long freight rates and short bunker fuel - the mirror image of every importer on this list. Both legs are hedgeable: FFAs on the revenue side, Singapore bunker swaps on the cost side, both in USD, which is also the revenue currency, so the currency mismatch is small.",
+"concor": "Rail haulage charges paid to Indian Railways are the dominant cost and are administratively set; diesel and traction power are the market-linked remainder. Volume tracks EXIM trade, so container freight rates matter for demand rather than for cost.",
+"welspunliving": "Cotton is around 40% of cost with no functioning Indian derivative - SEBI's agri-derivative suspension removed it - and the customer base is concentrated in a small number of large US retailers, so the same shock hits input cost and negotiating position together.",
+"vardhman": "Over half the cost base is cotton, unhedgeable domestically, against yarn prices set by a global market where Chinese and Vietnamese demand is the swing factor. The MSP floor from the Cotton Corporation of India truncates the downside in a way no futures curve reflects.",
+"jkpaper": "Wood pulp is the dominant input and India imports around half of it, priced off index assessments with no derivative. Captive plantation and farm-forestry programmes are the structural hedge that Indian mills have pursued in place of a financial one.",
+"waaree": "Polysilicon and cells are the dominant input, made overwhelmingly in China, with silver paste and aluminium frames adding hedgeable components. ALMM domestic-content rules and customs duty make the landed cost a policy variable as much as a market one.",
+"cipla": "APIs and key starting materials are largely Chinese-sourced, and a large share of revenue is USD-denominated - which creates a natural offset between USD input costs and USD receivables that group treasury should be netting before hedging either.",
+"aurobindo": "Among the most API-intensive of the large Indian pharma companies, with substantial in-house API manufacturing that reduces but does not remove Chinese KSM dependence, and a US-heavy revenue base.",
+"kalyan": "Gold is over 70% of the cost base and India imports essentially all of it, so the exposure is metal price, rupee and import duty at once. The May 2026 duty hike from 6% to 15% repriced landed cost by roughly nine percentage points in a single session - and no listed instrument hedges a duty change.",
+"supremeind": "PVC resin is nearly half the cost base, India imports over half its PVC, and there is no accessible derivative. Anti-dumping duties and BIS quality control orders make the landed cost a regulatory variable, and inventory gains and losses on resin swings drive reported margin more than volume does.",
+"_default": "No material direct commodity inputs. Exposure is indirect — via loan books, client sectors, or investment portfolios."
+},
+"lenses": {
+"reliance": {
+"fx": [
+4,
+"USD debt program plus USD-priced crude bill (AR)"
+],
+"fin": [
+2,
+"Deleveraged since 2021; strong FCF"
+],
+"conc": [
+2,
+"Diversified: O2C, retail, Jio"
+],
+"trans": [
+3,
+"O2C long-run transition; new-energy build underway"
+]
+},
+"tcs": {
+"fx": [
+3,
+"USD receivables vs INR costs — translation swings guidance"
+],
+"fin": [
+1,
+"Net cash"
+],
+"conc": [
+3,
+"BFSI ~30% of revenue (factsheet)"
+],
+"trans": [
+2,
+"GenAI pricing-model disruption watch"
+]
+},
+"hdfcbank": {
+"fx": [
+2,
+"Institutionally hedged"
+],
+"fin": [
+3,
+"Post-merger funding mix still normalizing"
+],
+"conc": [
+3,
+"Mortgage-heavy book"
+],
+"trans": [
+2,
+"Fintech competition"
+]
+},
+"bhartiairtel": {
+"fx": [
+4,
+"USD debt; African currency earnings (naira episodes disclosed)"
+],
+"fin": [
+3,
+"Deleveraging but capex-heavy"
+],
+"conc": [
+2,
+"India + Africa spread"
+],
+"trans": [
+2,
+"Technology refresh cycles"
+]
+},
+"icicibank": {
+"fx": [
+2,
+"Institutionally hedged"
+],
+"fin": [
+2,
+"Strong capital"
+],
+"conc": [
+3,
+"Domestic credit cycle"
+],
+"trans": [
+2,
+"Fintech competition"
+]
+},
+"sbi": {
+"fx": [
+2,
+"Institutionally hedged"
+],
+"fin": [
+3,
+"PSU capital-raise cycles"
+],
+"conc": [
+3,
+"Largest corporate book — commodity sector credit"
+],
+"trans": [
+2,
+"Fintech competition"
+]
+},
+"infosys": {
+"fx": [
+3,
+"USD/EUR receivables"
+],
+"fin": [
+1,
+"Net cash"
+],
+"conc": [
+3,
+"BFSI concentration"
+],
+"trans": [
+2,
+"GenAI disruption watch"
+]
+},
+"hul": {
+"fx": [
+3,
+"USD palm bill + GBP-linked royalty (disclosed)"
+],
+"fin": [
+1,
+"Net cash"
+],
+"conc": [
+2,
+"Broad category spread"
+],
+"trans": [
+2,
+"Rural demand cyclicality"
+]
+},
+"itc": {
+"fx": [
+2,
+"Modest net FX book"
+],
+"fin": [
+1,
+"Net cash"
+],
+"conc": [
+4,
+"Cigarettes still the profit engine (segment data)"
+],
+"trans": [
+3,
+"Tobacco secular decline; FMCG pivot ongoing"
+]
+},
+"lic": {
+"fx": [
+2,
+"Domestic liabilities"
+],
+"fin": [
+2,
+"Sovereign-linked"
+],
+"conc": [
+4,
+"Outsized single-name equity positions"
+],
+"trans": [
+2,
+"Private insurer share gains"
+]
+},
+"bajajfinance": {
+"fx": [
+2,
+"Domestic book"
+],
+"fin": [
+3,
+"Wholesale funding cost cycle"
+],
+"conc": [
+3,
+"Consumer credit cycle"
+],
+"trans": [
+2,
+"Fintech competition"
+]
+},
+"bajajfinserv": {
+"fx": [
+2,
+"Domestic"
+],
+"fin": [
+3,
+"Holding structure"
+],
+"conc": [
+3,
+"Arms' cycles correlated"
+],
+"trans": [
+2,
+"Competition"
+]
+},
+"lt": {
+"fx": [
+3,
+"Gulf receivables (AED/SAR/USD) on hydrocarbon orders"
+],
+"fin": [
+2,
+"Working-capital cycles"
+],
+"conc": [
+3,
+"Middle East hydrocarbon order share"
+],
+"trans": [
+2,
+"Green EPC pipeline building"
+]
+},
+"hcltech": {
+"fx": [
+3,
+"USD/EUR receivables"
+],
+"fin": [
+1,
+"Net cash"
+],
+"conc": [
+3,
+"Client concentration typical of IT"
+],
+"trans": [
+2,
+"GenAI watch"
+]
+},
+"kotakbank": {
+"fx": [
+2,
+"Institutionally hedged"
+],
+"fin": [
+2,
+"Conservative underwriting"
+],
+"conc": [
+3,
+"Domestic cycle"
+],
+"trans": [
+2,
+"Competition"
+]
+},
+"sunpharma": {
+"fx": [
+3,
+"US revenue dominant; CNY-linked API costs"
+],
+"fin": [
+1,
+"Net cash"
+],
+"conc": [
+3,
+"US specialty portfolio weight"
+],
+"trans": [
+3,
+"FDA inspection history; generic price erosion"
+]
+},
+"maruti": {
+"fx": [
+4,
+"JPY royalty + JPY component imports (AR) — structural"
+],
+"fin": [
+1,
+"Net cash"
+],
+"conc": [
+3,
+"Small-car mix in a SUV market"
+],
+"trans": [
+4,
+"Late EV ramp; hybrid bridge strategy"
+]
+},
+"mm": {
+"fx": [
+2,
+"Moderate import book"
+],
+"fin": [
+2,
+"Comfortable leverage"
+],
+"conc": [
+3,
+"Tractor cycle is monsoon-linked"
+],
+"trans": [
+3,
+"EV cell imports; farm-cycle swings"
+]
+},
+"ultratech": {
+"fx": [
+3,
+"USD petcoke/coal imports"
+],
+"fin": [
+3,
+"Expansion capex on the balance sheet"
+],
+"conc": [
+2,
+"Pan-India spread"
+],
+"trans": [
+4,
+"Carbon intensity; India CCTS obligations coming"
+]
+},
+"axisbank": {
+"fx": [
+2,
+"Institutionally hedged"
+],
+"fin": [
+3,
+"Capital adequate, cost of funds cyclical"
+],
+"conc": [
+3,
+"Domestic cycle"
+],
+"trans": [
+2,
+"Competition"
+]
+},
+"ntpc": {
+"fx": [
+3,
+"USD/green bond funding for RE pivot"
+],
+"fin": [
+3,
+"Regulated leverage — high but stable"
+],
+"conc": [
+3,
+"Coal fleet dominance"
+],
+"trans": [
+4,
+"Coal-to-renewables pivot execution risk"
+]
+},
+"titan": {
+"fx": [
+4,
+"Gold ~99% imported; duty-change shocks (May 2026 live)"
+],
+"fin": [
+2,
+"Gold-on-lease funding structure"
+],
+"conc": [
+3,
+"Jewellery ~90% of revenue"
+],
+"trans": [
+3,
+"Lab-grown diamond pressure on studded mix"
+]
+},
+"adaniports": {
+"fx": [
+4,
+"USD bonds vs INR cash flows"
+],
+"fin": [
+3,
+"Group refinancing spread episodes (2023, public)"
+],
+"conc": [
+2,
+"Diversified cargo and coasts"
+],
+"trans": [
+2,
+"Route disruption sensitivity"
+]
+},
+"wipro": {
+"fx": [
+3,
+"USD receivables"
+],
+"fin": [
+1,
+"Net cash"
+],
+"conc": [
+3,
+"Client concentration"
+],
+"trans": [
+3,
+"Growth lag vs peers"
+]
+},
+"tatamotors": {
+"fx": [
+5,
+"JLR: GBP costs vs EUR/USD/CNY revenues; multi-currency book (AR)"
+],
+"fin": [
+2,
+"Auto net debt cleared FY25 (disclosed)"
+],
+"conc": [
+4,
+"JLR dominates earnings"
+],
+"trans": [
+4,
+"JLR EV transition + Sep 2025 cyberattack recovery (public)"
+]
+},
+"tatasteel": {
+"fx": [
+4,
+"EUR/GBP funding + USD coking coal"
+],
+"fin": [
+3,
+"European restructuring costs (Port Talbot EAF, public)"
+],
+"conc": [
+3,
+"Europe drag vs India strength"
+],
+"trans": [
+5,
+"EAF conversion + CBAM compliance to 2027"
+]
+},
+"jswsteel": {
+"fx": [
+4,
+"USD bonds + USD coal imports"
+],
+"fin": [
+4,
+"Capex-led leverage (AR)"
+],
+"conc": [
+3,
+"Domestic steel cycle"
+],
+"trans": [
+4,
+"Carbon intensity + CBAM on EU exports"
+]
+},
+"hindalco": {
+"fx": [
+4,
+"Novelis USD debt; LME-priced flows"
+],
+"fin": [
+3,
+"Novelis leverage"
+],
+"conc": [
+3,
+"Novelis ~2/3 of EBITDA"
+],
+"trans": [
+3,
+"Smelter coal power vs decarbonization"
+]
+},
+"nestleindia": {
+"fx": [
+3,
+"CHF-linked royalty + cocoa/coffee imports"
+],
+"fin": [
+1,
+"Net cash"
+],
+"conc": [
+3,
+"Few mega-brands drive profit"
+],
+"trans": [
+2,
+"Nutrition regulation watch"
+]
+},
+"asianpaints": {
+"fx": [
+3,
+"TiO2 + crude-derivative imports"
+],
+"fin": [
+1,
+"Net cash"
+],
+"conc": [
+3,
+"Decorative paint core"
+],
+"trans": [
+4,
+"Birla Opus price war compressing margins (public)"
+]
+},
+"coalindia": {
+"fx": [
+1,
+"Domestic revenue and costs"
+],
+"fin": [
+1,
+"Cash-rich"
+],
+"conc": [
+4,
+"Single commodity"
+],
+"trans": [
+5,
+"Structural thermal-coal decline"
+]
+},
+"powergrid": {
+"fx": [
+2,
+"Mostly INR borrowing"
+],
+"fin": [
+3,
+"Regulated leverage"
+],
+"conc": [
+3,
+"Single network business (also a moat)"
+],
+"trans": [
+2,
+"Grid buildout is transition-aligned"
+]
+},
+"adanient": {
+"fx": [
+4,
+"USD-heavy project debt vs INR cash flows"
+],
+"fin": [
+4,
+"Incubation leverage across verticals"
+],
+"conc": [
+3,
+"Multiple early-stage bets"
+],
+"trans": [
+3,
+"Solar policy/duty swings"
+]
+},
+"ongc": {
+"fx": [
+2,
+"USD-linked realizations are a natural hedge"
+],
+"fin": [
+2,
+"Strong cash generation"
+],
+"conc": [
+4,
+"Hydrocarbon single-sector"
+],
+"trans": [
+4,
+"Long-run demand + APM caps/windfall levies"
+]
+},
+"interglobe": {
+"fx": [
+5,
+"USD lease liabilities, USD MRO and USD fuel against INR ticket revenue - the deepest structural mismatch in Indian corporate India"
+],
+"fin": [
+3,
+"Lease liabilities dominate the balance sheet; operating cash flow is strong but the obligation is long-dated and dollar-denominated"
+],
+"conc": [
+4,
+"Single fleet family, single home market, one dominant route network"
+],
+"trans": [
+3,
+"SAF blending mandates and EU ETS exposure on Europe-bound routes"
+]
+},
+"iocl": {
+"fx": [
+4,
+"USD crude purchases against INR-denominated administered retail revenue"
+],
+"fin": [
+3,
+"Large working capital swing with crude; subsidy receivable timing on LPG"
+],
+"conc": [
+3,
+"State-owned marketing network is a strength and a constraint"
+],
+"trans": [
+4,
+"Long-run demand transition plus a mandated ethanol and green-hydrogen build"
+]
+},
+"bpcl": {
+"fx": [
+4,
+"USD crude bill against INR revenue"
+],
+"fin": [
+3,
+"Crude-driven working capital swings"
+],
+"conc": [
+3,
+"Concentrated in fuels; petchem diversification underway"
+],
+"trans": [
+4,
+"Refining asset transition risk over the long run"
+]
+},
+"gail": {
+"fx": [
+4,
+"USD-denominated LNG contracts against INR domestic tariffs"
+],
+"fin": [
+2,
+"Regulated transmission tariffs provide a stable cash floor"
+],
+"conc": [
+3,
+"Dominant pipeline network but concentrated in one fuel"
+],
+"trans": [
+3,
+"Long-run gas demand is a transition beneficiary, then a stranded-asset question"
+]
+},
+"petronet": {
+"fx": [
+4,
+"USD LNG purchase obligations against INR regasification revenue"
+],
+"fin": [
+2,
+"Take-or-pay structures provide contracted cash flow"
+],
+"conc": [
+4,
+"Two terminals, a narrow customer set and a single commodity"
+],
+"trans": [
+3,
+"Gas is a transition fuel with a finite runway"
+]
+},
+"gujgas": {
+"fx": [
+4,
+"USD spot LNG purchases against INR industrial tariffs"
+],
+"fin": [
+2,
+"Asset-light distribution with regulated returns on part of the book"
+],
+"conc": [
+5,
+"Heavy concentration in one industrial cluster with a ready substitute fuel"
+],
+"trans": [
+3,
+"CNG demand grows; industrial demand is exposed to fuel switching"
+]
+},
+"igl": {
+"fx": [
+3,
+"Partial USD exposure on the non-APM slice"
+],
+"fin": [
+2,
+"Strong cash generation, low leverage"
+],
+"conc": [
+4,
+"Single-city concentration with regulated tariffs"
+],
+"trans": [
+3,
+"EV adoption in Delhi NCR erodes the CNG volume base over time"
+]
+},
+"tatapower": {
+"fx": [
+4,
+"USD coal imports and USD-denominated equipment against INR tariffs"
+],
+"fin": [
+3,
+"Capex-heavy renewable build programme"
+],
+"conc": [
+3,
+"Diversified across generation, distribution and renewables"
+],
+"trans": [
+2,
+"Best-positioned Indian utility for the transition"
+]
+},
+"adanipower": {
+"fx": [
+5,
+"Coal and freight in USD against INR PPA tariffs with contested pass-through"
+],
+"fin": [
+4,
+"High leverage against long-dated PPA cash flows"
+],
+"conc": [
+5,
+"Single fuel, single technology"
+],
+"trans": [
+4,
+"Thermal generation faces a structural transition and now a CCTS carbon cost"
+]
+},
+"oilindia": {
+"fx": [
+2,
+"USD-linked realisations against INR costs - a natural long"
+],
+"fin": [
+2,
+"Strong cash generation"
+],
+"conc": [
+4,
+"Single upstream basin concentration"
+],
+"trans": [
+4,
+"Long-run oil demand transition"
+]
+},
+"vedanta": {
+"fx": [
+4,
+"USD-linked LME realisations against INR costs and a large USD debt stack"
+],
+"fin": [
+5,
+"High holding-company leverage with a demanding refinancing schedule"
+],
+"conc": [
+3,
+"Genuinely diversified across metals, oil and power"
+],
+"trans": [
+3,
+"Aluminium is power-intensive and now carbon-exposed"
+]
+},
+"hindzinc": {
+"fx": [
+3,
+"USD-linked LME and silver realisations against INR costs - a natural long"
+],
+"fin": [
+2,
+"Cash-generative with low debt"
+],
+"conc": [
+4,
+"Single mining complex in Rajasthan"
+],
+"trans": [
+2,
+"Zinc for galvanising and silver for solar are both transition-supported"
+]
+},
+"nalco": {
+"fx": [
+3,
+"USD-linked LME and alumina export realisations against INR costs"
+],
+"fin": [
+1,
+"Debt-free with strong cash generation"
+],
+"conc": [
+4,
+"Single commodity chain, single location"
+],
+"trans": [
+3,
+"Power-intensive smelting faces a carbon cost under CCTS"
+]
+},
+"sail": {
+"fx": [
+4,
+"USD coking coal imports against largely INR revenue"
+],
+"fin": [
+4,
+"High working capital intensity and legacy leverage"
+],
+"conc": [
+5,
+"Single commodity, blast-furnace route only"
+],
+"trans": [
+4,
+"Blast-furnace route is the hardest steel technology to decarbonise; CBAM and CCTS both apply"
+]
+},
+"jindalsteel": {
+"fx": [
+4,
+"USD coking coal against domestic INR steel realisations"
+],
+"fin": [
+3,
+"Deleveraged materially but capex cycle is active"
+],
+"conc": [
+4,
+"Single commodity chain"
+],
+"trans": [
+4,
+"Blast-furnace transition exposure plus CBAM and CCTS"
+]
+},
+"apollotyre": {
+"fx": [
+4,
+"USD rubber and carbon black inputs, EUR revenue from European operations, INR cost base"
+],
+"fin": [
+3,
+"Capex cycle in Europe and India"
+],
+"conc": [
+3,
+"Concentrated in one product category across two geographies"
+],
+"trans": [
+3,
+"EUDR applies to natural rubber for EU-bound goods"
+]
+},
+"mrf": {
+"fx": [
+3,
+"USD rubber and carbon black inputs against a largely domestic INR revenue base"
+],
+"fin": [
+1,
+"Very strong balance sheet, minimal debt"
+],
+"conc": [
+3,
+"Single product category, domestic-heavy"
+],
+"trans": [
+2,
+"Replacement-market demand is resilient"
+]
+},
+"balkrishna": {
+"fx": [
+5,
+"EUR and USD receivables against USD-priced inputs and an INR cost base - a three-currency book"
+],
+"fin": [
+2,
+"Low leverage, strong margins"
+],
+"conc": [
+4,
+"Concentrated in one niche category and one export region"
+],
+"trans": [
+3,
+"EUDR on natural rubber; European agricultural demand cycle"
+]
+},
+"coromandel": {
+"fx": [
+5,
+"Fully USD-priced imported inputs against an INR price ceiling set by government"
+],
+"fin": [
+4,
+"Subsidy receivable timing drives large working capital swings and short-term borrowing"
+],
+"conc": [
+4,
+"Concentrated in phosphatics with a narrow supplier set"
+],
+"trans": [
+3,
+"Nutrient-use-efficiency policy shifts and the move toward nano and specialty products"
+]
+},
+"chambal": {
+"fx": [
+3,
+"Partial USD exposure through imported gas in the pool and traded fertiliser"
+],
+"fin": [
+4,
+"Subsidy payment cycle drives working capital"
+],
+"conc": [
+4,
+"Single product concentration"
+],
+"trans": [
+3,
+"Green ammonia and energy-efficiency norms reshape the cost curve over time"
+]
+},
+"srf": {
+"fx": [
+4,
+"USD-priced imported inputs with substantial export revenue - a partial natural offset worth netting"
+],
+"fin": [
+2,
+"Comfortable leverage against a heavy capex programme"
+],
+"conc": [
+3,
+"Three distinct segments: chemicals, packaging films, technical textiles"
+],
+"trans": [
+4,
+"HFC phase-down under Kigali restructures the refrigerant portfolio over the next decade"
+]
+},
+"tatachem": {
+"fx": [
+4,
+"GBP, USD and KES operations alongside the Indian base"
+],
+"fin": [
+3,
+"Moderate leverage with a capex programme"
+],
+"conc": [
+3,
+"Soda ash concentration with specialty diversification"
+],
+"trans": [
+3,
+"Energy-intensive production faces CCTS in India and ETS in the UK"
+]
+},
+"deepaknitrite": {
+"fx": [
+4,
+"USD-priced aromatic feedstocks against a mix of domestic and export sales"
+],
+"fin": [
+2,
+"Low leverage"
+],
+"conc": [
+3,
+"Concentrated in the aromatics chain"
+],
+"trans": [
+2,
+"Import substitution supports the domestic position"
+]
+},
+"upl": {
+"fx": [
+5,
+"Revenue across many emerging-market currencies against USD debt and INR costs - one of the most complex FX books in Indian corporate India"
+],
+"fin": [
+5,
+"High leverage against a working-capital-intensive Latin American receivables cycle"
+],
+"conc": [
+4,
+"Latin American concentration in both revenue and credit exposure"
+],
+"trans": [
+3,
+"Regulatory pressure on legacy actives in Europe"
+]
+},
+"pidilite": {
+"fx": [
+4,
+"Fully USD-denominated imported VAM against domestic INR revenue"
+],
+"fin": [
+1,
+"Net cash, very strong balance sheet"
+],
+"conc": [
+5,
+"Extreme single-input concentration with no substitute and no hedge"
+],
+"trans": [
+2,
+"Construction and repair demand is structurally supported"
+]
+},
+"bergerpaints": {
+"fx": [
+3,
+"USD-priced pigment and resin inputs against domestic INR revenue"
+],
+"fin": [
+2,
+"Moderate leverage"
+],
+"conc": [
+3,
+"Decorative paints concentration in a market facing new entrants"
+],
+"trans": [
+2,
+"Water-based and low-VOC formulation shift"
+]
+},
+"britannia": {
+"fx": [
+3,
+"USD and MYR palm purchases; the rest is domestic INR"
+],
+"fin": [
+1,
+"Net cash"
+],
+"conc": [
+3,
+"Biscuits dominate the portfolio"
+],
+"trans": [
+2,
+"Rural demand cyclicality tied to monsoon"
+]
+},
+"marico": {
+"fx": [
+3,
+"Largely domestic INR inputs with a USD palm leg and international operations"
+],
+"fin": [
+1,
+"Net cash"
+],
+"conc": [
+4,
+"Heavy dependence on one input and a small number of hero brands"
+],
+"trans": [
+2,
+"Premiumisation and category expansion underway"
+]
+},
+"godrejcp": {
+"fx": [
+4,
+"USD and IDR palm exposure, African currency operations, INR domestic base"
+],
+"fin": [
+2,
+"Moderate leverage"
+],
+"conc": [
+3,
+"Soaps and household insecticides dominate"
+],
+"trans": [
+3,
+"EUDR applies to palm for any EU-bound flow"
+]
+},
+"awl": {
+"fx": [
+5,
+"USD and MYR oil purchases financed short-term against INR sales - the classic importer squeeze"
+],
+"fin": [
+4,
+"Very high inventory and working capital intensity relative to margin"
+],
+"conc": [
+4,
+"Edible oil dominates the revenue mix"
+],
+"trans": [
+3,
+"EUDR on palm for any export flow; biofuel policy shifts in Indonesia"
+]
+},
+"tataconsumer": {
+"fx": [
+3,
+"USD and GBP exposure through international brands, INR domestic base"
+],
+"fin": [
+2,
+"Comfortable leverage"
+],
+"conc": [
+3,
+"Tea and salt dominate the domestic portfolio"
+],
+"trans": [
+2,
+"Premiumisation and packaged-foods expansion"
+]
+},
+"varunbev": {
+"fx": [
+3,
+"International territory operations in Africa alongside the INR domestic base"
+],
+"fin": [
+3,
+"Capex-heavy expansion programme"
+],
+"conc": [
+4,
+"Single-franchise concentration with strong seasonality"
+],
+"trans": [
+3,
+"Sugar-content regulation and plastic packaging EPR rules"
+]
+},
+"balrampur": {
+"fx": [
+1,
+"Almost entirely domestic INR"
+],
+"fin": [
+3,
+"Cane payment obligations create a seasonal working capital cycle"
+],
+"conc": [
+5,
+"Single crop, single geography, single set of policy levers"
+],
+"trans": [
+3,
+"Ethanol blending policy is both the opportunity and the concentration risk"
+]
+},
+"polycab": {
+"fx": [
+3,
+"USD-linked LME copper flows through MCX pricing; largely INR revenue"
+],
+"fin": [
+1,
+"Net cash, strong working capital discipline"
+],
+"conc": [
+3,
+"Wires and cables dominate the mix"
+],
+"trans": [
+2,
+"Electrification and grid capex are structural tailwinds"
+]
+},
+"havells": {
+"fx": [
+3,
+"USD-linked metal inputs against domestic INR consumer revenue"
+],
+"fin": [
+1,
+"Net cash"
+],
+"conc": [
+2,
+"Broad product portfolio"
+],
+"trans": [
+2,
+"Energy-efficiency standards drive product refresh"
+]
+},
+"dixon": {
+"fx": [
+4,
+"USD component imports on thin INR-denominated conversion margins"
+],
+"fin": [
+3,
+"Working-capital-intensive with a heavy capex programme"
+],
+"conc": [
+4,
+"Customer concentration is high in contract manufacturing"
+],
+"trans": [
+3,
+"PLI scheme dependence and the domestic value-addition trajectory"
+]
+},
+"motherson": {
+"fx": [
+5,
+"Manufacturing and revenue across many currencies with a consolidated INR reporting base"
+],
+"fin": [
+3,
+"Acquisition-driven leverage"
+],
+"conc": [
+3,
+"Diversified across customers and geographies"
+],
+"trans": [
+3,
+"EV transition reshapes the component mix"
+]
+},
+"bharatforge": {
+"fx": [
+4,
+"EUR and USD export receivables against an INR cost base"
+],
+"fin": [
+3,
+"Capex programme across defence and e-mobility diversification"
+],
+"conc": [
+3,
+"Commercial vehicle cycle exposure moderated by defence growth"
+],
+"trans": [
+3,
+"Powertrain content declines as vehicles electrify"
+]
+},
+"exide": {
+"fx": [
+3,
+"USD-linked LME lead flowing through MCX pricing against INR revenue"
+],
+"fin": [
+2,
+"Comfortable leverage with a lithium capex programme"
+],
+"conc": [
+5,
+"Extreme single-input concentration in a single product technology"
+],
+"trans": [
+4,
+"Lithium substitution in starter and backup applications is a long-run structural threat"
+]
+},
+"amararaja": {
+"fx": [
+3,
+"USD-linked lead and lithium inputs against INR revenue"
+],
+"fin": [
+3,
+"Gigafactory capex against an established cash-generating base"
+],
+"conc": [
+5,
+"Single dominant input in the legacy business"
+],
+"trans": [
+4,
+"Managing a technology transition while the legacy product still funds it"
+]
+},
+"bajajauto": {
+"fx": [
+4,
+"Emerging-market export receivables in fragile currencies against USD-linked inputs"
+],
+"fin": [
+1,
+"Net cash"
+],
+"conc": [
+3,
+"Two-wheeler concentration with meaningful export dependence"
+],
+"trans": [
+3,
+"Electrification of two and three-wheelers"
+]
+},
+"heromoto": {
+"fx": [
+2,
+"Largely domestic INR with USD-linked input costs"
+],
+"fin": [
+1,
+"Net cash"
+],
+"conc": [
+3,
+"Two-wheeler and domestic-market concentration"
+],
+"trans": [
+3,
+"Electric two-wheeler transition and new entrants"
+]
+},
+"ambuja": {
+"fx": [
+3,
+"USD petcoke and coal imports against domestic INR realisations"
+],
+"fin": [
+2,
+"Strong balance sheet post-acquisition"
+],
+"conc": [
+3,
+"Regional market concentration typical of cement"
+],
+"trans": [
+4,
+"CCTS obligated entity; cement is among the hardest sectors to decarbonise"
+]
+},
+"gesco": {
+"fx": [
+2,
+"USD revenue and USD costs - one of the few naturally currency-matched Indian businesses"
+],
+"fin": [
+2,
+"Conservative leverage through the cycle"
+],
+"conc": [
+4,
+"Highly cyclical single-sector exposure"
+],
+"trans": [
+4,
+"IMO decarbonisation rules and EU ETS extension to shipping"
+]
+},
+"concor": {
+"fx": [
+2,
+"Largely domestic INR"
+],
+"fin": [
+1,
+"Net cash"
+],
+"conc": [
+4,
+"EXIM trade concentration with a single infrastructure counterparty"
+],
+"trans": [
+2,
+"Dedicated freight corridors improve the structural position"
+]
+},
+"welspunliving": {
+"fx": [
+4,
+"USD export receivables against INR cotton procurement"
+],
+"fin": [
+3,
+"Working-capital-intensive with cotton inventory cycles"
+],
+"conc": [
+5,
+"Concentrated in a handful of large US retail customers"
+],
+"trans": [
+3,
+"Cotton traceability and forced-labour import rules in the US and EU"
+]
+},
+"vardhman": {
+"fx": [
+3,
+"Export receivables in USD against INR cotton procurement"
+],
+"fin": [
+3,
+"Inventory-heavy with seasonal cotton buying"
+],
+"conc": [
+4,
+"Single-fibre and single-industry concentration"
+],
+"trans": [
+2,
+"China-plus-one sourcing shifts favour Indian textiles"
+]
+},
+"jkpaper": {
+"fx": [
+3,
+"USD pulp imports against domestic INR realisations"
+],
+"fin": [
+3,
+"Capex cycle in packaging board"
+],
+"conc": [
+3,
+"Paper and board concentration"
+],
+"trans": [
+3,
+"Packaging demand grows as single-use plastic is restricted"
+]
+},
+"waaree": {
+"fx": [
+4,
+"USD-denominated cell and wafer imports against INR module sales"
+],
+"fin": [
+3,
+"Heavy capex on backward integration into cells and wafers"
+],
+"conc": [
+4,
+"Single technology, and policy-dependent domestic demand"
+],
+"trans": [
+2,
+"Structurally supported by India's renewable capacity targets"
+]
+},
+"cipla": {
+"fx": [
+3,
+"USD API purchases against substantial USD revenue - a natural offset worth quantifying"
+],
+"fin": [
+1,
+"Net cash"
+],
+"conc": [
+3,
+"US generics concentration alongside a strong domestic franchise"
+],
+"trans": [
+3,
+"US price erosion and regulatory inspection risk"
+]
+},
+"aurobindo": {
+"fx": [
+3,
+"USD-heavy revenue against USD KSM purchases"
+],
+"fin": [
+3,
+"Capex-heavy across API and injectables"
+],
+"conc": [
+4,
+"US generics concentration"
+],
+"trans": [
+3,
+"Price erosion and inspection risk in the US market"
+]
+},
+"kalyan": {
+"fx": [
+4,
+"USD gold purchases and gold-on-lease funding against INR retail revenue"
+],
+"fin": [
+3,
+"Inventory-heavy with gold metal loan funding"
+],
+"conc": [
+5,
+"Single commodity dominates the cost base"
+],
+"trans": [
+2,
+"Formalisation of the jewellery market favours organised retail"
+]
+},
+"supremeind": {
+"fx": [
+3,
+"USD-priced imported PVC against domestic INR sales"
+],
+"fin": [
+1,
+"Net cash"
+],
+"conc": [
+4,
+"Piping dominates the mix; demand is monsoon and agriculture-linked"
+],
+"trans": [
+2,
+"Infrastructure and irrigation spending are structural drivers"
+]
+}
+},
+"companies": [
+{
+"id": "reliance",
+"name": "Reliance Industries",
+"sector": "Energy, petchem, retail, telecom"
+},
+{
+"id": "tcs",
+"name": "TCS",
+"sector": "IT services"
+},
+{
+"id": "hdfcbank",
+"name": "HDFC Bank",
+"sector": "Banking"
+},
+{
+"id": "bhartiairtel",
+"name": "Bharti Airtel",
+"sector": "Telecom"
+},
+{
+"id": "icicibank",
+"name": "ICICI Bank",
+"sector": "Banking"
+},
+{
+"id": "sbi",
+"name": "State Bank of India",
+"sector": "Banking"
+},
+{
+"id": "infosys",
+"name": "Infosys",
+"sector": "IT services"
+},
+{
+"id": "hul",
+"name": "Hindustan Unilever",
+"sector": "FMCG"
+},
+{
+"id": "itc",
+"name": "ITC",
+"sector": "FMCG, tobacco, paper"
+},
+{
+"id": "lic",
+"name": "LIC",
+"sector": "Insurance"
+},
+{
+"id": "bajajfinance",
+"name": "Bajaj Finance",
+"sector": "NBFC"
+},
+{
+"id": "bajajfinserv",
+"name": "Bajaj Finserv",
+"sector": "Financial services"
+},
+{
+"id": "lt",
+"name": "Larsen & Toubro",
+"sector": "Engineering and construction"
+},
+{
+"id": "hcltech",
+"name": "HCL Tech",
+"sector": "IT services"
+},
+{
+"id": "kotakbank",
+"name": "Kotak Mahindra Bank",
+"sector": "Banking"
+},
+{
+"id": "sunpharma",
+"name": "Sun Pharma",
+"sector": "Pharmaceuticals"
+},
+{
+"id": "maruti",
+"name": "Maruti Suzuki",
+"sector": "Automotive"
+},
+{
+"id": "mm",
+"name": "Mahindra & Mahindra",
+"sector": "Automotive and farm"
+},
+{
+"id": "ultratech",
+"name": "UltraTech Cement",
+"sector": "Cement"
+},
+{
+"id": "axisbank",
+"name": "Axis Bank",
+"sector": "Banking"
+},
+{
+"id": "ntpc",
+"name": "NTPC",
+"sector": "Power generation"
+},
+{
+"id": "titan",
+"name": "Titan",
+"sector": "Jewellery and watches"
+},
+{
+"id": "adaniports",
+"name": "Adani Ports",
+"sector": "Ports and logistics"
+},
+{
+"id": "wipro",
+"name": "Wipro",
+"sector": "IT services"
+},
+{
+"id": "tatamotors",
+"name": "Tata Motors",
+"sector": "Automotive"
+},
+{
+"id": "tatasteel",
+"name": "Tata Steel",
+"sector": "Steelmaking"
+},
+{
+"id": "jswsteel",
+"name": "JSW Steel",
+"sector": "Steelmaking"
+},
+{
+"id": "hindalco",
+"name": "Hindalco",
+"sector": "Aluminum and copper"
+},
+{
+"id": "nestleindia",
+"name": "Nestlé India",
+"sector": "Food"
+},
+{
+"id": "asianpaints",
+"name": "Asian Paints",
+"sector": "Paints"
+},
+{
+"id": "coalindia",
+"name": "Coal India",
+"sector": "Mining"
+},
+{
+"id": "powergrid",
+"name": "Power Grid",
+"sector": "Transmission"
+},
+{
+"id": "adanient",
+"name": "Adani Enterprises",
+"sector": "Incubator, coal trading, solar"
+},
+{
+"id": "ongc",
+"name": "ONGC",
+"sector": "Oil and gas production"
+},
+{
+"id": "interglobe",
+"name": "InterGlobe Aviation (IndiGo)",
+"sector": "Airlines"
+},
+{
+"id": "iocl",
+"name": "Indian Oil Corporation",
+"sector": "Refining and marketing"
+},
+{
+"id": "bpcl",
+"name": "Bharat Petroleum",
+"sector": "Refining and marketing"
+},
+{
+"id": "gail",
+"name": "GAIL (India)",
+"sector": "Gas transmission and petrochemicals"
+},
+{
+"id": "petronet",
+"name": "Petronet LNG",
+"sector": "LNG regasification"
+},
+{
+"id": "gujgas",
+"name": "Gujarat Gas",
+"sector": "City gas distribution"
+},
+{
+"id": "igl",
+"name": "Indraprastha Gas",
+"sector": "City gas distribution"
+},
+{
+"id": "tatapower",
+"name": "Tata Power",
+"sector": "Power generation and distribution"
+},
+{
+"id": "adanipower",
+"name": "Adani Power",
+"sector": "Thermal power generation"
+},
+{
+"id": "oilindia",
+"name": "Oil India",
+"sector": "Oil and gas production"
+},
+{
+"id": "vedanta",
+"name": "Vedanta",
+"sector": "Diversified natural resources"
+},
+{
+"id": "hindzinc",
+"name": "Hindustan Zinc",
+"sector": "Zinc, lead and silver mining"
+},
+{
+"id": "nalco",
+"name": "National Aluminium",
+"sector": "Alumina and aluminium"
+},
+{
+"id": "sail",
+"name": "Steel Authority of India",
+"sector": "Steelmaking"
+},
+{
+"id": "jindalsteel",
+"name": "Jindal Steel & Power",
+"sector": "Steelmaking"
+},
+{
+"id": "apollotyre",
+"name": "Apollo Tyres",
+"sector": "Tyres"
+},
+{
+"id": "mrf",
+"name": "MRF",
+"sector": "Tyres"
+},
+{
+"id": "balkrishna",
+"name": "Balkrishna Industries",
+"sector": "Off-highway tyres"
+},
+{
+"id": "coromandel",
+"name": "Coromandel International",
+"sector": "Fertilisers and crop protection"
+},
+{
+"id": "chambal",
+"name": "Chambal Fertilisers",
+"sector": "Urea and agri-inputs"
+},
+{
+"id": "srf",
+"name": "SRF",
+"sector": "Specialty chemicals and packaging films"
+},
+{
+"id": "tatachem",
+"name": "Tata Chemicals",
+"sector": "Soda ash and specialty chemicals"
+},
+{
+"id": "deepaknitrite",
+"name": "Deepak Nitrite",
+"sector": "Intermediates and phenolics"
+},
+{
+"id": "upl",
+"name": "UPL",
+"sector": "Crop protection"
+},
+{
+"id": "pidilite",
+"name": "Pidilite Industries",
+"sector": "Adhesives and construction chemicals"
+},
+{
+"id": "bergerpaints",
+"name": "Berger Paints",
+"sector": "Paints and coatings"
+},
+{
+"id": "britannia",
+"name": "Britannia Industries",
+"sector": "Packaged foods"
+},
+{
+"id": "marico",
+"name": "Marico",
+"sector": "Consumer staples"
+},
+{
+"id": "godrejcp",
+"name": "Godrej Consumer Products",
+"sector": "Home and personal care"
+},
+{
+"id": "awl",
+"name": "AWL Agri Business",
+"sector": "Edible oils and foods"
+},
+{
+"id": "tataconsumer",
+"name": "Tata Consumer Products",
+"sector": "Beverages and foods"
+},
+{
+"id": "varunbev",
+"name": "Varun Beverages",
+"sector": "Beverages bottling"
+},
+{
+"id": "balrampur",
+"name": "Balrampur Chini Mills",
+"sector": "Sugar and ethanol"
+},
+{
+"id": "polycab",
+"name": "Polycab India",
+"sector": "Wires and cables"
+},
+{
+"id": "havells",
+"name": "Havells India",
+"sector": "Electrical consumer goods"
+},
+{
+"id": "dixon",
+"name": "Dixon Technologies",
+"sector": "Electronics manufacturing"
+},
+{
+"id": "motherson",
+"name": "Samvardhana Motherson",
+"sector": "Auto components"
+},
+{
+"id": "bharatforge",
+"name": "Bharat Forge",
+"sector": "Forgings and defence"
+},
+{
+"id": "exide",
+"name": "Exide Industries",
+"sector": "Lead-acid and lithium batteries"
+},
+{
+"id": "amararaja",
+"name": "Amara Raja Energy & Mobility",
+"sector": "Batteries and energy storage"
+},
+{
+"id": "bajajauto",
+"name": "Bajaj Auto",
+"sector": "Two and three-wheelers"
+},
+{
+"id": "heromoto",
+"name": "Hero MotoCorp",
+"sector": "Two-wheelers"
+},
+{
+"id": "ambuja",
+"name": "Ambuja Cements",
+"sector": "Cement"
+},
+{
+"id": "gesco",
+"name": "Great Eastern Shipping",
+"sector": "Shipping"
+},
+{
+"id": "concor",
+"name": "Container Corporation",
+"sector": "Rail logistics"
+},
+{
+"id": "welspunliving",
+"name": "Welspun Living",
+"sector": "Home textiles"
+},
+{
+"id": "vardhman",
+"name": "Vardhman Textiles",
+"sector": "Yarn and fabric"
+},
+{
+"id": "jkpaper",
+"name": "JK Paper",
+"sector": "Paper and packaging board"
+},
+{
+"id": "waaree",
+"name": "Waaree Energies",
+"sector": "Solar module manufacturing"
+},
+{
+"id": "cipla",
+"name": "Cipla",
+"sector": "Pharmaceuticals"
+},
+{
+"id": "aurobindo",
+"name": "Aurobindo Pharma",
+"sector": "Pharmaceuticals"
+},
+{
+"id": "kalyan",
+"name": "Kalyan Jewellers",
+"sector": "Jewellery retail"
+},
+{
+"id": "supremeind",
+"name": "Supreme Industries",
+"sector": "Plastic piping and products"
+}
+]
+}

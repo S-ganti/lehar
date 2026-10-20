@@ -1,0 +1,2568 @@
+{
+ "_meta": {
+  "note": "Monthly portfolio disclosures read from each AMC's own website. Weights are % of net assets. Holdings without an ISIN (cash, TREPS, receivables) are not listed; the remainder to 100% is that.",
+  "built": "2026-10-20"
+ },
+ "funds": {
+  "ppfcf": {
+   "name": "Parag Parikh Flexi Cap Fund",
+   "asof": "2026-09-30",
+   "src": "https://amc.ppfas.com/downloads/portfolio-disclosure/2026/PPFAS_Monthly_Portfolio_Report_September_30_2026.xls",
+   "holdings": [
+    {
+     "isin": "INE040A01034",
+     "name": "HDFC Bank Limited",
+     "industry": "Banks",
+     "w": 7.75,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE752E01010",
+     "name": "Power Grid Corporation of India Limited",
+     "industry": "Power",
+     "w": 5.6,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE154A01025",
+     "name": "ITC Limited",
+     "industry": "Diversified FMCG",
+     "w": 5.49,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE522F01014",
+     "name": "Coal India Limited",
+     "industry": "Consumable Fuels",
+     "w": 5.39,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE090A01021",
+     "name": "ICICI Bank Limited",
+     "industry": "Banks",
+     "w": 5.24,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE118A01012",
+     "name": "Bajaj Holdings & Investment Limited",
+     "industry": "Finance",
+     "w": 4.96,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE237A01036",
+     "name": "Kotak Mahindra Bank Limited",
+     "industry": "Banks",
+     "w": 4.44,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE860A01027",
+     "name": "HCL Technologies Limited",
+     "industry": "IT - Software",
+     "w": 3.96,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE101A01026",
+     "name": "Mahindra & Mahindra Limited",
+     "industry": "Automobiles",
+     "w": 3.89,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE009A01021",
+     "name": "Infosys Limited",
+     "industry": "IT - Software",
+     "w": 2.93,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE397D01024",
+     "name": "Bharti Airtel Limited",
+     "industry": "Telecom - Services",
+     "w": 2.91,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE238A01034",
+     "name": "Axis Bank Limited",
+     "industry": "Banks",
+     "w": 2.85,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE467B01029",
+     "name": "Tata Consultancy Services Limited",
+     "industry": "IT - Software",
+     "w": 2.5,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE271C01023",
+     "name": "DLF Limited",
+     "industry": "Realty",
+     "w": 2.45,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE585B01010",
+     "name": "Maruti Suzuki India Limited",
+     "industry": "Automobiles",
+     "w": 2.4,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE010B01027",
+     "name": "Zydus Lifesciences Limited",
+     "industry": "Pharmaceuticals & Biotechnology",
+     "w": 1.54,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE059A01026",
+     "name": "Cipla Limited",
+     "industry": "Pharmaceuticals & Biotechnology",
+     "w": 1.33,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE089A01031",
+     "name": "Dr. Reddy's Laboratories Limited",
+     "industry": "Pharmaceuticals & Biotechnology",
+     "w": 1.23,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE203G01027",
+     "name": "Indraprastha Gas Limited",
+     "industry": "Gas",
+     "w": 1.22,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE768C01028",
+     "name": "Zydus Wellness Limited",
+     "industry": "Food Products",
+     "w": 0.78,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE022Q01020",
+     "name": "Indian Energy Exchange Limited",
+     "industry": "Capital Markets",
+     "w": 0.62,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE347G01014",
+     "name": "Petronet LNG Limited",
+     "industry": "Gas",
+     "w": 0.6,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE126A01031",
+     "name": "EID Parry India Limited",
+     "industry": "Food Products",
+     "w": 0.52,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE002S01010",
+     "name": "Mahanagar Gas Limited",
+     "industry": "Gas",
+     "w": 0.29,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE410P01011",
+     "name": "Narayana Hrudayalaya Limited",
+     "industry": "Healthcare Services",
+     "w": 0.25,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE736A01011",
+     "name": "Central Depository Services (India) Limited",
+     "industry": "Capital Markets",
+     "w": 0.2,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE121J01017",
+     "name": "Indus Towers Limited",
+     "industry": "Telecom - Services",
+     "w": 0.18,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE536H01010",
+     "name": "CIE Automotive India Limited",
+     "industry": "Auto Components",
+     "w": 0.17,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE925R01014",
+     "name": "CMS Info System Limited",
+     "industry": "Commercial Services & Supplies",
+     "w": 0.15,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE288A01013",
+     "name": "Maharashtra Scooters Limited",
+     "industry": "Finance",
+     "w": 0.1,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE725G01011",
+     "name": "ICRA Limited",
+     "industry": "Capital Markets",
+     "w": 0.08,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE317F01035",
+     "name": "Nesco Limited",
+     "industry": "Commercial Services & Supplies",
+     "w": 0.03,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE277A01016",
+     "name": "Swaraj Engines Limited",
+     "industry": "Industrial Products",
+     "w": 0.01,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE002A01018",
+     "name": "Reliance Industries Limited",
+     "industry": "Petroleum Products",
+     "w": 0.29,
+     "kind": "arbitrage"
+    },
+    {
+     "isin": "INE296A01032",
+     "name": "Bajaj Finance Limited",
+     "industry": "Finance",
+     "w": 0.26,
+     "kind": "arbitrage"
+    },
+    {
+     "isin": "INE044A01036",
+     "name": "Sun Pharmaceutical Industries Limited",
+     "industry": "Pharmaceuticals & Biotechnology",
+     "w": 0.12,
+     "kind": "arbitrage"
+    },
+    {
+     "isin": "INE476A01022",
+     "name": "Canara Bank",
+     "industry": "Banks",
+     "w": 0.09,
+     "kind": "arbitrage"
+    },
+    {
+     "isin": "INE361B01024",
+     "name": "Divi's Laboratories Limited",
+     "industry": "Pharmaceuticals & Biotechnology",
+     "w": 0.09,
+     "kind": "arbitrage"
+    },
+    {
+     "isin": "INE280A01028",
+     "name": "Titan Company Limited",
+     "industry": "Consumer Durables",
+     "w": 0.08,
+     "kind": "arbitrage"
+    },
+    {
+     "isin": "INE062A01020",
+     "name": "State Bank of India",
+     "industry": "Banks",
+     "w": 0.08,
+     "kind": "arbitrage"
+    },
+    {
+     "isin": "INE481G01011",
+     "name": "UltraTech Cement Limited",
+     "industry": "Cement & Cement Products",
+     "w": 0.06,
+     "kind": "arbitrage"
+    },
+    {
+     "isin": "INE066F01020",
+     "name": "Hindustan Aeronautics Limited",
+     "industry": "Aerospace & Defense",
+     "w": 0.05,
+     "kind": "arbitrage"
+    },
+    {
+     "isin": "INE038A01020",
+     "name": "Hindalco Industries Limited",
+     "industry": "Non - Ferrous Metals",
+     "w": 0.05,
+     "kind": "arbitrage"
+    },
+    {
+     "isin": "INE081A01020",
+     "name": "Tata Steel Limited",
+     "industry": "Ferrous Metals",
+     "w": 0.05,
+     "kind": "arbitrage"
+    },
+    {
+     "isin": "INE213A01029",
+     "name": "Oil & Natural Gas Corporation Limited",
+     "industry": "Oil",
+     "w": 0.05,
+     "kind": "arbitrage"
+    },
+    {
+     "isin": "INE030A01027",
+     "name": "Hindustan Unilever Limited",
+     "industry": "Diversified FMCG",
+     "w": 0.04,
+     "kind": "arbitrage"
+    },
+    {
+     "isin": "INE095A01012",
+     "name": "IndusInd Bank Limited",
+     "industry": "Banks",
+     "w": 0.03,
+     "kind": "arbitrage"
+    },
+    {
+     "isin": "INE494B01023",
+     "name": "TVS Motor Company Limited",
+     "industry": "Automobiles",
+     "w": 0.03,
+     "kind": "arbitrage"
+    },
+    {
+     "isin": "INE066A01021",
+     "name": "Eicher Motors Limited",
+     "industry": "Automobiles",
+     "w": 0.03,
+     "kind": "arbitrage"
+    },
+    {
+     "isin": "INE047A01021",
+     "name": "Grasim Industries Limited",
+     "industry": "Cement & Cement Products",
+     "w": 0.02,
+     "kind": "arbitrage"
+    },
+    {
+     "isin": "INE918I01026",
+     "name": "Bajaj Finserv Limited",
+     "industry": "Finance",
+     "w": 0.01,
+     "kind": "arbitrage"
+    },
+    {
+     "isin": "INE019A01038",
+     "name": "JSW Steel Limited",
+     "industry": "Ferrous Metals",
+     "w": 0.01,
+     "kind": "arbitrage"
+    },
+    {
+     "isin": "INE041025011",
+     "name": "Embassy Office Parks REIT",
+     "industry": "Realty",
+     "w": 2.49,
+     "kind": "reit"
+    },
+    {
+     "isin": "INE1JAR25012",
+     "name": "Knowledge Realty Trust",
+     "industry": "Realty",
+     "w": 2.18,
+     "kind": "reit"
+    },
+    {
+     "isin": "INE0FDU25010",
+     "name": "Brookfield India Real Estate Trust",
+     "industry": "Realty",
+     "w": 1.6,
+     "kind": "reit"
+    },
+    {
+     "isin": "US02079K3059",
+     "name": "Alphabet Inc A",
+     "industry": "Computer Software: Programming, Data Processing ##",
+     "w": 4.29,
+     "kind": "foreign_equity"
+    },
+    {
+     "isin": "US30303M1027",
+     "name": "Meta Platforms Registered Shares A",
+     "industry": "Computer Software: Programming, Data Processing ##",
+     "w": 2.83,
+     "kind": "foreign_equity"
+    },
+    {
+     "isin": "US5949181045",
+     "name": "Microsoft Corp",
+     "industry": "Computer Software: Prepackaged Software ##",
+     "w": 2.48,
+     "kind": "foreign_equity"
+    },
+    {
+     "isin": "US0231351067",
+     "name": "Amazon Com Inc",
+     "industry": "Catalog/Specialty Distribution ##",
+     "w": 2.3,
+     "kind": "foreign_equity"
+    },
+    {
+     "isin": "INE476A16F78",
+     "name": "Canara Bank (18/12/2026)",
+     "industry": "CRISIL A1+",
+     "w": 0.31,
+     "kind": "debt"
+    },
+    {
+     "isin": "INE237AD6109",
+     "name": "Kotak Mahindra Bank Limited (18/12/2026)",
+     "industry": "CRISIL A1+",
+     "w": 0.21,
+     "kind": "debt"
+    },
+    {
+     "isin": "INE562A16QG2",
+     "name": "Indian Bank (22/01/2027)",
+     "industry": "CRISIL A1+",
+     "w": 0.2,
+     "kind": "debt"
+    },
+    {
+     "isin": "INE160A16VR2",
+     "name": "Punjab National Bank (01/10/2026)",
+     "industry": "IND A1+",
+     "w": 0.17,
+     "kind": "debt"
+    },
+    {
+     "isin": "INE261F16AE9",
+     "name": "National Bank For Agriculture and Rural Development (19/01/2027)",
+     "industry": "ICRA A1+",
+     "w": 0.17,
+     "kind": "debt"
+    },
+    {
+     "isin": "INE261F16AD1",
+     "name": "National Bank For Agriculture and Rural Development (14/01/2027)",
+     "industry": "CRISIL A1+",
+     "w": 0.15,
+     "kind": "debt"
+    },
+    {
+     "isin": "INE556F16BL5",
+     "name": "Small Industries Dev Bank of India (13/10/2026)",
+     "industry": "CRISIL A1+",
+     "w": 0.14,
+     "kind": "debt"
+    },
+    {
+     "isin": "INE476A16E38",
+     "name": "Canara Bank (11/11/2026)",
+     "industry": "CRISIL A1+",
+     "w": 0.14,
+     "kind": "debt"
+    },
+    {
+     "isin": "INE237AD6117",
+     "name": "Kotak Mahindra Bank Limited (08/01/2027)",
+     "industry": "CRISIL A1+",
+     "w": 0.14,
+     "kind": "debt"
+    },
+    {
+     "isin": "INE090AD6279",
+     "name": "ICICI Bank Limited (27/01/2027)",
+     "industry": "ICRA A1+",
+     "w": 0.13,
+     "kind": "debt"
+    },
+    {
+     "isin": "INE261F16AF6",
+     "name": "National Bank For Agriculture and Rural Development (22/01/2027)",
+     "industry": "ICRA A1+",
+     "w": 0.1,
+     "kind": "debt"
+    },
+    {
+     "isin": "INE261F16AH2",
+     "name": "National Bank For Agriculture and Rural Development (28/01/2027)",
+     "industry": "CRISIL A1+",
+     "w": 0.1,
+     "kind": "debt"
+    },
+    {
+     "isin": "INE556F16BR2",
+     "name": "Small Industries Dev Bank of India (10/11/2026)",
+     "industry": "CARE A1+",
+     "w": 0.07,
+     "kind": "debt"
+    },
+    {
+     "isin": "INE040A16HW5",
+     "name": "HDFC Bank Limited (13/11/2026)",
+     "industry": "CARE A1+",
+     "w": 0.07,
+     "kind": "debt"
+    },
+    {
+     "isin": "INE040A16IK8",
+     "name": "HDFC Bank Limited (22/01/2027)",
+     "industry": "CARE A1+",
+     "w": 0.07,
+     "kind": "debt"
+    },
+    {
+     "isin": "INE028A16LF7",
+     "name": "Bank of Baroda (04/02/2027)",
+     "industry": "CARE A1+",
+     "w": 0.07,
+     "kind": "debt"
+    },
+    {
+     "isin": "INE028A16LH3",
+     "name": "Bank of Baroda (05/02/2027)",
+     "industry": "CARE A1+",
+     "w": 0.07,
+     "kind": "debt"
+    },
+    {
+     "isin": "INE238AD6BP3",
+     "name": "Axis Bank Limited (27/11/2026)",
+     "industry": "CRISIL A1+",
+     "w": 0.03,
+     "kind": "debt"
+    },
+    {
+     "isin": "INE160A16UE2",
+     "name": "Punjab National Bank (05/02/2027)",
+     "industry": "CRISIL A1+",
+     "w": 0.03,
+     "kind": "debt"
+    },
+    {
+     "isin": "INE556F16CE8",
+     "name": "Small Industries Dev Bank of India (11/06/2027)",
+     "industry": "CRISIL A1+",
+     "w": 0.03,
+     "kind": "debt"
+    },
+    {
+     "isin": "INE028A16KK9",
+     "name": "Bank of Baroda (25/11/2026)",
+     "industry": "IND A1+",
+     "w": 0.02,
+     "kind": "debt"
+    },
+    {
+     "isin": "INE476A16K06",
+     "name": "Canara Bank (30/11/2026)",
+     "industry": "CRISIL A1+",
+     "w": 0.02,
+     "kind": "debt"
+    },
+    {
+     "isin": "INE028A16MQ2",
+     "name": "Bank of Baroda (07/12/2026)",
+     "industry": "IND A1+",
+     "w": 0.02,
+     "kind": "debt"
+    },
+    {
+     "isin": "INE514E14TQ3",
+     "name": "Export Import Bank of India (14/12/2026)",
+     "industry": "CRISIL A1+",
+     "w": 0.31,
+     "kind": "debt"
+    },
+    {
+     "isin": "INE514E14TW1",
+     "name": "Export Import Bank of India (10/12/2026)",
+     "industry": "CRISIL A1+",
+     "w": 0.17,
+     "kind": "debt"
+    },
+    {
+     "isin": "INE296A14I67",
+     "name": "Bajaj Finance Limited (26/10/2026)",
+     "industry": "ICRA A1+",
+     "w": 0.14,
+     "kind": "debt"
+    },
+    {
+     "isin": "INE242A14ZC6",
+     "name": "Indian Oil Corporation Limited (08/12/2026)",
+     "industry": "CRISIL A1+",
+     "w": 0.07,
+     "kind": "debt"
+    },
+    {
+     "isin": "INE029A14BY2",
+     "name": "Bharat Petroleum Corporation Limited (11/12/2026)",
+     "industry": "CRISIL A1+",
+     "w": 0.07,
+     "kind": "debt"
+    },
+    {
+     "isin": "INE763G14N92",
+     "name": "ICICI Securities Limited (11/12/2026)",
+     "industry": "CRISIL A1+",
+     "w": 0.07,
+     "kind": "debt"
+    },
+    {
+     "isin": "INE660A14ZE5",
+     "name": "Sundaram Finance Limited (17/08/2027)",
+     "industry": "CRISIL A1+",
+     "w": 0.06,
+     "kind": "debt"
+    },
+    {
+     "isin": "INE296A14D13",
+     "name": "Bajaj Finance Limited (04/11/2026)",
+     "industry": "ICRA A1+",
+     "w": 0.03,
+     "kind": "debt"
+    },
+    {
+     "isin": "INE134E14AZ1",
+     "name": "Power Finance Corporation Limited (18/11/2026)",
+     "industry": "CRISIL A1+",
+     "w": 0.03,
+     "kind": "debt"
+    },
+    {
+     "isin": "INE296A14K48",
+     "name": "Bajaj Finance Limited (27/08/2027)",
+     "industry": "CRISIL A1+",
+     "w": 0.01,
+     "kind": "debt"
+    },
+    {
+     "isin": "IN002025Z294",
+     "name": "364 Days Tbill (MD 15/10/2026)",
+     "industry": "Sovereign",
+     "w": 0.24,
+     "kind": "debt"
+    },
+    {
+     "isin": "IN002025Z419",
+     "name": "364 Days Tbill (MD 15/01/2027)",
+     "industry": "Sovereign",
+     "w": 0.14,
+     "kind": "debt"
+    },
+    {
+     "isin": "IN002026Z136",
+     "name": "364 Days Tbill (MD 01/07/2027)",
+     "industry": "Sovereign",
+     "w": 0.07,
+     "kind": "debt"
+    },
+    {
+     "isin": "INF879O01068",
+     "name": "Parag Parikh Liquid Fund- Direct Plan- Growth",
+     "industry": "",
+     "w": 0.6,
+     "kind": "mf"
+    }
+   ],
+   "indianEquityPct": 72.06,
+   "totalListedPct": 96.14,
+   "mix": {
+    "equity_in": 72.06,
+    "arbitrage": 1.44,
+    "reit": 6.27,
+    "foreign_equity": 11.9,
+    "debt": 3.87,
+    "mf": 0.6
+   }
+  },
+  "hdfcn50": {
+   "name": "HDFC Nifty 50 Index Fund",
+   "asof": "2026-09-30",
+   "src": "https://www.hdfcfund.com/statutory-disclosure/portfolio/monthly-portfolio",
+   "holdings": [
+    {
+     "isin": "INE040A01034",
+     "name": "HDFC Bank Ltd.",
+     "industry": "Banks",
+     "w": 10.38,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE090A01021",
+     "name": "ICICI Bank Ltd.",
+     "industry": "Banks",
+     "w": 9.05,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE002A01018",
+     "name": "Reliance Industries Ltd.",
+     "industry": "Petroleum Products",
+     "w": 7.58,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE397D01024",
+     "name": "Bharti Airtel Ltd.",
+     "industry": "Telecom - Services",
+     "w": 5.11,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE018A01030",
+     "name": "Larsen and Toubro Ltd.",
+     "industry": "Construction",
+     "w": 4.21,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE062A01020",
+     "name": "State Bank of India",
+     "industry": "Banks",
+     "w": 3.79,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE238A01034",
+     "name": "Axis Bank Ltd.",
+     "industry": "Banks",
+     "w": 3.37,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE009A01021",
+     "name": "Infosys Limited",
+     "industry": "IT - Software",
+     "w": 3.36,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE237A01036",
+     "name": "Kotak Mahindra Bank Limited",
+     "industry": "Banks",
+     "w": 2.93,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE101A01026",
+     "name": "Mahindra & Mahindra Ltd.",
+     "industry": "Automobiles",
+     "w": 2.52,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE296A01032",
+     "name": "Bajaj Finance Ltd.",
+     "industry": "Finance",
+     "w": 2.5,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE154A01025",
+     "name": "ITC LIMITED",
+     "industry": "Diversified FMCG",
+     "w": 2.42,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE758T01015",
+     "name": "Eternal Limited",
+     "industry": "Retailing",
+     "w": 2.22,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE467B01029",
+     "name": "Tata Consultancy Services Ltd.",
+     "industry": "IT - Software",
+     "w": 2.0,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE044A01036",
+     "name": "Sun Pharmaceutical Industries Ltd.",
+     "industry": "Pharmaceuticals & Biotechnology",
+     "w": 1.84,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE280A01028",
+     "name": "Titan Company Ltd.",
+     "industry": "Consumer Durables",
+     "w": 1.81,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE030A01027",
+     "name": "Hindustan Unilever Ltd.",
+     "industry": "Diversified FMCG",
+     "w": 1.59,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE585B01010",
+     "name": "Maruti Suzuki India Limited",
+     "industry": "Automobiles",
+     "w": 1.49,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE733E01010",
+     "name": "NTPC Limited",
+     "industry": "Power",
+     "w": 1.47,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE081A01020",
+     "name": "Tata Steel Ltd.",
+     "industry": "Ferrous Metals",
+     "w": 1.46,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE742F01042",
+     "name": "Adani Ports & Special Economic Zone",
+     "industry": "Transport Infrastructure",
+     "w": 1.35,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE263A01024",
+     "name": "Bharat Electronics Ltd.",
+     "industry": "Aerospace & Defense",
+     "w": 1.33,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE721A01047",
+     "name": "Shriram Finance Ltd.",
+     "industry": "Finance",
+     "w": 1.32,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE038A01020",
+     "name": "Hindalco Industries Ltd.",
+     "industry": "Non - Ferrous Metals",
+     "w": 1.3,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE860A01027",
+     "name": "HCL Technologies Ltd.",
+     "industry": "IT - Software",
+     "w": 1.24,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE481G01011",
+     "name": "UltraTech Cement Limited",
+     "industry": "Cement & Cement Products",
+     "w": 1.24,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE118H01025",
+     "name": "Bombay Stock Exchange Limited (BSE)",
+     "industry": "Capital Markets",
+     "w": 1.21,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE019A01038",
+     "name": "JSW Steel Ltd.",
+     "industry": "Ferrous Metals",
+     "w": 1.15,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE917I01010",
+     "name": "Bajaj Auto Limited",
+     "industry": "Automobiles",
+     "w": 1.13,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE752E01010",
+     "name": "Power Grid Corporation of India Ltd.",
+     "industry": "Power",
+     "w": 1.13,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE047A01021",
+     "name": "Grasim Industries Ltd.",
+     "industry": "Cement & Cement Products",
+     "w": 1.1,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE646L01027",
+     "name": "InterGlobe Aviation Ltd.",
+     "industry": "Transport Services",
+     "w": 1.08,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE021A01026",
+     "name": "Asian Paints Limited",
+     "industry": "Consumer Durables",
+     "w": 1.04,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE522F01014",
+     "name": "Coal India Ltd.",
+     "industry": "Consumable Fuels",
+     "w": 0.97,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE918I01026",
+     "name": "Bajaj Finserv Ltd.",
+     "industry": "Finance",
+     "w": 0.96,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE423A01024",
+     "name": "ADANI ENTERPRISES LIMTIED",
+     "industry": "Metals & Minerals Trading",
+     "w": 0.94,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE066A01021",
+     "name": "Eicher Motors Ltd.",
+     "industry": "Automobiles",
+     "w": 0.94,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE669C01036",
+     "name": "Tech Mahindra Ltd.",
+     "industry": "IT - Software",
+     "w": 0.93,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE239A01024",
+     "name": "Nestle India Ltd.",
+     "industry": "Food Products",
+     "w": 0.9,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE213A01029",
+     "name": "Oil & Natural Gas Corporation Ltd.",
+     "industry": "Oil",
+     "w": 0.84,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE849A01020",
+     "name": "Trent Ltd.",
+     "industry": "Retailing",
+     "w": 0.83,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE437A01024",
+     "name": "Apollo Hospitals Enterprise Ltd.",
+     "industry": "Healthcare Services",
+     "w": 0.8,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE123W01016",
+     "name": "SBI Life Insurance Company Ltd.",
+     "industry": "Insurance",
+     "w": 0.73,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE059A01026",
+     "name": "Cipla Ltd.",
+     "industry": "Pharmaceuticals & Biotechnology",
+     "w": 0.72,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE089A01031",
+     "name": "Dr Reddys Laboratories Ltd.",
+     "industry": "Pharmaceuticals & Biotechnology",
+     "w": 0.72,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE758E01017",
+     "name": "Jio Financial Services Limited",
+     "industry": "Finance",
+     "w": 0.68,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE027H01010",
+     "name": "Max Healthcare Institute Limited",
+     "industry": "Healthcare Services",
+     "w": 0.66,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE192A01025",
+     "name": "Tata Consumer Products Limited",
+     "industry": "Agricultural Food & Other Products",
+     "w": 0.59,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE155A01022",
+     "name": "Tata Motors Passenger Vehicles Limited",
+     "industry": "Automobiles",
+     "w": 0.57,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE795G01014",
+     "name": "HDFC Life Insurance Company Limited",
+     "industry": "Insurance",
+     "w": 0.54,
+     "kind": "equity_in"
+    }
+   ],
+   "indianEquityPct": 100.04,
+   "totalListedPct": 100.04,
+   "mix": {
+    "equity_in": 100.04
+   }
+  },
+  "hdfcflexi": {
+   "name": "HDFC Flexi Cap Fund",
+   "asof": "2026-09-30",
+   "src": "https://www.hdfcfund.com/statutory-disclosure/portfolio/monthly-portfolio",
+   "holdings": [
+    {
+     "isin": "INE090A01021",
+     "name": "ICICI Bank Ltd.",
+     "industry": "Banks",
+     "w": 8.8,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE238A01034",
+     "name": "Axis Bank Ltd.",
+     "industry": "Banks",
+     "w": 6.11,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE040A01034",
+     "name": "HDFC Bank Ltd.",
+     "industry": "Banks",
+     "w": 6.03,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE062A01020",
+     "name": "State Bank of India",
+     "industry": "Banks",
+     "w": 3.94,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE758T01015",
+     "name": "Eternal Limited",
+     "industry": "Retailing",
+     "w": 3.46,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE237A01036",
+     "name": "Kotak Mahindra Bank Limited",
+     "industry": "Banks",
+     "w": 3.4,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE123W01016",
+     "name": "SBI Life Insurance Company Ltd.",
+     "industry": "Insurance",
+     "w": 3.25,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE018A01030",
+     "name": "Larsen and Toubro Ltd.",
+     "industry": "Construction",
+     "w": 3.08,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE646L01027",
+     "name": "InterGlobe Aviation Ltd.",
+     "industry": "Transport Services",
+     "w": 2.99,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE397D01024",
+     "name": "Bharti Airtel Ltd.",
+     "industry": "Telecom - Services",
+     "w": 2.62,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE585B01010",
+     "name": "Maruti Suzuki India Limited",
+     "industry": "Automobiles",
+     "w": 2.57,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE059A01026",
+     "name": "Cipla Ltd.",
+     "industry": "Pharmaceuticals & Biotechnology",
+     "w": 2.47,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE860A01027",
+     "name": "HCL Technologies Ltd.",
+     "industry": "IT - Software",
+     "w": 2.44,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE066A01021",
+     "name": "Eicher Motors Ltd.",
+     "industry": "Automobiles",
+     "w": 2.3,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE752E01010",
+     "name": "Power Grid Corporation of India Ltd.",
+     "industry": "Power",
+     "w": 2.11,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE0V6F01027",
+     "name": "Hyundai Motor India Limited",
+     "industry": "Automobiles",
+     "w": 1.68,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE361B01024",
+     "name": "Divis Laboratories Ltd.",
+     "industry": "Pharmaceuticals & Biotechnology",
+     "w": 1.62,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE027H01010",
+     "name": "Max Healthcare Institute Limited",
+     "industry": "Healthcare Services",
+     "w": 1.46,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE019A01038",
+     "name": "JSW Steel Ltd.",
+     "industry": "Ferrous Metals",
+     "w": 1.45,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE002A01018",
+     "name": "Reliance Industries Ltd.",
+     "industry": "Petroleum Products",
+     "w": 1.4,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE0DK501011",
+     "name": "Piramal Pharma Limited",
+     "industry": "Pharmaceuticals & Biotechnology",
+     "w": 1.37,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE262H01021",
+     "name": "Persistent Systems Limited",
+     "industry": "IT - Software",
+     "w": 1.32,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE323A01026",
+     "name": "Bosch Limited",
+     "industry": "Auto Components",
+     "w": 1.3,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE417T01026",
+     "name": "PB Fintech Limited",
+     "industry": "Financial Technology (Fintech)",
+     "w": 1.12,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE494B01023",
+     "name": "TVS Motor Company Ltd.",
+     "industry": "Automobiles",
+     "w": 0.96,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE665L01035",
+     "name": "Varroc Engineering Limited",
+     "industry": "Auto Components",
+     "w": 0.92,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE326A01037",
+     "name": "Lupin Ltd.",
+     "industry": "Pharmaceuticals & Biotechnology",
+     "w": 0.91,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE081A01020",
+     "name": "Tata Steel Ltd.",
+     "industry": "Ferrous Metals",
+     "w": 0.88,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE481G01011",
+     "name": "UltraTech Cement Limited",
+     "industry": "Cement & Cement Products",
+     "w": 0.87,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE956O01016",
+     "name": "LENSKART SOLUTIONS LIMITED",
+     "industry": "Retailing",
+     "w": 0.85,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE437A01024",
+     "name": "Apollo Hospitals Enterprise Ltd.",
+     "industry": "Healthcare Services",
+     "w": 0.79,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE914M01019",
+     "name": "Aster DM Quality Care Limited",
+     "industry": "Healthcare Services",
+     "w": 0.79,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE600L01024",
+     "name": "Dr. Lal Path Labs Ltd",
+     "industry": "Healthcare Services",
+     "w": 0.76,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE388Y01029",
+     "name": "Fsn Ecommerce Ventures Limited (Nykaa)",
+     "industry": "Retailing",
+     "w": 0.72,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE854D01024",
+     "name": "United Spirits Limited",
+     "industry": "Beverages",
+     "w": 0.72,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE216A01030",
+     "name": "Britannia Industries Ltd.",
+     "industry": "Food Products",
+     "w": 0.67,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE118H01025",
+     "name": "Bombay Stock Exchange Limited (BSE)",
+     "industry": "Capital Markets",
+     "w": 0.65,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE622W01025",
+     "name": "ACME Solar Holdings Limited",
+     "industry": "Power",
+     "w": 0.64,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE263A01024",
+     "name": "Bharat Electronics Ltd.",
+     "industry": "Aerospace & Defense",
+     "w": 0.62,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE880J01026",
+     "name": "JSW Infrastructure Limited",
+     "industry": "Transport Infrastructure",
+     "w": 0.61,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE0CZ201020",
+     "name": "Anthem Biosciences Limited",
+     "industry": "Pharmaceuticals & Biotechnology",
+     "w": 0.59,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE220B01022",
+     "name": "Kalpataru Projects International Ltd",
+     "industry": "Construction",
+     "w": 0.58,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE794A01010",
+     "name": "Neuland Laboratories Limited",
+     "industry": "Pharmaceuticals & Biotechnology",
+     "w": 0.55,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE118D01016",
+     "name": "Nuvoco Vistas Corporation Ltd.",
+     "industry": "Cement & Cement Products",
+     "w": 0.55,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE423A01024",
+     "name": "ADANI ENTERPRISES LIMTIED",
+     "industry": "Metals & Minerals Trading",
+     "w": 0.54,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE00LO01017",
+     "name": "Craftsman Automation Ltd",
+     "industry": "Auto Components",
+     "w": 0.54,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE093A01041",
+     "name": "Hexaware Technologies Ltd.",
+     "industry": "IT - Software",
+     "w": 0.54,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE01EA01019",
+     "name": "Vishal Mega Mart Limited",
+     "industry": "Retailing",
+     "w": 0.54,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE346A01027",
+     "name": "ICICI PRUDENTIAL ASSET MANAGEMENT COMPANY LIMITED",
+     "industry": "Capital Markets",
+     "w": 0.5,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE917I01010",
+     "name": "Bajaj Auto Limited",
+     "industry": "Automobiles",
+     "w": 0.48,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE176B01034",
+     "name": "Havells India Ltd.",
+     "industry": "Consumer Durables",
+     "w": 0.46,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE009A01021",
+     "name": "Infosys Limited",
+     "industry": "IT - Software",
+     "w": 0.46,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE298J01013",
+     "name": "Nippon Life India Asset Management Limited",
+     "industry": "Capital Markets",
+     "w": 0.46,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE811K01011",
+     "name": "Prestige Estates Projects Ltd.",
+     "industry": "Realty",
+     "w": 0.46,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE02ZQ01018",
+     "name": "CORONA REMEDIES LIMITED",
+     "industry": "Pharmaceuticals & Biotechnology",
+     "w": 0.45,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE208A01029",
+     "name": "Ashok Leyland  Ltd",
+     "industry": "Agricultural, Commercial & Construction Vehicles",
+     "w": 0.42,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE806T01020",
+     "name": "SAPPHIRE FOODS INDIA LIMITED",
+     "industry": "Leisure Services",
+     "w": 0.39,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE640G01020",
+     "name": "SBI Funds Management Limited",
+     "industry": "Capital Markets",
+     "w": 0.39,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE536H01010",
+     "name": "CIE Automotive India Ltd",
+     "industry": "Auto Components",
+     "w": 0.36,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE935N01020",
+     "name": "Dixon Technologies (India) Ltd.",
+     "industry": "Consumer Durables",
+     "w": 0.32,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE112L01020",
+     "name": "Metropolis Healthcare Ltd.",
+     "industry": "Healthcare Services",
+     "w": 0.32,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE331A01037",
+     "name": "The Ramco Cements Ltd.",
+     "industry": "Cement & Cement Products",
+     "w": 0.31,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE042A01014",
+     "name": "ESCORTS KUBOTA LIMITED",
+     "industry": "Agricultural, Commercial & Construction Vehicles",
+     "w": 0.3,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE299U01018",
+     "name": "Crompton Greaves Consumer Elec. Ltd.",
+     "industry": "Consumer Durables",
+     "w": 0.28,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE0J1Y01017",
+     "name": "Life Insurance Corporation of India",
+     "industry": "Insurance",
+     "w": 0.28,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE869T01028",
+     "name": "Molbio Diagnostics Limited",
+     "industry": "Healthcare Equipment & Supplies",
+     "w": 0.28,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE07T201019",
+     "name": "Restaurant Brands Asia Limited",
+     "industry": "Leisure Services",
+     "w": 0.28,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE372A01015",
+     "name": "Apar Industries Limited",
+     "industry": "Electrical Equipment",
+     "w": 0.27,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE213A01029",
+     "name": "Oil & Natural Gas Corporation Ltd.",
+     "industry": "Oil",
+     "w": 0.27,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE0LEZ01016",
+     "name": "Ather Energy Limited",
+     "industry": "Automobiles",
+     "w": 0.25,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE376G01013",
+     "name": "Biocon Ltd.",
+     "industry": "Pharmaceuticals & Biotechnology",
+     "w": 0.25,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE00H001014",
+     "name": "Swiggy Limited",
+     "industry": "Retailing",
+     "w": 0.25,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE117A01022",
+     "name": "ABB India Ltd.",
+     "industry": "Electrical Equipment",
+     "w": 0.24,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE989C01038",
+     "name": "Diamond Power Infrastructure Limited",
+     "industry": "Electrical Equipment",
+     "w": 0.23,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE094A01015",
+     "name": "Hindustan Petroleum Corp. Ltd.",
+     "industry": "Petroleum Products",
+     "w": 0.23,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE786A01032",
+     "name": "JK Lakshmi Cement Ltd",
+     "industry": "Cement & Cement Products",
+     "w": 0.23,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE506V01022",
+     "name": "Rubicon Research Limited",
+     "industry": "Pharmaceuticals & Biotechnology",
+     "w": 0.2,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE356A01018",
+     "name": "MphasiS Limited.",
+     "industry": "IT - Software",
+     "w": 0.17,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE19RI01016",
+     "name": "TENNECO CLEAN AIR INDIA LIMITED",
+     "industry": "Auto Components",
+     "w": 0.1,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE0NDH25011",
+     "name": "Nexus Select Trust REIT",
+     "industry": "Realty",
+     "w": 1.7,
+     "kind": "reit"
+    },
+    {
+     "isin": "INE041025011",
+     "name": "Embassy Office Parks REIT",
+     "industry": "Realty",
+     "w": 0.59,
+     "kind": "reit"
+    },
+    {
+     "isin": "IN0020220037",
+     "name": "7.38% GOI MAT 200627",
+     "industry": "Sovereign",
+     "w": 0.27,
+     "kind": "debt"
+    },
+    {
+     "isin": "IN0020230135",
+     "name": "7.32% GOI MAT 131130",
+     "industry": "Sovereign",
+     "w": 0.1,
+     "kind": "debt"
+    },
+    {
+     "isin": "IN0020230101",
+     "name": "7.37% GOI MAT 231028",
+     "industry": "Sovereign",
+     "w": 0.09,
+     "kind": "debt"
+    }
+   ],
+   "indianEquityPct": 94.97,
+   "totalListedPct": 97.72,
+   "mix": {
+    "equity_in": 94.97,
+    "reit": 2.29,
+    "debt": 0.46
+   }
+  },
+  "hdfcmid": {
+   "name": "HDFC Mid Cap Fund",
+   "asof": "2026-09-30",
+   "src": "https://www.hdfcfund.com/statutory-disclosure/portfolio/monthly-portfolio",
+   "holdings": [
+    {
+     "isin": "INE171A01029",
+     "name": "The Federal Bank Ltd.",
+     "industry": "Banks",
+     "w": 3.98,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE949L01017",
+     "name": "Au Small Finance Bank Ltd.",
+     "industry": "Banks",
+     "w": 3.94,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE180A01020",
+     "name": "Max Financial Services Ltd.",
+     "industry": "Insurance",
+     "w": 3.52,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE571A01038",
+     "name": "Ipca Laboratories Ltd.",
+     "industry": "Pharmaceuticals & Biotechnology",
+     "w": 3.43,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE935A01035",
+     "name": "Glenmark Pharmaceuticals Ltd.",
+     "industry": "Pharmaceuticals & Biotechnology",
+     "w": 3.07,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE787D01026",
+     "name": "Balkrishna Industries Ltd.",
+     "industry": "Auto Components",
+     "w": 2.98,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE562A01011",
+     "name": "Indian Bank",
+     "industry": "Banks",
+     "w": 2.92,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE591G01025",
+     "name": "Coforge Limited",
+     "industry": "IT - Software",
+     "w": 2.68,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE061F01013",
+     "name": "Fortis Healthcare Limited",
+     "industry": "Healthcare Services",
+     "w": 2.4,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE196A01026",
+     "name": "Marico Ltd.",
+     "industry": "Agricultural Food & Other Products",
+     "w": 2.37,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE01EA01019",
+     "name": "Vishal Mega Mart Limited",
+     "industry": "Retailing",
+     "w": 2.24,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE406A01037",
+     "name": "Aurobindo Pharma Ltd.",
+     "industry": "Pharmaceuticals & Biotechnology",
+     "w": 2.19,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE774D01024",
+     "name": "Mahindra & Mahindra Financial Services Ltd.",
+     "industry": "Finance",
+     "w": 2.11,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE094A01015",
+     "name": "Hindustan Petroleum Corp. Ltd.",
+     "industry": "Petroleum Products",
+     "w": 2.09,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE854D01024",
+     "name": "United Spirits Limited",
+     "industry": "Beverages",
+     "w": 1.9,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE298A01020",
+     "name": "Cummins India Ltd.",
+     "industry": "Industrial Products",
+     "w": 1.82,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE151A01013",
+     "name": "Tata Communications Limited",
+     "industry": "Telecom - Services",
+     "w": 1.81,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE262H01021",
+     "name": "Persistent Systems Limited",
+     "industry": "IT - Software",
+     "w": 1.78,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE068V01023",
+     "name": "Gland Pharma Ltd.",
+     "industry": "Pharmaceuticals & Biotechnology",
+     "w": 1.73,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE540L01014",
+     "name": "Alkem Laboratories Ltd.",
+     "industry": "Pharmaceuticals & Biotechnology",
+     "w": 1.72,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE438A01022",
+     "name": "Apollo Tyres Ltd.",
+     "industry": "Auto Components",
+     "w": 1.66,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE016A01026",
+     "name": "Dabur India Ltd.",
+     "industry": "Personal Products",
+     "w": 1.66,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE749A01030",
+     "name": "Jindal Steel Limited.",
+     "industry": "Ferrous Metals",
+     "w": 1.64,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE356A01018",
+     "name": "MphasiS Limited.",
+     "industry": "IT - Software",
+     "w": 1.55,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE692A01016",
+     "name": "Union Bank of India",
+     "industry": "Banks",
+     "w": 1.51,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE323A01026",
+     "name": "Bosch Limited",
+     "industry": "Auto Components",
+     "w": 1.44,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE758T01015",
+     "name": "Eternal Limited",
+     "industry": "Retailing",
+     "w": 1.35,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE212H01026",
+     "name": "AIA Engineering Ltd.",
+     "industry": "Industrial Products",
+     "w": 1.29,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE148O01028",
+     "name": "Delhivery Limited",
+     "industry": "Transport Services",
+     "w": 1.27,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE036D01028",
+     "name": "Karur Vysya Bank Ltd.",
+     "industry": "Banks",
+     "w": 1.25,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE465A01025",
+     "name": "Bharat Forge Ltd.",
+     "industry": "Auto Components",
+     "w": 1.22,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE169A01031",
+     "name": "Coromandel International Limited",
+     "industry": "Fertilizers & Agrochemicals",
+     "w": 1.19,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE891D01026",
+     "name": "Redington Ltd.",
+     "industry": "Commercial Services & Supplies",
+     "w": 1.1,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE575P01011",
+     "name": "Star Health and Allied Insurance Company Ltd",
+     "industry": "Insurance",
+     "w": 1.08,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE417T01026",
+     "name": "PB Fintech Limited",
+     "industry": "Financial Technology (Fintech)",
+     "w": 1.07,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE095A01012",
+     "name": "Indusind Bank Ltd.",
+     "industry": "Banks",
+     "w": 1.04,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE298J01013",
+     "name": "Nippon Life India Asset Management Limited",
+     "industry": "Capital Markets",
+     "w": 1.04,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE053A01029",
+     "name": "Indian Hotels Company Ltd.",
+     "industry": "Leisure Services",
+     "w": 1.01,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE102D01028",
+     "name": "Godrej Consumer Products Ltd.",
+     "industry": "Personal Products",
+     "w": 0.98,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE765G01017",
+     "name": "ICICI Lombard General Insurance Co",
+     "industry": "Insurance",
+     "w": 0.95,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE914M01019",
+     "name": "Aster DM Quality Care Limited",
+     "industry": "Healthcare Services",
+     "w": 0.9,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE176B01034",
+     "name": "Havells India Ltd.",
+     "industry": "Consumer Durables",
+     "w": 0.84,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE073K01018",
+     "name": "Sona Blw Precision Forgings",
+     "industry": "Auto Components",
+     "w": 0.82,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE387A01021",
+     "name": "Sundram Fasteners Ltd.",
+     "industry": "Auto Components",
+     "w": 0.81,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE042A01014",
+     "name": "ESCORTS KUBOTA LIMITED",
+     "industry": "Agricultural, Commercial & Construction Vehicles",
+     "w": 0.79,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE093A01041",
+     "name": "Hexaware Technologies Ltd.",
+     "industry": "IT - Software",
+     "w": 0.78,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE491A01021",
+     "name": "City Union Bank Ltd.",
+     "industry": "Banks",
+     "w": 0.74,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE203G01027",
+     "name": "Indraprastha Gas Ltd.",
+     "industry": "Gas",
+     "w": 0.73,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE935N01020",
+     "name": "Dixon Technologies (India) Ltd.",
+     "industry": "Consumer Durables",
+     "w": 0.66,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE2J8701016",
+     "name": "SKF India (Industrial) Limited",
+     "industry": "Industrial Products",
+     "w": 0.64,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE09N301011",
+     "name": "GUJARAT FLUOROCHEMICALS LIMITED",
+     "industry": "Chemicals & Petrochemicals",
+     "w": 0.6,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE325A01013",
+     "name": "Timken India Ltd.",
+     "industry": "Industrial Products",
+     "w": 0.6,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE299U01018",
+     "name": "Crompton Greaves Consumer Elec. Ltd.",
+     "industry": "Consumer Durables",
+     "w": 0.59,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE012A01025",
+     "name": "ACC Ltd.",
+     "industry": "Cement & Cement Products",
+     "w": 0.56,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE195A01028",
+     "name": "Supreme Industries Ltd.",
+     "industry": "Industrial Products",
+     "w": 0.56,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE034A01011",
+     "name": "Arvind Limited",
+     "industry": "Textiles & Apparels",
+     "w": 0.43,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE769A01020",
+     "name": "Aarti Industries Ltd.",
+     "industry": "Chemicals & Petrochemicals",
+     "w": 0.36,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE881D01027",
+     "name": "Oracle Financial Ser Software Ltd.",
+     "industry": "IT - Software",
+     "w": 0.36,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE347G01014",
+     "name": "Petronet LNG Ltd.",
+     "industry": "Gas",
+     "w": 0.36,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE640A01023",
+     "name": "SKF India Ltd.",
+     "industry": "Auto Components",
+     "w": 0.35,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE149A01033",
+     "name": "Cholamandalam Financial Holdings Ltd.",
+     "industry": "Finance",
+     "w": 0.31,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE389H01022",
+     "name": "KEC International Ltd.",
+     "industry": "Construction",
+     "w": 0.3,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE825A01020",
+     "name": "Vardhman Textiles Ltd.",
+     "industry": "Textiles & Apparels",
+     "w": 0.3,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE386A01023",
+     "name": "Vesuvius India Ltd.",
+     "industry": "Industrial Products",
+     "w": 0.3,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE536H01010",
+     "name": "CIE Automotive India Ltd",
+     "industry": "Auto Components",
+     "w": 0.27,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE225D01027",
+     "name": "Symphony Ltd.",
+     "industry": "Consumer Durables",
+     "w": 0.21,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE128S01021",
+     "name": "Five-Star Business Finance Limited",
+     "industry": "Finance",
+     "w": 0.2,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE343G01021",
+     "name": "Bharti Hexacom Limited",
+     "industry": "Telecom - Services",
+     "w": 0.19,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE0HOQ01053",
+     "name": "Billionbrains Garage Ventures Limited (Groww)",
+     "industry": "Capital Markets",
+     "w": 0.18,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE259A01022",
+     "name": "Colgate-Palmolive ( I ) Ltd.",
+     "industry": "Personal Products",
+     "w": 0.18,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE324D01010",
+     "name": "LG Electronics India Limited",
+     "industry": "Consumer Durables",
+     "w": 0.17,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE461C01038",
+     "name": "Greenply Industries Ltd.",
+     "industry": "Consumer Durables",
+     "w": 0.16,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE060A01024",
+     "name": "Navneet Education Ltd.",
+     "industry": "Household Products",
+     "w": 0.16,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE544R01021",
+     "name": "Greenlam Industries Ltd.",
+     "industry": "Consumer Durables",
+     "w": 0.13,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE435G01025",
+     "name": "Dhanuka Agritech Ltd.",
+     "industry": "Fertilizers & Agrochemicals",
+     "w": 0.1,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE548C01032",
+     "name": "Emami Ltd.",
+     "industry": "Personal Products",
+     "w": 0.03,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE199G01027",
+     "name": "Jagran Prakashan Ltd.",
+     "industry": "Media",
+     "w": 0.03,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE08ZM01014",
+     "name": "Greenpanel Industries Limited",
+     "industry": "Consumer Durables",
+     "w": 0.02,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE634I01029",
+     "name": "KNR Construction limited.",
+     "industry": "Construction",
+     "w": 0.01,
+     "kind": "equity_in"
+    }
+   ],
+   "indianEquityPct": 91.71,
+   "totalListedPct": 91.71,
+   "mix": {
+    "equity_in": 91.71
+   }
+  },
+  "hdfclarge": {
+   "name": "HDFC Large Cap Fund",
+   "asof": "2026-09-30",
+   "src": "https://www.hdfcfund.com/statutory-disclosure/portfolio/monthly-portfolio",
+   "holdings": [
+    {
+     "isin": "INE090A01021",
+     "name": "ICICI Bank Ltd.",
+     "industry": "Banks",
+     "w": 9.79,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE040A01034",
+     "name": "HDFC Bank Ltd.",
+     "industry": "Banks",
+     "w": 7.36,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE397D01024",
+     "name": "Bharti Airtel Ltd.",
+     "industry": "Telecom - Services",
+     "w": 6.46,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE237A01036",
+     "name": "Kotak Mahindra Bank Limited",
+     "industry": "Banks",
+     "w": 6.08,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE280A01028",
+     "name": "Titan Company Ltd.",
+     "industry": "Consumer Durables",
+     "w": 5.07,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE002A01018",
+     "name": "Reliance Industries Ltd.",
+     "industry": "Petroleum Products",
+     "w": 4.76,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE685A01028",
+     "name": "Torrent Pharmaceuticals Ltd.",
+     "industry": "Pharmaceuticals & Biotechnology",
+     "w": 4.09,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE238A01034",
+     "name": "Axis Bank Ltd.",
+     "industry": "Banks",
+     "w": 3.52,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE918I01026",
+     "name": "Bajaj Finserv Ltd.",
+     "industry": "Finance",
+     "w": 3.05,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE917I01010",
+     "name": "Bajaj Auto Limited",
+     "industry": "Automobiles",
+     "w": 2.81,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE758T01015",
+     "name": "Eternal Limited",
+     "industry": "Retailing",
+     "w": 2.6,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE009A01021",
+     "name": "Infosys Limited",
+     "industry": "IT - Software",
+     "w": 2.59,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE326A01037",
+     "name": "Lupin Ltd.",
+     "industry": "Pharmaceuticals & Biotechnology",
+     "w": 2.51,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE121A01024",
+     "name": "Cholamandalam Investment & Finance Co. Ltd.",
+     "industry": "Finance",
+     "w": 2.28,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE079A01024",
+     "name": "Ambuja Cements Ltd.",
+     "industry": "Cement & Cement Products",
+     "w": 2.24,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE646L01027",
+     "name": "InterGlobe Aviation Ltd.",
+     "industry": "Transport Services",
+     "w": 2.0,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE018A01030",
+     "name": "Larsen and Toubro Ltd.",
+     "industry": "Construction",
+     "w": 1.98,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE1TAE01010",
+     "name": "Tata Motors Limited",
+     "industry": "Agricultural, Commercial & Construction Vehicles",
+     "w": 1.94,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE733E01010",
+     "name": "NTPC Limited",
+     "industry": "Power",
+     "w": 1.93,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE634S01028",
+     "name": "MANKIND PHARMA LIMITED",
+     "industry": "Pharmaceuticals & Biotechnology",
+     "w": 1.84,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE062A01020",
+     "name": "State Bank of India",
+     "industry": "Banks",
+     "w": 1.83,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE854D01024",
+     "name": "United Spirits Limited",
+     "industry": "Beverages",
+     "w": 1.73,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE027H01010",
+     "name": "Max Healthcare Institute Limited",
+     "industry": "Healthcare Services",
+     "w": 1.65,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE346A01027",
+     "name": "ICICI PRUDENTIAL ASSET MANAGEMENT COMPANY LIMITED",
+     "industry": "Capital Markets",
+     "w": 1.57,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE095A01012",
+     "name": "Indusind Bank Ltd.",
+     "industry": "Banks",
+     "w": 1.49,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE01EA01019",
+     "name": "Vishal Mega Mart Limited",
+     "industry": "Retailing",
+     "w": 1.33,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE192A01025",
+     "name": "Tata Consumer Products Limited",
+     "industry": "Agricultural Food & Other Products",
+     "w": 1.29,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE00H001014",
+     "name": "Swiggy Limited",
+     "industry": "Retailing",
+     "w": 1.24,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE0V6F01027",
+     "name": "Hyundai Motor India Limited",
+     "industry": "Automobiles",
+     "w": 1.19,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE176B01034",
+     "name": "Havells India Ltd.",
+     "industry": "Consumer Durables",
+     "w": 1.18,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE742F01042",
+     "name": "Adani Ports & Special Economic Zone",
+     "industry": "Transport Infrastructure",
+     "w": 1.05,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE066A01021",
+     "name": "Eicher Motors Ltd.",
+     "industry": "Automobiles",
+     "w": 0.99,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE647A01010",
+     "name": "SRF Ltd.",
+     "industry": "Chemicals & Petrochemicals",
+     "w": 0.92,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE976I01016",
+     "name": "Tata Capital Ltd.",
+     "industry": "Finance",
+     "w": 0.72,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE016A01026",
+     "name": "Dabur India Ltd.",
+     "industry": "Personal Products",
+     "w": 0.7,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE640G01020",
+     "name": "SBI Funds Management Limited",
+     "industry": "Capital Markets",
+     "w": 0.64,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE067A01029",
+     "name": "CG Power and Industrial Solutions Ltd.",
+     "industry": "Electrical Equipment",
+     "w": 0.62,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE101A01026",
+     "name": "Mahindra & Mahindra Ltd.",
+     "industry": "Automobiles",
+     "w": 0.62,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE263A01024",
+     "name": "Bharat Electronics Ltd.",
+     "industry": "Aerospace & Defense",
+     "w": 0.47,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE0J1Y01017",
+     "name": "Life Insurance Corporation of India",
+     "industry": "Insurance",
+     "w": 0.41,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE155A01022",
+     "name": "Tata Motors Passenger Vehicles Limited",
+     "industry": "Automobiles",
+     "w": 0.4,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE271C01023",
+     "name": "DLF LIMITED",
+     "industry": "Realty",
+     "w": 0.38,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE298A01020",
+     "name": "Cummins India Ltd.",
+     "industry": "Industrial Products",
+     "w": 0.29,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE0HOQ01053",
+     "name": "Billionbrains Garage Ventures Limited (Groww)",
+     "industry": "Capital Markets",
+     "w": 0.28,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE721I01024",
+     "name": "National Stock Exchange of India Limited",
+     "industry": "Capital Markets",
+     "w": 0.25,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "INE038A01020",
+     "name": "Hindalco Industries Ltd.",
+     "industry": "Non - Ferrous Metals",
+     "w": 0.23,
+     "kind": "equity_in"
+    },
+    {
+     "isin": "IN0020250042",
+     "name": "6.68% GOI MAT 070740",
+     "industry": "Sovereign",
+     "w": 0.51,
+     "kind": "debt"
+    }
+   ],
+   "indianEquityPct": 98.37,
+   "totalListedPct": 98.88,
+   "mix": {
+    "equity_in": 98.37,
+    "debt": 0.51
+   }
+  }
+ }
+}

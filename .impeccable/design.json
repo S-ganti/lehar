@@ -1,0 +1,651 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-20T21:00:00+05:30",
+  "title": "Design System: Lehar",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Map Paper",
+        "canonical": "oklch(96.6% 0.009 129)",
+        "tonalRamp": [
+          "#0A0C08",
+          "#232521",
+          "#3E413C",
+          "#5C5F5A",
+          "#7F817C",
+          "#A3A6A0",
+          "#C9CCC6",
+          "#EDF0EA"
+        ]
+      },
+      "paper2": {
+        "role": "neutral",
+        "displayName": "Panel Paper",
+        "canonical": "oklch(93.9% 0.013 142)",
+        "tonalRamp": [
+          "#080D08",
+          "#212620",
+          "#3C423B",
+          "#5A6059",
+          "#7C827B",
+          "#A0A79F",
+          "#C6CDC5",
+          "#EAF1E9"
+        ]
+      },
+      "paper3": {
+        "role": "neutral",
+        "displayName": "Track Paper",
+        "canonical": "oklch(91.5% 0.017 145)",
+        "tonalRamp": [
+          "#070D07",
+          "#1F261F",
+          "#3A423A",
+          "#586058",
+          "#7A837A",
+          "#9EA89E",
+          "#C4CEC4",
+          "#E8F2E8"
+        ]
+      },
+      "card": {
+        "role": "neutral",
+        "displayName": "Survey Card",
+        "canonical": "oklch(98.9% 0.004 122)",
+        "tonalRamp": [
+          "#0B0B0A",
+          "#242422",
+          "#3F403E",
+          "#5D5E5B",
+          "#80817E",
+          "#A4A5A2",
+          "#CACBC8",
+          "#EEEFEC"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Deep Ink",
+        "canonical": "oklch(27.3% 0.037 189)",
+        "tonalRamp": [
+          "#020E0D",
+          "#152827",
+          "#2D4543",
+          "#486462",
+          "#698784",
+          "#90ABA8",
+          "#B9D0CE",
+          "#E0F3F1"
+        ]
+      },
+      "ink2": {
+        "role": "neutral",
+        "displayName": "Survey Ink",
+        "canonical": "oklch(45.1% 0.035 188)",
+        "tonalRamp": [
+          "#030E0D",
+          "#162826",
+          "#2F4542",
+          "#496461",
+          "#6A8784",
+          "#91ABA8",
+          "#BAD0CD",
+          "#E1F3F1"
+        ]
+      },
+      "ink3": {
+        "role": "neutral",
+        "displayName": "Faint Ink",
+        "canonical": "oklch(50.5% 0.028 187)",
+        "tonalRamp": [
+          "#040D0C",
+          "#192725",
+          "#334442",
+          "#4E6360",
+          "#6F8683",
+          "#96A9A7",
+          "#BECFCC",
+          "#E4F2F0"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "rgba(14,45,43,.14)"
+      },
+      "line2": {
+        "role": "neutral",
+        "displayName": "Rule",
+        "canonical": "rgba(14,45,43,.26)"
+      },
+      "shell": {
+        "role": "primary",
+        "displayName": "Monsoon Shell Teal",
+        "canonical": "oklch(32.3% 0.047 193)",
+        "tonalRamp": [
+          "#000F0E",
+          "#0F2928",
+          "#264645",
+          "#406664",
+          "#618987",
+          "#8AADAB",
+          "#B4D2D0",
+          "#DBF4F3"
+        ]
+      },
+      "shell2": {
+        "role": "primary",
+        "displayName": "Shell Hover Teal",
+        "canonical": "oklch(39.8% 0.059 193)",
+        "tonalRamp": [
+          "#000F0F",
+          "#052A29",
+          "#1C4847",
+          "#356866",
+          "#578B8A",
+          "#81AFAD",
+          "#ADD3D2",
+          "#D6F6F5"
+        ]
+      },
+      "onshell": {
+        "role": "neutral",
+        "displayName": "On-Shell Paper",
+        "canonical": "oklch(96.6% 0.009 129)",
+        "tonalRamp": [
+          "#0A0C08",
+          "#232521",
+          "#3E413C",
+          "#5C5F5A",
+          "#7F817C",
+          "#A3A6A0",
+          "#C9CCC6",
+          "#EDF0EA"
+        ]
+      },
+      "onshell2": {
+        "role": "neutral",
+        "displayName": "On-Shell Muted",
+        "canonical": "rgba(242,245,239,.78)"
+      },
+      "contour": {
+        "role": "primary",
+        "displayName": "Isochrone Teal",
+        "canonical": "oklch(49.3% 0.076 188)",
+        "tonalRamp": [
+          "#00100E",
+          "#002C29",
+          "#084A46",
+          "#236A65",
+          "#488E88",
+          "#77B2AB",
+          "#A5D6D0",
+          "#CFF8F4"
+        ]
+      },
+      "band1": {
+        "role": "tertiary",
+        "displayName": "Rainfall Band High",
+        "canonical": "oklch(85.8% 0.049 161)",
+        "tonalRamp": [
+          "#020F07",
+          "#14291F",
+          "#2C4639",
+          "#466655",
+          "#688977",
+          "#8FAD9C",
+          "#B8D2C3",
+          "#DFF5E8"
+        ]
+      },
+      "band2": {
+        "role": "tertiary",
+        "displayName": "Rainfall Band Medium",
+        "canonical": "oklch(90.1% 0.036 160)",
+        "tonalRamp": [
+          "#040E08",
+          "#1A2820",
+          "#33453A",
+          "#4E6457",
+          "#6F8779",
+          "#96AB9E",
+          "#BED0C5",
+          "#E4F3EA"
+        ]
+      },
+      "band3": {
+        "role": "tertiary",
+        "displayName": "Rainfall Band Low",
+        "canonical": "oklch(93.6% 0.023 158)",
+        "tonalRamp": [
+          "#070D09",
+          "#1E2621",
+          "#38433C",
+          "#546159",
+          "#76847B",
+          "#9BA8A0",
+          "#C3CEC6",
+          "#E8F1EB"
+        ]
+      },
+      "dry": {
+        "role": "tertiary",
+        "displayName": "Dry Grey-Green",
+        "canonical": "oklch(81.7% 0.019 161)",
+        "tonalRamp": [
+          "#050E09",
+          "#1C2721",
+          "#37433C",
+          "#55615A",
+          "#77847D",
+          "#9BA8A1",
+          "#C0CFC6",
+          "#E4F3EA"
+        ]
+      },
+      "cost": {
+        "role": "tertiary",
+        "displayName": "Deficit Orange-Red",
+        "canonical": "oklch(53.6% 0.162 36)",
+        "tonalRamp": [
+          "#260000",
+          "#4C0000",
+          "#751A00",
+          "#A03412",
+          "#CA5838",
+          "#EA8568",
+          "#FFB198",
+          "#FFDAC4"
+        ]
+      },
+      "rev": {
+        "role": "tertiary",
+        "displayName": "Excess Blue",
+        "canonical": "oklch(47.6% 0.121 252)",
+        "tonalRamp": [
+          "#000926",
+          "#00244A",
+          "#0F4171",
+          "#27609A",
+          "#4983C2",
+          "#76A9E1",
+          "#A4CFFF",
+          "#CEF2FF"
+        ]
+      },
+      "rev-ground": {
+        "role": "tertiary",
+        "displayName": "Rain-Wash Blue",
+        "canonical": "oklch(95.1% 0.014 248)",
+        "tonalRamp": [
+          "#070C11",
+          "#1F252A",
+          "#3A4147",
+          "#585E65",
+          "#7A8188",
+          "#9EA6AD",
+          "#C4CCD3",
+          "#E8F0F8"
+        ]
+      },
+      "both": {
+        "role": "tertiary",
+        "displayName": "Two-Way Violet",
+        "canonical": "oklch(48.8% 0.160 294)",
+        "tonalRamp": [
+          "#10002C",
+          "#291252",
+          "#452C7C",
+          "#6448A7",
+          "#866BD1",
+          "#A994EE",
+          "#CEBDFF",
+          "#F1E4FF"
+        ]
+      },
+      "both-ground": {
+        "role": "tertiary",
+        "displayName": "Pale Lilac",
+        "canonical": "oklch(94.5% 0.019 302)",
+        "tonalRamp": [
+          "#0D0912",
+          "#26222C",
+          "#423D48",
+          "#5F5B67",
+          "#827E8A",
+          "#A7A2AF",
+          "#CDC8D5",
+          "#F1ECFA"
+        ]
+      },
+      "origin": {
+        "role": "secondary",
+        "displayName": "Onset Orange",
+        "canonical": "oklch(68.3% 0.146 48)",
+        "tonalRamp": [
+          "#230000",
+          "#470C00",
+          "#6E2500",
+          "#974000",
+          "#C0632A",
+          "#E18D60",
+          "#FFB791",
+          "#FFDFBF"
+        ]
+      },
+      "on-origin": {
+        "role": "secondary",
+        "displayName": "Burnt Umber",
+        "canonical": "oklch(21.5% 0.045 47)",
+        "tonalRamp": [
+          "#140803",
+          "#311F17",
+          "#503A2F",
+          "#72574A",
+          "#96796B",
+          "#B99E91",
+          "#DCC5BA",
+          "#FEEAE0"
+        ]
+      },
+      "f1": {
+        "role": "tertiary",
+        "displayName": "Direct Route Ink",
+        "canonical": "oklch(27.3% 0.037 189)",
+        "tonalRamp": [
+          "#020E0D",
+          "#152827",
+          "#2D4543",
+          "#486462",
+          "#698784",
+          "#90ABA8",
+          "#B9D0CE",
+          "#E0F3F1"
+        ]
+      },
+      "f2": {
+        "role": "tertiary",
+        "displayName": "Fund Route Teal 1",
+        "canonical": "oklch(54.4% 0.081 187)",
+        "tonalRamp": [
+          "#00110E",
+          "#002C29",
+          "#004A46",
+          "#1C6B65",
+          "#438F88",
+          "#73B2AC",
+          "#A2D7D1",
+          "#CDF9F4"
+        ]
+      },
+      "f3": {
+        "role": "tertiary",
+        "displayName": "Fund Route Teal 2",
+        "canonical": "oklch(71.9% 0.071 184)",
+        "tonalRamp": [
+          "#00100D",
+          "#002B27",
+          "#134943",
+          "#2B6A62",
+          "#4E8D85",
+          "#7BB1A9",
+          "#A8D5CE",
+          "#D2F8F1"
+        ]
+      },
+      "route-sea": {
+        "role": "tertiary",
+        "displayName": "Fund Route Sea",
+        "canonical": "oklch(63.5% 0.077 185)",
+        "tonalRamp": [
+          "#00100E",
+          "#002C27",
+          "#084A44",
+          "#236B63",
+          "#488F86",
+          "#77B2AA",
+          "#A5D6CF",
+          "#CFF9F2"
+        ]
+      },
+      "route-mist": {
+        "role": "tertiary",
+        "displayName": "Fund Route Mist",
+        "canonical": "oklch(81.6% 0.055 183)",
+        "tonalRamp": [
+          "#000F0C",
+          "#0B2A26",
+          "#224742",
+          "#3B6760",
+          "#5D8B83",
+          "#86AEA7",
+          "#B1D3CD",
+          "#D9F6F0"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The map headline; one per page, max 24ch."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section titles below the map."
+      },
+      "figure": {
+        "displayName": "Figure",
+        "purpose": "Condensed bold numbers: reach headline (26px), move readout (30px), coverage percentages (20px)."
+      },
+      "wordmark": {
+        "displayName": "Wordmark",
+        "purpose": "Lehar wordmark only, wide axis 110."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Panel headings and sub-section heads, 15 to 18px."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Reading text and ledes, 52 to 66ch."
+      },
+      "body-small": {
+        "displayName": "Body small",
+        "purpose": "List rows, legend, what-changes lines."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Table column heads: condensed tracked caps."
+      },
+      "map-region": {
+        "displayName": "Map region",
+        "purpose": "Industry names on the map, Faint Ink with paper halo; size scales with the map font size."
+      }
+    },
+    "shadows": [
+      {
+        "name": "floating-card",
+        "value": "0 18px 40px -18px rgba(14,45,43,.55), 0 1px 0 rgba(14,45,43,.14)",
+        "purpose": "Company info card floating on the map."
+      },
+      {
+        "name": "menu",
+        "value": "0 16px 40px -16px rgba(14,45,43,.5), 0 0 0 1px rgba(14,45,43,.14)",
+        "purpose": "Search suggestion menu."
+      },
+      {
+        "name": "button-lift",
+        "value": "0 6px 16px -8px rgba(14,45,43,.55)",
+        "purpose": "Primary button hover, with translateY(-1px)."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(.16,1,.3,1)",
+        "purpose": "Default ease: buttons, contour draw-in, place moves."
+      },
+      {
+        "name": "sweep",
+        "value": "r 1.3s cubic-bezier(.33,1,.68,1)",
+        "purpose": "Rainfall-band clip circle growing from the origin."
+      },
+      {
+        "name": "contour-draw",
+        "value": "stroke-dashoffset 1s cubic-bezier(.16,1,.3,1)",
+        "purpose": "Contours drawing in after the sweep."
+      },
+      {
+        "name": "place-move",
+        "value": "transform .7s cubic-bezier(.16,1,.3,1)",
+        "purpose": "Places re-laying out when the factor changes."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "none",
+        "purpose": "prefers-reduced-motion: reduce turns all transitions and animations off."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "nav-hide",
+        "value": "1240px"
+      },
+      {
+        "name": "stack",
+        "value": "1080px"
+      },
+      {
+        "name": "phone",
+        "value": "720px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The single primary action, in Onset Orange.",
+      "html": "<button class=\"ds-btn\">Use my portfolio</button>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:8px;padding:10px 16px;font:650 15px/1.5 'Anek Latin',system-ui,sans-serif;background:#E07A3F;color:#2A1206;cursor:pointer;transition:transform .2s cubic-bezier(.16,1,.3,1),box-shadow .2s cubic-bezier(.16,1,.3,1)}.ds-btn:hover{transform:translateY(-1px);box-shadow:0 6px 16px -8px rgba(14,45,43,.55)}.ds-btn:focus-visible{outline:2px solid #1E6F69;outline-offset:2px}"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary actions such as Load the sample and Clear all.",
+      "html": "<button class=\"ds-btn-ghost\">Load the sample</button>",
+      "css": ".ds-btn-ghost{border:1px solid rgba(14,45,43,.26);background:transparent;color:#0E2D2B;border-radius:8px;padding:6px 11px;font:650 14px/1.5 'Anek Latin',system-ui,sans-serif;cursor:pointer}.ds-btn-ghost:hover{background:#E6EDE5}.ds-btn-ghost:focus-visible{outline:2px solid #1E6F69;outline-offset:2px}"
+    },
+    {
+      "name": "Search Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Holding search and value fields.",
+      "html": "<input class=\"ds-input\" placeholder=\"Search: Infosys, ITC, Parag Parikh…\">",
+      "css": ".ds-input{font:400 15px/1.5 'Anek Latin',system-ui,sans-serif;color:#0E2D2B;background:#FBFCF9;border:1px solid rgba(14,45,43,.26);border-radius:8px;padding:9px 11px;width:280px}.ds-input::placeholder{color:#536A67}.ds-input:focus{outline:2px solid #1E6F69;outline-offset:0;border-color:transparent}"
+    },
+    {
+      "name": "Shell Bar",
+      "kind": "nav",
+      "refersTo": "shell-bar",
+      "description": "Sticky monsoon-teal top bar with wordmark, section links and the primary action.",
+      "html": "<header class=\"ds-top\"><b class=\"ds-mark\">Lehar</b><nav class=\"ds-nav\"><a href=\"#\">Map</a><a href=\"#\">What you own</a><a href=\"#\">All factors</a></nav><span style=\"flex:1\"></span><button class=\"ds-top-btn\">Use my portfolio</button></header>",
+      "css": ".ds-top{display:flex;align-items:center;gap:28px;height:64px;padding:0 24px;background:#0F3B3A;color:#F2F5EF;font-family:'Anek Latin',system-ui,sans-serif}.ds-mark{font-size:26px;font-weight:700;letter-spacing:-.01em;font-variation-settings:\"wdth\" 110}.ds-nav{display:flex;gap:4px}.ds-nav a{color:rgba(242,245,239,.78);text-decoration:none;font-size:15px;padding:8px 10px;border-radius:6px}.ds-nav a:hover{color:#F2F5EF;background:#155150}.ds-nav a:focus-visible{outline:2px solid #9CCFC6;outline-offset:2px}.ds-top-btn{border:0;border-radius:8px;padding:10px 16px;font:650 15px 'Anek Latin',system-ui,sans-serif;background:#E07A3F;color:#2A1206;cursor:pointer}.ds-top-btn:hover{transform:translateY(-1px);box-shadow:0 6px 16px -8px rgba(0,0,0,.55)}"
+    },
+    {
+      "name": "Factor Row",
+      "kind": "custom",
+      "description": "Ruled factor picker row: name, share of your money, and a cost/both/revenue split bar; pressed state in Isochrone Teal.",
+      "html": "<div class=\"ds-factors\"><button class=\"ds-f\" aria-pressed=\"true\"><span>Crude oil</span><span>38%</span><i class=\"ds-fbar\"><i style=\"width:60%;background:#B8401C\"></i><i style=\"width:15%;background:#6747B0\"></i><i style=\"width:25%;background:#1E5E9E\"></i></i></button><button class=\"ds-f\" aria-pressed=\"false\"><span>Rupee vs dollar</span><span>45%</span><i class=\"ds-fbar\"><i style=\"width:30%;background:#B8401C\"></i><i style=\"width:70%;background:#1E5E9E\"></i></i></button></div>",
+      "css": ".ds-factors{display:grid;grid-template-columns:1fr 1fr;column-gap:18px;width:356px;font-family:'Anek Latin',system-ui,sans-serif;font-variant-numeric:tabular-nums}.ds-f{display:grid;grid-template-columns:minmax(0,1fr) auto;row-gap:5px;column-gap:8px;background:transparent;border:0;border-bottom:1px solid rgba(14,45,43,.14);padding:9px 0;text-align:left;font:inherit;font-size:14.5px;line-height:1.15;color:#0E2D2B;cursor:pointer}.ds-f:hover{color:#1E6F69}.ds-f[aria-pressed=\"true\"]{color:#1E6F69;font-weight:700;box-shadow:inset 0 -2px 0 #1E6F69}.ds-f:focus-visible{outline:2px solid #1E6F69;outline-offset:2px}.ds-fbar{grid-column:1/3;display:flex;height:5px;border-radius:3px;overflow:hidden;background:#DCE6DC}.ds-fbar i{display:block;height:100%}"
+    },
+    {
+      "name": "Data Swatches",
+      "kind": "chip",
+      "description": "Pattern-twinned data keys: cost solid, revenue hatched, both cross-hatched, not reached hollow.",
+      "html": "<div class=\"ds-key\"><span><i class=\"ds-sw ds-cost\"></i>cost</span><span><i class=\"ds-sw ds-rev\"></i>revenue</span><span><i class=\"ds-sw ds-both\"></i>both ways</span><span><i class=\"ds-sw ds-dry\"></i>not reached</span></div>",
+      "css": ".ds-key{display:flex;gap:6px 18px;flex-wrap:wrap;font:400 13px 'Anek Latin',system-ui,sans-serif;color:#3F5C59}.ds-sw{display:inline-block;width:18px;height:12px;border-radius:2px;vertical-align:-1px;margin-right:6px;border:1px solid rgba(14,45,43,.25)}.ds-cost{background:#B8401C}.ds-rev{background:repeating-linear-gradient(135deg,#1E5E9E 0 2.5px,#E8F0F8 2.5px 5px)}.ds-both{background:repeating-linear-gradient(45deg,#6747B0 0 2px,transparent 2px 5px),repeating-linear-gradient(-45deg,#6747B0 0 2px,#EFEAF8 2px 5px)}.ds-dry{background:#FBFCF9;border-color:#B9C7BF}"
+    },
+    {
+      "name": "Onset Contours",
+      "kind": "custom",
+      "description": "Signature: origin pin, rainfall bands and contours, solid for measured and dotted for template-only.",
+      "html": "<svg class=\"ds-onset\" viewBox=\"0 0 320 200\" role=\"img\" aria-label=\"Onset contours\"><defs><pattern id=\"dsrev\" patternUnits=\"userSpaceOnUse\" width=\"5\" height=\"5\" patternTransform=\"rotate(45)\"><rect width=\"5\" height=\"5\" fill=\"#E8F0F8\"/><rect width=\"2.4\" height=\"5\" fill=\"#1E5E9E\"/></pattern></defs><path d=\"M20 180 L20 20 A160 160 0 0 1 180 180 Z\" fill=\"#DEEFE4\"/><path d=\"M20 180 L20 75 A105 105 0 0 1 125 180 Z\" fill=\"#CBE6D6\"/><path d=\"M20 180 L20 125 A55 55 0 0 1 75 180 Z\" fill=\"#B5DBC6\"/><path class=\"c\" d=\"M20 125 A55 55 0 0 1 75 180\"/><path class=\"c\" d=\"M20 75 A105 105 0 0 1 125 180\"/><path class=\"c t\" d=\"M20 20 A160 160 0 0 1 180 180\"/><circle cx=\"20\" cy=\"180\" r=\"14\" fill=\"none\" stroke=\"#E07A3F\" stroke-width=\"1.5\" opacity=\".45\"/><circle cx=\"20\" cy=\"180\" r=\"7\" fill=\"#E07A3F\" stroke=\"#FBFCF9\" stroke-width=\"3\"/><circle cx=\"60\" cy=\"140\" r=\"9\" fill=\"#B8401C\" stroke=\"#0E2D2B\" stroke-width=\"1.1\"/><circle cx=\"105\" cy=\"110\" r=\"7\" fill=\"url(#dsrev)\" stroke=\"#0E2D2B\" stroke-width=\"1.1\"/><circle cx=\"230\" cy=\"80\" r=\"8\" fill=\"#FBFCF9\" stroke=\"#B9C7BF\" stroke-width=\"1.4\"/><text x=\"72\" y=\"144\" class=\"l\">Reliance</text><text x=\"242\" y=\"84\" class=\"l d\">Infosys</text></svg>",
+      "css": ".ds-onset{width:320px;height:200px;background:#F2F5EF;font-family:'Anek Latin',system-ui,sans-serif}.ds-onset .c{fill:none;stroke:#1E6F69;stroke-width:2.6}.ds-onset .c.t{stroke-dasharray:1.5 6;stroke-width:2.2}.ds-onset .l{font-size:13px;font-weight:650;fill:#0E2D2B;paint-order:stroke;stroke:#F2F5EF;stroke-width:4.5px;stroke-linejoin:round}.ds-onset .l.d{fill:#536A67;font-weight:550}"
+    },
+    {
+      "name": "Info Card",
+      "kind": "card",
+      "refersTo": "info-card",
+      "description": "The only card: floats on the map with a company's money, routes and exposures.",
+      "html": "<div class=\"ds-info\"><h4>Reliance Industries</h4><div class=\"m\">company estimate</div><div class=\"money\"><span>Your money</span><b>₹1.85 L</b></div><ul><li>Crude oil: cost</li><li>Rupee vs dollar: both ways</li></ul></div>",
+      "css": ".ds-info{width:300px;background:#FBFCF9;border-radius:12px;padding:14px 16px;box-shadow:0 18px 40px -18px rgba(14,45,43,.55),0 1px 0 rgba(14,45,43,.14);font:400 14px/1.4 'Anek Latin',system-ui,sans-serif;color:#0E2D2B;font-variant-numeric:tabular-nums}.ds-info h4{margin:0 0 2px;font-size:17px;font-weight:700;line-height:1.15}.ds-info .m{color:#536A67;font-size:12.5px}.ds-info .money{display:flex;justify-content:space-between;margin:10px 0 8px}.ds-info .money b{font-size:18px}.ds-info ul{list-style:none;margin:0;padding:0}.ds-info li{padding:6px 0;border-top:1px solid rgba(14,45,43,.14);font-size:13.5px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Onset Chart",
+    "overview": "Lehar is drawn as a monsoon onset map in the IMD isochrone tradition. A market factor is the origin, pinned bottom-left of the map; teal contours sweep outward from it; industries are wedge-shaped regions fanned around the origin; companies are places sized by the user's money. The page is a working instrument (Operate mode), not a report: the first viewport is the map with a sticky factor panel beside it, and everything below is hairline-ruled sections on the same pale green-grey paper.\n\nDensity is high but uncarded. Information sits in ruled rows (1px hairlines at 14% ink) rather than boxed tiles; only floating things (the info card on the map, the search suggestions, the tooltip) lift off the paper. Colour is quarantined: the shell and chrome are monsoon teal and paper, and the saturated hues appear only where they carry data, each paired with a fill pattern so meaning survives greyscale and projection.\n\nOne face does all the work. Anek Latin's width axis is the cartographic tool: condensed tracked caps name regions and column heads, the normal width runs the UI, a wide setting is reserved for the wordmark, and tabular figures are on everywhere.",
+    "keyCharacteristics": [
+      "Pale map paper (#F2F5EF) under a deep monsoon-teal shell bar and footer.",
+      "Contours, rainfall-band tints and a radial sweep are the signature; solid contours for measured data, dotted for template-only.",
+      "Data colours (cost orange-red, revenue blue, both-ways violet) each carry a pattern: solid, hatched, cross-hatched.",
+      "Hairline-ruled rows instead of cards; soft shadows only on floating layers.",
+      "One variable face, Anek Latin, with width doing hierarchy work; tabular numerals throughout."
+    ],
+    "rules": [
+      {
+        "name": "The Quarantine Rule",
+        "body": "Cost, revenue and both-ways hues appear only on data marks (cells, bars, swatches, places). Chrome, headings and buttons never use them. The one exception the build makes is Excess Blue as the link colour.",
+        "section": "colors"
+      },
+      {
+        "name": "The Pattern Twin Rule",
+        "body": "Every data hue ships with its pattern: cost solid, revenue hatched, both cross-hatched, at every size from the 16px swatch to the 30px grid cell. Colour is never the only carrier; the text label says \"cost\", \"revenue\" or \"both ways\" as well.",
+        "section": "colors"
+      },
+      {
+        "name": "The Origin Rule",
+        "body": "Onset Orange marks where a move starts and when the data was run, and the one primary action. Do not spend it on anything else.",
+        "section": "colors"
+      },
+      {
+        "name": "The Width Axis Rule",
+        "body": "Hierarchy on the map comes from width and tracking, not size: condensed tracked caps for regions and column heads, normal width for everything you read, wide (110) only for the Lehar wordmark.",
+        "section": "typography"
+      },
+      {
+        "name": "The Halo Rule",
+        "body": "Every label drawn on the map carries a paper-coloured stroke (4.5 to 5px, painted under the fill) so it reads over contours and bands.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tabular Rule",
+        "body": "Figures are tabular across the whole page; numbers right-align in their column at weight 600 to 650.",
+        "section": "typography"
+      },
+      {
+        "name": "The Paper Rule",
+        "body": "Panels, sections and rows sit flat on paper; if it is not floating over something, it gets no shadow.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** pair every data hue with its pattern and a text label: cost solid, revenue hatched, both cross-hatched.",
+      "**Do** draw contours solid for measured company data and dotted for template-only reach.",
+      "**Do** put a paper halo stroke under every label drawn on the map.",
+      "**Do** use Anek Latin's width axis for hierarchy: width 78 tracked caps for regions and column heads, width 110 only for the wordmark.",
+      "**Do** separate content with hairlines (rgba(14,45,43,.14)) and keep sections flat on Map Paper.",
+      "**Do** keep figures tabular and right-aligned."
+    ],
+    "donts": [
+      "**Don't** use cost, revenue or both-ways colours on chrome, headings or buttons.",
+      "**Don't** use Onset Orange for anything but the origin, the data-run marker and the single primary action.",
+      "**Don't** box rows into cards; only floating layers (info card, menu, tooltip) lift with a shadow.",
+      "**Don't** use shell2 (#155150) or any colour close to Deep Ink as a fund-route colour; routes must stay distinguishable from direct holdings.",
+      "**Don't** let a contour label sit on top of a place label; place names take priority."
+    ]
+  }
+}

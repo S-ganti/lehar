@@ -1,0 +1,18 @@
+{
+  "buildPath": "code",
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "repeating-stripes-gradient",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-20T15:04:39.107Z",
+        "reason": "Claude, from the direction contract and PRODUCT.md accessibility rule: hatch fills encode revenue (hatched) and both-ways (cross-hatched) exposure so meaning is not carried by colour alone; functional data encoding, not surface decoration"
+      }
+    ]
+  }
+}

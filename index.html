@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lehar — see where a market move reaches your money</title>
+<meta name="description" content="Lehar opens your mutual funds into the companies they hold and shows which of them carry crude oil, the rupee, metals and interest rates. Public data only. Not investment advice.">
+<meta name="theme-color" content="#0F3B3A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230F3B3A'/%3E%3Cpath d='M12 52a40 40 0 0 1 40-40' fill='none' stroke='%23F2F5EF' stroke-width='5' stroke-linecap='round'/%3E%3Cpath d='M12 52a26 26 0 0 1 26-26' fill='none' stroke='%239CCFC6' stroke-width='5' stroke-linecap='round'/%3E%3Ccircle cx='14' cy='50' r='6' fill='%23E07A3F'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wdth,wght@75..125,300..800&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:light;
+  --paper:#F2F5EF; --paper2:#E6EDE5; --paper3:#DCE6DC; --card:#FBFCF9;
+  --ink:#0E2D2B; --ink2:#3F5C59; --ink3:#536A67; --line:rgba(14,45,43,.14); --line2:rgba(14,45,43,.26);
+  --shell:#0F3B3A; --shell2:#155150; --onshell:#F2F5EF; --onshell2:rgba(242,245,239,.78);
+  --contour:#1E6F69; --band1:#B5DBC6; --band2:#CBE6D6; --band3:#DEEFE4; --dry:#B9C7BF;
+  --cost:#B8401C; --rev:#1E5E9E; --both:#6747B0; --origin:#E07A3F;
+  --f1:#0E2D2B; --f2:#2A7F78; --f3:#6FB3A9; --f4:#2F5F8F; --f5:#8FB3D9; --f6:#A8C9A0;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --narrow:"wdth" 78; --wide:"wdth" 110;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.5 'Anek Latin',system-ui,sans-serif;font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased;caret-color:var(--contour)}
+::selection{background:var(--band1);color:var(--ink)}
+:focus-visible{outline:2px solid var(--contour);outline-offset:2px;border-radius:3px}
+*{scrollbar-width:thin;scrollbar-color:var(--line2) transparent}
+::-webkit-scrollbar{width:8px;height:8px}::-webkit-scrollbar-thumb{background:var(--line2);border-radius:8px}
+a{color:var(--rev);text-underline-offset:3px}
+button{font:inherit;color:inherit;cursor:pointer}
+h1,h2,h3{margin:0;font-weight:650;letter-spacing:-.01em;text-wrap:balance}
+p{margin:0}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.caps{font-variation-settings:var(--narrow);text-transform:uppercase;letter-spacing:.09em;font-weight:600;font-size:12px}
+
+/* shell bar */
+.top{position:sticky;top:0;z-index:20;background:var(--shell);color:var(--onshell);height:64px;display:flex;align-items:center;gap:28px;padding:0 24px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit}
+.brand b{font-size:26px;font-weight:700;letter-spacing:-.01em;font-variation-settings:var(--wide)}
+.nav{display:flex;gap:4px}
+.nav a{color:var(--onshell2);text-decoration:none;font-size:15px;padding:8px 10px;border-radius:6px;white-space:nowrap}
+.nav a:hover{color:var(--onshell);background:var(--shell2)}
+.top .sp{flex:1}
+.sum{font-size:14px;color:var(--onshell2);text-align:right;line-height:1.25;white-space:nowrap}
+.sum b{color:var(--onshell);font-weight:650}
+.btn{white-space:nowrap;display:inline-flex;align-items:center;gap:8px;border:0;border-radius:8px;padding:10px 16px;font-weight:650;font-size:15px;background:var(--origin);color:#2A1206;text-decoration:none;transition:transform .2s var(--ease),box-shadow .2s var(--ease)}
+.btn:hover{transform:translateY(-1px);box-shadow:0 6px 16px -8px rgba(14,45,43,.55)}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line2)}
+.btn.ghost:hover{background:var(--paper2);box-shadow:none}
+.btn.sm{padding:6px 11px;font-size:14px}
+
+/* first viewport: map + panel */
+.stage{display:grid;grid-template-columns:minmax(0,1fr) 400px;min-height:calc(100vh - 64px);min-height:calc(100svh - 64px);border-bottom:1px solid var(--line)}
+.mapwrap{position:relative;display:flex;flex-direction:column;min-width:0}
+.maphead{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;padding:22px 28px 0}
+.maphead h1{font-size:clamp(26px,2.6vw,38px);line-height:1.08;max-width:24ch}
+.maphead .lede{color:var(--ink2);font-size:15px;max-width:52ch;margin-top:6px}
+.map{flex:1;min-height:420px;position:relative}
+.map svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.samplebar{display:none;margin-top:10px;font-size:14px;color:var(--ink2)}
+.samplebar b{color:var(--ink)}
+.samplebar a{font-weight:650}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;padding:10px 28px 16px;font-size:13px;color:var(--ink2);align-items:center}
+.sw{display:inline-block;width:18px;height:12px;border-radius:2px;vertical-align:-1px;margin-right:6px;border:1px solid rgba(14,45,43,.25)}
+.sw.cost{background:var(--cost)}
+.sw.rev{background:repeating-linear-gradient(135deg,var(--rev) 0 2.5px,#E8F0F8 2.5px 5px)}
+.sw.both{background:repeating-linear-gradient(45deg,var(--both) 0 2px,transparent 2px 5px),repeating-linear-gradient(-45deg,var(--both) 0 2px,#EFEAF8 2px 5px)}
+.sw.dry{background:var(--card);border-color:var(--dry)}
+.sw.b1{background:var(--band1)}.sw.b2{background:var(--band2)}.sw.b3{background:var(--band3)}
+.sw.ring{border-radius:50%;width:14px;height:14px;background:var(--card);border:2.5px solid var(--f1);border-right-color:var(--f3);border-bottom-color:var(--f3)}
+.line-solid,.line-dot{display:inline-block;width:26px;height:0;border-top:2px solid var(--contour);vertical-align:middle;margin-right:6px}
+.line-dot{border-top-style:dotted}
+
+/* svg map styling */
+.region-edge{stroke:var(--line2);stroke-width:.7;fill:none}
+.region-label{paint-order:stroke;stroke:var(--paper);stroke-width:5px;stroke-linejoin:round;font-variation-settings:var(--narrow);text-transform:uppercase;letter-spacing:.14em;font-weight:600;font-size:calc(var(--fs,13px) * .95);fill:var(--ink3)}
+.contour{fill:none;stroke:var(--contour);stroke-width:2.6;transition:stroke-dashoffset 1s var(--ease),opacity .4s}
+.contour.tmpl{stroke-dasharray:1.5 6;stroke-width:2.2}
+.contour-label{font-size:calc(var(--fs,13px) * .9);fill:var(--contour);font-weight:650;letter-spacing:.03em;paint-order:stroke;stroke:var(--paper);stroke-width:5px;stroke-linejoin:round}
+.band{transition:opacity .6s}
+#sweep{transition:r 1.3s cubic-bezier(.33,1,.68,1)}
+.place{cursor:pointer;transition:transform .7s var(--ease)}
+.place circle.dot{stroke:var(--ink);stroke-width:1.1;transition:fill .35s,stroke .35s,opacity .35s}
+.place.dryp circle.dot{fill:var(--card);stroke:var(--dry);stroke-width:1.4}
+.place:hover circle.dot,.place.sel circle.dot{stroke-width:2.4}
+.plabel{font-size:var(--fs,13px);fill:var(--ink);paint-order:stroke;stroke:var(--paper);stroke-width:4.5px;stroke-linejoin:round;pointer-events:none}
+.plabel .n{font-weight:650}.plabel .d{font-weight:500;fill:var(--ink2)}
+.plabel.dry .n{fill:var(--ink3);font-weight:550}
+.route{fill:none;stroke-width:2.4}
+.leader{stroke:var(--ink2);stroke-width:1;opacity:.7}
+.origin-pin circle{fill:var(--origin);stroke:var(--card);stroke-width:3}
+.origin-ring{fill:none;stroke:var(--origin);stroke-width:1.5;opacity:.45}
+.origin-txt{font-weight:700;font-size:calc(var(--fs,13px) * 1.15);fill:var(--ink)}
+.origin-sub{font-size:calc(var(--fs,13px) * .95);fill:var(--ink2)}
+#svg.narrow .contour-label,#svg.narrow .origin-txt,#svg.narrow .origin-sub{display:none}
+#svg.narrow .region-label{font-size:calc(var(--fs,13px) * .78)}
+
+/* panel */
+.panel{background:var(--paper2);border-left:1px solid var(--line);display:flex;flex-direction:column;min-width:0;max-height:calc(100vh - 64px);max-height:calc(100svh - 64px);position:sticky;top:64px}
+.panel-scroll{overflow:auto;padding:22px 22px 18px;flex:1}
+.panel h2{font-size:15px;font-weight:650;margin-bottom:10px}
+.factors{list-style:none;margin:0 0 6px;padding:0;display:grid;grid-template-columns:1fr 1fr;column-gap:18px}
+.factors li.extra{display:none}.factors.all li.extra{display:block}
+.factors button{width:100%;display:grid;grid-template-columns:minmax(0,1fr) auto;grid-template-rows:auto 4px;column-gap:8px;row-gap:5px;align-items:center;background:transparent;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:9px 0 9px;text-align:left;font-size:14.5px;line-height:1.15}
+.factors button>span:first-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.factors .fbar{grid-column:1/3}
+.morefac{border:0;background:transparent;font-size:13.5px;color:var(--ink2);padding:6px 2px;margin-bottom:12px;text-decoration:underline;text-decoration-color:var(--line2);text-underline-offset:3px}
+.morefac:hover{color:var(--ink)}
+.factors button:hover{color:var(--contour)}
+.factors button[aria-pressed="true"]{color:var(--contour);font-weight:700;box-shadow:inset 0 -2px 0 var(--contour)}
+.factors .fbar{height:5px;border-radius:3px;background:var(--paper3);overflow:hidden;display:flex}
+.factors .fbar i{display:block;height:100%}
+.factors .fpct{text-align:right;font-weight:600;font-size:14px}
+.factors .nofeed{display:none}
+.mover{border-top:1px solid var(--line2);border-bottom:1px solid var(--line2);padding:14px 0 12px;margin-bottom:18px}
+.mover .row{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.mover output{font-size:30px;font-weight:700;font-variation-settings:var(--narrow)}
+.mover input[type=range]{width:100%;margin:8px 0 4px;accent-color:var(--contour)}
+.scale{display:flex;justify-content:space-between;font-size:12px;color:var(--ink3)}
+.latest{font-size:13px;color:var(--ink2);background:none;border:0;padding:0;text-decoration:underline;text-decoration-color:var(--line2);text-underline-offset:3px}
+.latest:hover{color:var(--ink)}
+.reach h3{font-size:26px;line-height:1.1;font-weight:700;font-variation-settings:var(--narrow);margin-bottom:6px}
+.reach .split{display:flex;gap:14px;flex-wrap:wrap;font-size:13.5px;color:var(--ink2);margin-bottom:12px}
+.reach .split b{font-size:15px}
+.rlist{list-style:none;margin:0;padding:0}
+.rlist li{display:grid;grid-template-columns:18px 1fr auto;gap:10px;align-items:start;padding:9px 0;border-top:1px solid var(--line)}
+.rlist .nm{font-weight:600;font-size:15px;line-height:1.2}
+.rlist .what{font-size:13.5px;color:var(--ink2);line-height:1.35;margin-top:2px}
+.rlist .what b{color:var(--ink);font-weight:650}
+.rlist .pc{font-weight:650;font-size:15px;text-align:right}
+.rlist .basis{display:block;font-size:11.5px;color:var(--ink3);font-weight:400}
+.rlist .rt{font-size:12.5px;color:var(--ink3);margin-top:2px}
+.rlist .sw{margin:3px 0 0;width:16px;height:16px}
+.rlist button{all:unset;cursor:pointer;display:contents}
+.more{font-size:13.5px;color:var(--ink2);padding:10px 0 0}
+
+/* info card on map */
+.info{position:absolute;z-index:6;width:300px;background:var(--card);border-radius:12px;padding:14px 16px;box-shadow:0 18px 40px -18px rgba(14,45,43,.55),0 1px 0 var(--line);font-size:14px}
+.info h4{margin:0 26px 2px 0;font-size:17px;font-weight:700;line-height:1.15}
+.info .meta{color:var(--ink3);font-size:12.5px}
+.info .money{display:flex;justify-content:space-between;margin:10px 0 8px;font-size:14px}
+.info .money b{font-size:18px}
+.info ul{list-style:none;padding:0;margin:0}
+.info li{display:grid;grid-template-columns:16px 1fr;gap:8px;padding:6px 0;border-top:1px solid var(--line);font-size:13.5px;line-height:1.35}
+.info .x{position:absolute;right:8px;top:8px;border:0;background:transparent;width:28px;height:28px;border-radius:6px;color:var(--ink2);display:grid;place-items:center}
+.info .x:hover{background:var(--paper2)}
+.tip{position:fixed;z-index:30;pointer-events:none;background:var(--ink);color:var(--paper);font-size:13px;line-height:1.35;padding:7px 10px;border-radius:7px;max-width:280px;opacity:0;transform:translateY(4px);transition:opacity .12s,transform .12s}
+.tip.on{opacity:1;transform:none}
+
+/* sections below */
+.sec{padding:64px 28px 56px;max-width:1240px;margin:0 auto;position:relative}
+.sec>h2{font-size:clamp(26px,2.4vw,34px);line-height:1.1;margin-bottom:8px}
+.sec>.lede{color:var(--ink2);max-width:66ch;margin-bottom:28px}
+.band-row{border-top:1px solid var(--line)}
+.mix{display:flex;height:44px;border-radius:8px;overflow:hidden;margin:6px 0 10px;background:var(--paper2)}
+.mix div{display:flex;align-items:center;padding:0 12px;font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;color:#fff;min-width:0}
+.mixkey{display:flex;gap:6px 22px;flex-wrap:wrap;font-size:14px;color:var(--ink2);margin-bottom:28px}
+.mixkey b{color:var(--ink)}
+.callout{margin:0 0 30px;max-width:64ch}
+.callout p{font-size:21px;line-height:1.35;font-weight:450}
+.callout b{font-weight:700}
+.own{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:36px}
+.bars{display:grid;gap:4px}
+.brow{display:grid;grid-template-columns:200px minmax(0,1fr) 74px;gap:12px;align-items:center;font-size:14.5px}
+.brow .nm{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:550}
+.brow .track{height:20px;display:flex;border-radius:4px;overflow:hidden}
+.brow .track span{display:block;height:100%;transition:filter .15s}
+.brow .track span:hover{filter:brightness(1.15)}
+.brow .v{text-align:right;font-weight:650}
+.fkey{display:grid;gap:8px;font-size:14px;align-content:start}
+.fkey div{display:grid;grid-template-columns:14px 1fr auto;gap:10px;align-items:center}
+.fkey i{width:14px;height:14px;border-radius:3px}
+.fkey .h{font-weight:650;margin-bottom:2px}
+.fkey small{color:var(--ink3);font-size:12.5px;grid-column:2/4;margin-top:-6px}
+
+/* factor grid */
+.grid-wrap{overflow-x:auto;padding-bottom:8px;position:relative}
+.fgrid{border-collapse:separate;border-spacing:3px;font-size:13.5px}
+.fgrid th{font-weight:550;text-align:left;color:var(--ink2)}
+.fgrid thead th{height:148px;vertical-align:bottom;padding:0 0 6px}
+.fgrid thead th span{display:inline-block;writing-mode:vertical-rl;transform:rotate(180deg);white-space:nowrap;font-size:13px;max-height:140px;overflow:hidden;text-overflow:ellipsis}
+.fgrid tbody th{white-space:nowrap;padding-right:12px}
+.fgrid tbody th button{border:0;background:transparent;padding:4px 6px;border-radius:6px;font-weight:600;color:var(--ink)}
+.fgrid tbody th button:hover{background:var(--paper2)}
+.fgrid td.c{width:30px;height:30px;border-radius:4px;background:var(--card);box-shadow:inset 0 0 0 1px var(--line)}
+.fgrid td.c.l-high{opacity:1}.fgrid td.c.l-medium{opacity:.78}.fgrid td.c.l-low{opacity:.55}
+.fgrid td.tot{font-weight:650;padding-left:10px;white-space:nowrap}
+.fgrid tfoot td{font-size:12.5px;color:var(--ink3);padding-top:4px;text-align:center}
+.mgrid{width:100%;border-collapse:collapse;font-size:14.5px}
+.mgrid th{font-size:12px;color:var(--ink3);text-align:left;font-weight:600;padding:6px 6px;font-variation-settings:var(--narrow);text-transform:uppercase;letter-spacing:.09em}
+.mgrid td{padding:9px 6px;border-top:1px solid var(--line);vertical-align:top}
+.mgrid td.c{width:26px;padding-top:11px}.mgrid td.c i{display:block;width:20px;height:20px;border-radius:4px;box-shadow:inset 0 0 0 1px var(--line)}
+.mgrid .w{font-size:12.5px;color:var(--ink2);display:block}
+.mgrid td.num,.mgrid th.num{text-align:right;font-weight:650;white-space:nowrap}
+.gsel{display:flex;gap:10px;align-items:center;margin-bottom:12px;font-size:14.5px}
+.gsel select{font:inherit;font-size:15px;padding:8px 10px;border-radius:8px;border:1px solid var(--line2);background:var(--card);color:var(--ink);flex:1}
+.cell-cost{background:var(--cost)!important;box-shadow:none!important}
+.cell-rev{background:repeating-linear-gradient(135deg,var(--rev) 0 3px,#E8F0F8 3px 6px)!important;box-shadow:none!important}
+.cell-both{background:repeating-linear-gradient(45deg,var(--both) 0 2px,transparent 2px 6px),repeating-linear-gradient(-45deg,var(--both) 0 2px,#EFEAF8 2px 6px)!important;box-shadow:none!important}
+
+/* onset calendar */
+.cal{position:relative;margin-top:8px}
+.cal svg{width:100%;height:auto;display:block}
+.lane{cursor:pointer}
+.lane:hover .lane-bg{fill:var(--paper2)}
+.lane-bg{fill:transparent}
+.lane-name{font-size:14px;font-weight:600;fill:var(--ink)}
+.lane-sub{font-size:12px;fill:var(--ink3)}
+.lane-mv{font-size:16px;font-weight:700;fill:var(--ink);font-variation-settings:"wdth" 80}
+.lane.stale .lane-mv,.lane.stale .lane-name{fill:var(--ink3)}
+.axis text{font-size:12px;fill:var(--ink3)}
+.axis line{stroke:var(--line)}
+.today line{stroke:var(--origin);stroke-width:1.5}
+.today text{fill:var(--origin);font-size:12px;font-weight:650}
+
+/* portfolio editor */
+.edit{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:36px;align-items:start}
+.addrow{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+.search{position:relative;flex:1;min-width:220px}
+input,textarea{font:inherit;font-size:15px;color:var(--ink);background:var(--card);border:1px solid var(--line2);border-radius:8px;padding:9px 11px;width:100%}
+input::placeholder,textarea::placeholder{color:var(--ink3)}
+input:focus,textarea:focus{outline:2px solid var(--contour);outline-offset:0;border-color:transparent}
+.sugg{position:absolute;left:0;right:0;top:calc(100% + 4px);background:var(--card);border-radius:10px;box-shadow:0 16px 40px -16px rgba(14,45,43,.5),0 0 0 1px var(--line);z-index:8;max-height:300px;overflow:auto;padding:4px}
+.sugg div{padding:8px 10px;border-radius:7px;cursor:pointer;display:flex;justify-content:space-between;gap:10px;font-size:15px}
+.sugg div small{color:var(--ink3);font-size:12.5px;text-align:right}
+.sugg div:hover,.sugg div.on{background:var(--paper2)}
+.htable{width:100%;border-collapse:collapse;font-size:15px}
+.htable th{font-size:12px;color:var(--ink3);text-align:left;font-weight:600;padding:6px 8px;font-variation-settings:var(--narrow);text-transform:uppercase;letter-spacing:.09em}
+.htable td{padding:7px 8px;border-top:1px solid var(--line);vertical-align:middle}
+.htable td.num,.htable th.num{text-align:right;white-space:nowrap}
+.htable input{width:128px;text-align:right;padding:6px 9px}
+.htable .kind{font-size:12.5px;color:var(--ink3)}
+.htable .rm{border:0;background:transparent;width:30px;height:30px;border-radius:6px;color:var(--ink2);display:inline-grid;place-items:center}
+.htable .rm:hover{background:var(--paper2);color:var(--cost)}
+.side-note{border-left:1px solid var(--line2);padding:4px 0 4px 24px;font-size:14.5px;color:var(--ink2)}
+.side-note h3{font-size:16px;color:var(--ink);margin-bottom:8px}
+.side-note textarea{margin:10px 0 8px;min-height:120px;font-size:14px}
+.msg{font-size:13.5px;color:var(--ink2);margin-top:8px;min-height:1.3em}
+.msg.err{color:var(--cost)}
+.empty{padding:22px;border:1px dashed var(--line2);border-radius:10px;color:var(--ink2);text-align:center}
+
+/* sources */
+.cov{display:flex;height:16px;border-radius:5px;overflow:hidden;margin:4px 0 14px}
+.covrows{display:grid;gap:10px;margin-bottom:26px}
+.covrows div{display:grid;grid-template-columns:70px 1fr;gap:14px;font-size:15px}
+.covrows b{font-size:20px;font-variation-settings:var(--narrow)}
+.srcs{font-size:14px;color:var(--ink2);display:grid;gap:8px;max-width:84ch}
+footer{background:var(--shell);color:var(--onshell2);padding:36px 28px;font-size:14px}
+footer .in{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:auto 1fr;gap:24px 40px}
+footer b{color:var(--onshell);font-size:22px;font-variation-settings:var(--wide)}
+footer p{max-width:80ch}
+
+@media (max-width:1240px){.nav{display:none}}
+@media (max-width:1080px){
+  .stage{grid-template-columns:1fr}
+  .panel{position:static;max-height:none;border-left:0;border-top:1px solid var(--line)}
+  .map{min-height:0;aspect-ratio:10/7.4}
+  .own,.edit{grid-template-columns:1fr}
+}
+@media (max-width:720px){
+  .top{gap:12px;padding:0 14px;height:58px}
+  .sum{display:none}
+  .samplebar{display:block}
+  .side-note{border-left:0;border-top:1px solid var(--line2);padding:18px 0 0}
+  html{scroll-padding-top:64px}
+  .maphead{padding:18px 16px 0}
+  .legend{padding:8px 16px 14px}
+  .panel-scroll{padding:18px 16px}
+  .sec{padding:48px 16px 40px}
+  .brow{grid-template-columns:118px minmax(0,1fr) 56px;gap:8px;font-size:13.5px}
+  .htable input{width:104px}
+  .htable .kind{display:none}
+  .info{left:12px!important;right:12px;width:auto;top:auto!important;bottom:12px}
+  footer .in{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="#map" aria-label="Lehar, back to the map">
+    <svg width="30" height="30" viewBox="0 0 64 64" aria-hidden="true"><path d="M10 54a44 44 0 0 1 44-44" fill="none" stroke="#F2F5EF" stroke-width="5" stroke-linecap="round"/><path d="M10 54a28 28 0 0 1 28-28" fill="none" stroke="#9CCFC6" stroke-width="5" stroke-linecap="round"/><circle cx="12" cy="52" r="7" fill="#E07A3F"/></svg>
+    <b>Lehar</b>
+  </a>
+  <nav class="nav" aria-label="Sections">
+    <a href="#map">Map</a><a href="#own">What you own</a><a href="#grid">All factors</a><a href="#moved">What moved</a><a href="#sources">Sources</a>
+  </nav>
+  <span class="sp"></span>
+  <div class="sum" id="sum" aria-live="polite"></div>
+  <a class="btn" href="#portfolio" id="cta">Use my portfolio</a>
+</header>
+
+<main>
+<section class="stage" id="map" aria-label="Onset map">
+  <div class="mapwrap">
+    <div class="maphead">
+      <div>
+        <h1 id="maptitle">Where a move in crude oil reaches your money</h1>
+        <p class="lede">Each dot is a company you own, directly or inside your funds, sized by your money and grouped by industry. Pick a factor: the contours show how strongly it reaches each one.</p>
+        <p class="samplebar" id="samplebar"></p>
+      </div>
+    </div>
+    <div class="map" id="mapbox">
+      <svg id="svg" viewBox="0 0 1000 700" role="img" aria-labelledby="maptitle" preserveAspectRatio="xMidYMid meet"></svg>
+    </div>
+    <div class="legend" aria-label="Map key">
+      <span><i class="sw cost"></i>cost — a rise hurts margins</span>
+      <span><i class="sw rev"></i>revenue — a rise helps</span>
+      <span><i class="sw both"></i>both ways</span>
+      <span><i class="sw dry"></i>not reached</span>
+      <span><i class="sw b1"></i>≥15% of costs or revenue</span>
+      <span><i class="sw b2"></i>5–15%</span>
+      <span><i class="sw b3"></i>under 5%, or template</span>
+      <span><i class="sw ring"></i>ring: dark = held directly, teal = through funds</span>
+      <span><i class="line-solid"></i>measured from annual reports</span>
+      <span><i class="line-dot"></i>contours when only templates reach</span>
+      <span>size = your money</span>
+    </div>
+  </div>
+  <aside class="panel" aria-label="Choose a factor and a move">
+    <div class="panel-scroll">
+      <h2 id="fhead">Choose a factor</h2>
+      <ul class="factors" id="factors" aria-labelledby="fhead"></ul>
+      <button class="morefac" type="button" id="morefac" aria-controls="factors" aria-expanded="false"></button>
+      <div class="mover">
+        <div class="row"><label for="move" id="movelbl">If crude oil moves</label><output id="moveout" for="move">+10%</output></div>
+        <input type="range" id="move" min="-30" max="30" step="1" value="10" aria-describedby="movehint">
+        <div class="scale"><span>−30%</span><span>0</span><span>+30%</span></div>
+        <div id="movehint" style="margin-top:6px"></div>
+      </div>
+      <div class="reach" aria-live="polite">
+        <h3 id="reachhead"></h3>
+        <div class="split" id="reachsplit"></div>
+        <ul class="rlist" id="rlist"></ul>
+        <p class="more" id="rmore"></p>
+      </div>
+    </div>
+  </aside>
+</section>
+
+<section class="sec" id="own" aria-labelledby="ownh">
+  <h2 id="ownh">What you really own</h2>
+  <p class="lede">Your funds opened into the companies they hold (each fund's portfolio as on 30 Sep 2026), added to your direct stocks.</p>
+  <div class="mix" id="mix" aria-hidden="true"></div>
+  <div class="mixkey" id="mixkey"></div>
+  <div class="callout" id="callout"></div>
+  <div class="own">
+    <div>
+      <h3 style="font-size:18px;margin-bottom:12px" id="toph">Your biggest companies, all routes combined</h3>
+      <div class="bars" id="bars" aria-describedby="toph"></div>
+    </div>
+    <div class="fkey" id="fkey"></div>
+  </div>
+</section>
+
+<div class="band-row"></div>
+<section class="sec" id="grid" aria-labelledby="facth">
+  <h2 id="facth">Every factor, against your biggest companies</h2>
+  <p class="lede">Read across a row to see which of your companies a factor reaches, and how strongly. Paler cells are weaker exposures. Tap a factor to put it on the map.</p>
+  <div class="grid-wrap"><table class="fgrid" id="fgrid"></table></div>
+</section>
+
+<div class="band-row"></div>
+<section class="sec" id="moved" aria-labelledby="movedh">
+  <h2 id="movedh">What moved, and when the data is from</h2>
+  <p class="lede">Each line is the window a move was measured over, ending on the date its source is current to. Dotted lines are older data: monthly series or feeds that have not updated recently. Tap one to put that move on the map.</p>
+  <div class="cal" id="cal"></div>
+</section>
+
+<div class="band-row"></div>
+<section class="sec" id="portfolio" aria-labelledby="porth">
+  <h2 id="porth">Your portfolio</h2>
+  <p class="lede">The map starts on a sample portfolio. Replace it with what you hold: search for a stock (any Nifty 500 company) or one of the five covered funds, and enter its value. It is saved in this browser only and never sent anywhere.</p>
+  <div class="edit">
+    <div>
+      <div class="addrow">
+        <div class="search">
+          <label class="sr" for="q">Search stocks and funds</label>
+          <input id="q" placeholder="Search: Infosys, ITC, Parag Parikh…" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="sugg" aria-autocomplete="list">
+          <div class="sugg" id="sugg" role="listbox" hidden></div>
+        </div>
+        <label class="sr" for="amt">Value in rupees</label>
+        <input id="amt" type="text" inputmode="numeric" placeholder="Value ₹" style="width:140px;flex:none">
+        <button class="btn" id="add" type="button">Add</button>
+      </div>
+      <div class="msg" id="addmsg" aria-live="polite"></div>
+      <div id="holdings"></div>
+      <div style="display:flex;gap:8px;margin-top:14px;flex-wrap:wrap">
+        <button class="btn ghost sm" id="sample" type="button">Load the sample</button>
+        <button class="btn ghost sm" id="clear" type="button">Clear all</button>
+      </div>
+    </div>
+    <div class="side-note">
+      <h3>Paste a list instead</h3>
+      <p>One holding per line: a symbol, ISIN or fund name, a comma, then the value.</p>
+      <label class="sr" for="csv">Holdings list</label>
+      <textarea id="csv" placeholder="INFY, 150000&#10;INE040A01034, 200000&#10;Parag Parikh Flexi Cap, 800000"></textarea>
+      <button class="btn sm" id="csvgo" type="button">Replace my portfolio with this list</button>
+      <div class="msg" id="csvmsg" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<div class="band-row"></div>
+<section class="sec" id="sources" aria-labelledby="srch">
+  <h2 id="srch">How much of this is measured</h2>
+  <p class="lede">Every company on the map carries one of two kinds of exposure data. The rest of your money is not mapped yet.</p>
+  <div class="cov" id="cov" aria-hidden="true"></div>
+  <div class="covrows" id="covrows"></div>
+  <div class="srcs" id="srcs"></div>
+</section>
+</main>
+
+<footer>
+  <div class="in">
+    <b>Lehar</b>
+    <p>Information only, built from public data: NSE index lists, each fund's own monthly portfolio disclosure, company annual reports and public commodity and currency prices. Not investment advice and not a recommendation to buy, sell or hold any security. No price forecasts. The publisher is not a SEBI-registered investment adviser or research analyst. Check primary sources before acting.</p>
+  </div>
+</footer>
+<div class="tip" id="tip" role="tooltip"></div>
+
+<script>
+(() => {
+'use strict';
+const $ = id => document.getElementById(id);
+const NS = 'http://www.w3.org/2000/svg';
+const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const inr = v => { const a = Math.abs(v); return (v < 0 ? '−' : '') + (a >= 1e7 ? '₹' + (a / 1e7).toFixed(2) + ' Cr' : a >= 1e5 ? '₹' + (a / 1e5).toFixed(2) + ' L' : '₹' + Math.round(a).toLocaleString('en-IN')); };
+const pct = (x, d = 1) => (x * 100).toFixed(d) + '%';
+const sgn = (x, d = 1) => (x > 0 ? '+' : x < 0 ? '−' : '') + Math.abs(x).toFixed(d) + '%';
+const clean = n => String(n || '').replace(/\s+(Ltd\.?|Limited)$/i, '').replace(/\s+/g, ' ').trim();
+const ABBR = { 'Tata Consultancy Services': 'TCS', 'HCL Technologies': 'HCLTech', 'Bajaj Holdings & Investment': 'Bajaj Holdings', 'Mahindra & Mahindra': 'M&M',
+  'Larsen & Toubro': 'L&T', 'State Bank of India': 'SBI', 'Hindustan Unilever': 'HUL', 'InterGlobe Aviation': 'IndiGo', 'Maruti Suzuki India': 'Maruti Suzuki',
+  'Power Grid Corporation of India': 'Power Grid', 'Oil & Natural Gas Corporation': 'ONGC', 'Kotak Mahindra Bank': 'Kotak Bank', 'Tata Motors Passenger Vehicles': 'Tata Motors PV',
+  'Sun Pharmaceutical Industries': 'Sun Pharma', "Dr. Reddy's Laboratories": "Dr Reddy's", 'Bharat Electronics': 'BEL', 'Hindustan Aeronautics': 'HAL', 'Adani Ports and Special Economic Zone': 'Adani Ports' };
+const shortName = n => ABBR[clean(n)] || clean(n).replace(/ Corporation of India$/, '').replace(/ (Industries|Company|Corporation|Enterprises)$/, '').replace(/ of India$/, '').replace(/ Mahindra Bank$/, ' Bank');
+const shortFund = n => n.replace(/ Fund$/, '').replace(/^HDFC /, 'HDFC ');
+const ICON_X = '<svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 3l8 8M11 3l-8 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>';
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+let D, L, H = [], F = 'crude', M = 10, SEL = null;
+const LS = 'lehar-holdings-v1';
+const SAMPLE = [
+  { t: 'fund', id: 'ppfcf', v: 800000 }, { t: 'fund', id: 'hdfcn50', v: 500000 }, { t: 'fund', id: 'hdfcmid', v: 300000 },
+  { t: 'stock', id: 'HDFCBANK', v: 200000 }, { t: 'stock', id: 'INFY', v: 150000 }, { t: 'stock', id: 'RELIANCE', v: 150000 },
+  { t: 'stock', id: 'ITC', v: 100000 }, { t: 'stock', id: 'ASIANPAINT', v: 75000 }, { t: 'stock', id: 'INDIGO', v: 75000 },
+  { t: 'stock', id: 'TITAN', v: 75000 }, { t: 'stock', id: 'TATASTEEL', v: 50000 }
+];
+const isSample = () => JSON.stringify(H) === JSON.stringify(SAMPLE);
+const EFFNAME = { cost: 'cost', benefit: 'revenue', mixed: 'both ways' };
+const EFFCLS = { cost: 'cost', benefit: 'rev', mixed: 'both' };
+const COM = { tio2: 'titanium dioxide', metcoal: 'coking coal', ironore: 'iron ore', natgas: 'natural gas', lng: 'LNG', apmgas: 'domestic gas',
+  plastics: 'plastics and resins', diesel: 'diesel', jet: 'jet fuel', crude: 'crude', dubai: 'crude', petcoke: 'petcoke', elec: 'electricity',
+  natrub: 'natural rubber', carbonblack: 'carbon black', sbr: 'synthetic rubber', alum: 'aluminium', alumina: 'alumina', bauxite: 'bauxite',
+  copper: 'copper', steel: 'steel', gold: 'gold', silver: 'silver', diamonds: 'diamonds', pallad: 'palladium', chips: 'semiconductors', lithium: 'lithium',
+  api: 'pharma ingredients', palm: 'palm oil', soyoil: 'soybean oil', sunoil: 'sunflower oil', copra: 'copra', tea: 'tea', coffee: 'coffee', cocoa: 'cocoa',
+  milk: 'milk', wheat: 'wheat', sugar: 'sugar', ethanol: 'ethanol', tobacco: 'leaf tobacco', pulp: 'pulp', sodaash: 'soda ash', limestone: 'limestone',
+  cement: 'cement', coal: 'coal', zinc: 'zinc', lead: 'lead', vam: 'VAM', pvc: 'PVC', poly: 'polysilicon', cotton: 'cotton', fluorspar: 'fluorspar',
+  benzene: 'benzene', methanol: 'methanol', propylene: 'propylene', phenol: 'phenol', ammonia: 'ammonia', dap: 'phosphate', potash: 'potash', sulphur: 'sulphur',
+  bunker: 'marine fuel', drybulk: 'freight', crudetanker: 'tanker freight', container: 'container freight', caustic: 'caustic soda', pta: 'PTA' };
+
+// Industries grouped into map regions
+const REGIONS = [
+  ['fin', 'Banks & finance', ['Banks', 'Finance', 'Insurance', 'Capital Markets', 'Financial Technology (Fintech)']],
+  ['tech', 'Tech & telecom', ['IT - Software', 'IT - Services', 'Telecom - Services', 'Telecom - Equipment & Accessories', 'Telecommunication', 'Engineering Services', 'Media', 'Entertainment']],
+  ['energy', 'Energy & power', ['Petroleum Products', 'Oil', 'Gas', 'Consumable Fuels', 'Power', 'Other Utilities']],
+  ['mat', 'Metals & materials', ['Ferrous Metals', 'Non - Ferrous Metals', 'Diversified Metals', 'Minerals & Mining', 'Metals & Minerals Trading', 'Chemicals & Petrochemicals', 'Fertilizers & Agrochemicals', 'Cement & Cement Products', 'Paper, Forest & Jute Products', 'Textiles & Apparels']],
+  ['ind', 'Industry & infra', ['Electrical Equipment', 'Industrial Products', 'Industrial Manufacturing', 'Aerospace & Defense', 'Capital Goods', 'Construction', 'Realty', 'Transport Infrastructure', 'Transport Services', 'Agricultural, Commercial & Construction Vehicles', 'Commercial Services & Supplies']],
+  ['auto', 'Autos', ['Automobiles', 'Auto Components']],
+  ['cons', 'Consumer', ['Diversified FMCG', 'Personal Products', 'Food Products', 'Beverages', 'Agricultural Food & Other Products', 'Cigarettes & Tobacco Products', 'Household Products', 'Retailing', 'Consumer Durables', 'Leisure Services', 'Other Consumer Services']],
+  ['health', 'Health', ['Pharmaceuticals & Biotechnology', 'Healthcare Services', 'Healthcare Equipment & Supplies']],
+];
+const IND2REG = {}; REGIONS.forEach(r => r[2].forEach(i => IND2REG[i] = r[0]));
+const regionOf = ind => IND2REG[ind] || 'ind';
+
+const save = () => { try { localStorage.setItem(LS, JSON.stringify(H)); } catch (e) {} };
+const restore = () => { try { const s = JSON.parse(localStorage.getItem(LS) || 'null'); if (Array.isArray(s) && s.length) return s; } catch (e) {} return null; };
+const bySym = {}, byIsin = {};
+
+// ---------------------------------------------------------------- model
+function lookThrough() {
+  const pos = {}, b = { foreign: 0, reit: 0, debt: 0, cash: 0, arbitrage: 0, mf: 0, outside: 0 };
+  let total = 0;
+  const add = (isin, v, via) => {
+    const p = pos[isin] || (pos[isin] = { isin, s: byIsin[isin], v: 0, direct: 0, via: {} });
+    p.v += v; if (via) p.via[via] = (p.via[via] || 0) + v; else p.direct += v;
+  };
+  for (const h of H) {
+    total += h.v;
+    if (h.t === 'stock') { const s = bySym[h.id]; if (s) add(s.isin, h.v, null); continue; }
+    const f = D.funds[h.id]; let listed = 0;
+    for (const x of f.holdings) {
+      const v = h.v * x.w / 100; listed += x.w;
+      if (x.kind === 'equity_in') { byIsin[x.isin] ? add(x.isin, v, h.id) : b.outside += v; }
+      else if (x.kind === 'foreign_equity') b.foreign += v;
+      else if (x.kind === 'reit') b.reit += v;
+      else if (x.kind === 'arbitrage') b.arbitrage += v;
+      else if (x.kind === 'mf') b.mf += v;
+      else b.debt += v;
+    }
+    b.cash += h.v * Math.max(0, 100 - listed) / 100;
+  }
+  const list = Object.values(pos).sort((a, c) => c.v - a.v);
+  return { pos, list, b, total };
+}
+const expOf = (s, k) => s.ex.find(e => e.d === k);
+function factorStats(LT, k) {
+  const out = { cost: 0, benefit: 0, mixed: 0, n: 0, total: 0, items: [] };
+  for (const p of LT.list) { const e = expOf(p.s, k); if (!e) continue; out[e.e] += p.v; out.total += p.v; out.n++; out.items.push({ p, e }); }
+  return out;
+}
+function seriesInfo(k) {
+  const dv = D.drivers[k]; if (!dv.series || !L) return null;
+  const mv = (L.moves || {})[dv.series], vo = (L.vols || {})[dv.series]; if (mv == null || !vo) return null;
+  const deg = (L.degraded_sources || []).find(x => x.series === dv.series);
+  const asof = deg ? deg.using_persisted_to : vo.asof;
+  const age = Math.round((new Date(L.generated) - new Date(asof)) / 864e5);
+  return { mv, asof, freq: vo.freq, src: vo.src, stale: age > 45 || !!deg, age };
+}
+const fmtDate = s => new Date(s + 'T00:00:00').toLocaleDateString('en-IN', { day: 'numeric', month: 'short' });
+
+// what changes for one company when factor k moves by m%
+function change(e, s, k, m) {
+  const up = m >= 0, base = s.basis === 'company';
+  if (e.share != null && e.e !== 'benefit' && k !== 'usd' && m !== 0) {
+    let t = `costs ${up ? 'up' : 'down'} about <b>${Math.abs(e.share * m).toFixed(1)}%</b> (${Math.round(e.share * 100)}% of costs × ${Math.abs(m)}%)`;
+    if (e.rev) t += `; revenue from selling it ${up ? 'up' : 'down'} about ${Math.abs(e.rev * m).toFixed(1)}%`;
+    else if (e.e === 'mixed') t += ', but what it sells usually reprices with it, so the margin depends on the spread';
+    return t;
+  }
+  if (e.rev != null && m !== 0) return `revenue ${up ? 'up' : 'down'} about <b>${Math.abs(e.rev * m).toFixed(1)}%</b> (${Math.round(e.rev * 100)}% of revenue × ${Math.abs(m)}%)`;
+  const dir = e.e === 'cost' ? (up ? 'pressure on margins' : 'relief on margins') : e.e === 'benefit' ? (up ? 'a tailwind' : 'a headwind') : 'cuts both ways';
+  return `${dir}, size not measured${base ? '' : ' (industry template)'}${e.why ? ': ' + esc(e.why.charAt(0).toLowerCase() + e.why.slice(1)) : ''}`;
+}
+const why = e => (e.share != null || e.rev != null)
+  ? [e.share ? `~${Math.round(e.share * 100)}% of costs` : '', e.rev ? `~${Math.round(e.rev * 100)}% of revenue` : ''].filter(Boolean).join(', ') + (e.via && e.via.length ? ' · ' + e.via.map(v => COM[v] || v).join(', ') : '')
+  : (e.why || '');
+
+// ---------------------------------------------------------------- map geometry
+const OX = 64, OY = 662, W = 1000, HH = 700;
+const A0 = 3 * Math.PI / 180, A1 = 87 * Math.PI / 180;
+const AX = W - 44 - OX, BY = OY - 40; // quarter-ellipse field: smooth onset arcs that fill the frame
+const RINGS = { high: [0.14, 0.35], medium: [0.38, 0.57], low: [0.6, 0.77], dry: [0.81, 0.97] };
+const CONTOURS = [[0.365, 'high', '≥15% of costs or revenue'], [0.585, 'medium', '5–15%'], [0.79, 'low', 'under 5%, or template']];
+const xy = (th, f) => [OX + f * AX * Math.cos(th), OY - f * BY * Math.sin(th)];
+function contourPath(f, phase, rev) {
+  let d = '';
+  for (let i = 0; i <= 90; i++) {
+    const th = rev ? A1 - (A1 - A0) * i / 90 : A0 + (A1 - A0) * i / 90;
+    const wob = 1 + 0.035 * Math.sin(th * 7 + phase) + 0.02 * Math.sin(th * 13 + phase * 2);
+    const [x, y] = xy(th, f * wob); d += (i ? 'L' : 'M') + x.toFixed(1) + ' ' + y.toFixed(1);
+  }
+  return d;
+}
+function regionSpans(LT) {
+  const val = {}; REGIONS.forEach(r => val[r[0]] = 0);
+  LT.list.forEach(p => val[regionOf(p.s.ind)] += p.v);
+  const keys = REGIONS.map(r => r[0]).filter(k => val[k] > 0);
+  const w = keys.map(k => Math.sqrt(val[k]) + 0.0001), tot = w.reduce((a, b) => a + b, 0);
+  const minSpan = 0.06, span = A1 - A0; let a = A0; const out = {};
+  const ws = w.map(x => Math.max(minSpan, x / tot)), wt = ws.reduce((x, y) => x + y, 0);
+  keys.forEach((k, i) => { const s = span * ws[i] / wt; out[k] = [a, a + s]; a += s; });
+  return out;
+}
+
+let FS = 13, RS = 1, svgBuilt = false, placeEls = {}, contourEls = [], sweepEl, originEl;
+function buildSvg() {
+  const svg = $('svg'); svg.innerHTML = '';
+  svg.insertAdjacentHTML('beforeend', `<defs>
+    <pattern id="pat-rev" patternUnits="userSpaceOnUse" width="5" height="5" patternTransform="rotate(45)"><rect width="5" height="5" fill="#E8F0F8"/><rect width="2.4" height="5" fill="#1E5E9E"/></pattern>
+    <pattern id="pat-both" patternUnits="userSpaceOnUse" width="6" height="6"><rect width="6" height="6" fill="#EFEAF8"/><path d="M0 0L6 6M6 0L0 6" stroke="#6747B0" stroke-width="1.6"/></pattern>
+    <clipPath id="clip-sweep"><circle id="sweep" cx="${OX}" cy="${OY}" r="0"/></clipPath>
+  </defs>`);
+  const g = (cls) => { const e = document.createElementNS(NS, 'g'); if (cls) e.setAttribute('class', cls); svg.appendChild(e); return e; };
+  const bands = g('bands'); bands.setAttribute('clip-path', 'url(#clip-sweep)');
+  const fills = [['band1', 0.365], ['band2', 0.585], ['band3', 0.79]];
+  for (let i = fills.length - 1; i >= 0; i--) {
+    const p = document.createElementNS(NS, 'path');
+    p.setAttribute('d', contourPath(fills[i][1], i * 1.7) + `L${OX} ${OY}Z`);
+    p.setAttribute('fill', `var(--${fills[i][0]})`); p.setAttribute('class', 'band'); bands.appendChild(p);
+  }
+  g('regions'); g('contours'); g('places'); g('rlabels'); g('labels'); g('clabels'); g('origin');
+  sweepEl = svg.querySelector('#sweep');
+  const cl = svg.querySelector('.clabels');
+  const defs = svg.querySelector('defs');
+  CONTOURS.forEach((c, i) => {
+    defs.insertAdjacentHTML('beforeend', `<path id="ctr${i}" d="${contourPath(c[0], i * 1.7, true)}"/>`);
+    cl.insertAdjacentHTML('beforeend', `<text class="contour-label" dy="17"><textPath href="#ctr${i}" startOffset="${[52, 55, 58][i]}%" text-anchor="middle">${c[2]}</textPath></text>`);
+  });
+  contourEls = CONTOURS.map((c, i) => {
+    const p = document.createElementNS(NS, 'path'); p.setAttribute('d', contourPath(c[0], i * 1.7)); p.setAttribute('class', 'contour'); p.id = 'ct' + i;
+    svg.querySelector('.contours').appendChild(p);
+    return p;
+  });
+  svgBuilt = true;
+}
+
+function drawRegions(spans) {
+  const gR = $('svg').querySelector('.regions'); gR.innerHTML = '';
+  const gRL = $('svg').querySelector('.rlabels'); gRL.innerHTML = '';
+  REGIONS.forEach(r => {
+    const sp = spans[r[0]]; if (!sp) return;
+    const [x1, y1] = xy(sp[0], 1.0);
+    const edge = document.createElementNS(NS, 'path'); edge.setAttribute('class', 'region-edge');
+    edge.setAttribute('d', `M${OX} ${OY}L${x1.toFixed(1)} ${y1.toFixed(1)}`); gR.appendChild(edge);
+    const mid = (sp[0] + sp[1]) / 2, [lx, ly] = xy(mid, 1.0);
+    const t = document.createElementNS(NS, 'text'); t.setAttribute('class', 'region-label');
+    const anchor = mid < 0.5 ? 'end' : mid > 1.15 ? 'start' : 'middle';
+    t.setAttribute('x', (lx + (anchor === 'end' ? 2 : anchor === 'start' ? -2 : 0)).toFixed(1));
+    t.setAttribute('y', (ly - (mid > 0.5 ? 8 : -4)).toFixed(1));
+    t.setAttribute('text-anchor', anchor); t.textContent = r[1];
+    if (sp[1] - sp[0] > 0.07) gRL.appendChild(t);
+  });
+}
+
+function layout(LT, k) {
+  const spans = regionSpans(LT);
+  const shown = LT.list.slice(0, 64), maxV = shown.length ? shown[0].v : 1;
+  const groups = {};
+  shown.forEach(p => { const r = regionOf(p.s.ind); (groups[r] = groups[r] || []).push(p); });
+  const pts = [];
+  for (const r in groups) {
+    const sp = spans[r]; if (!sp) continue;
+    const arr = groups[r];
+    // within a region, each ring fills its own angular slots
+    const byRing = {};
+    arr.forEach(p => { const e = expOf(p.s, k); const ring = e ? e.lvl : 'dry'; (byRing[ring] = byRing[ring] || []).push({ p, e }); });
+    for (const ring in byRing) {
+      const items = byRing[ring], n = items.length, [f0, f1] = RINGS[ring];
+      items.forEach((it, i) => {
+        // low-discrepancy scatter: spreads places through the ring without a lattice
+        const hsh = [...it.p.isin].reduce((a, ch) => (a * 31 + ch.charCodeAt(0)) % 997, 7) / 997;
+        const u = (0.5 + i * 0.6180339887 + hsh * 0.15) % 1, v = (0.37 + i * 0.7548776662 + hsh * 0.5) % 1;
+        const th = sp[0] + (sp[1] - sp[0]) * (0.1 + 0.8 * (n === 1 ? 0.5 : u));
+        const f = f0 + (f1 - f0) * (0.12 + 0.76 * (n === 1 ? 0.5 : v));
+        const [x, y] = xy(th, f);
+        pts.push({ ...it, x, y, r: (4 + 21 * Math.sqrt(it.p.v / maxV)) * RS, ring });
+      });
+    }
+  }
+  // gentle relaxation so dots don't sit on each other
+  for (let it = 0; it < 40; it++) for (let i = 0; i < pts.length; i++) for (let j = i + 1; j < pts.length; j++) {
+    const a = pts[i], b = pts[j], dx = b.x - a.x, dy = b.y - a.y, d = Math.hypot(dx, dy) || 0.01, need = a.r + b.r + 3;
+    if (d < need) { const push = (need - d) / 2, ux = dx / d, uy = dy / d; a.x -= ux * push; a.y -= uy * push; b.x += ux * push; b.y += uy * push; }
+  }
+  pts.forEach(p => {
+    const q = Math.hypot((p.x - OX) / AX, (OY - p.y) / BY);   // keep every place inside the land, clear of the rim labels
+    if (q > 0.93) { const k2 = 0.93 / q; p.x = OX + (p.x - OX) * k2; p.y = OY - (OY - p.y) * k2; }
+    p.x = Math.max(p.r + 6, Math.min(W - p.r - 6, p.x)); p.y = Math.max(p.r + 6, Math.min(HH - p.r - 6, p.y));
+  });
+  return { pts, spans, hidden: LT.list.length - shown.length };
+}
+
+function labelData(pt, T) {
+  const e = pt.e, sh = pct(pt.p.v / T);
+  if (!e) return '';
+  let d = sh;
+  if (e.share != null && e.e !== 'benefit' && F !== 'usd' && M !== 0) d += ` · costs ${M > 0 ? '+' : '−'}${Math.abs(e.share * M).toFixed(1)}%`;
+  else if (e.rev != null && M !== 0) d += ` · revenue ${M > 0 ? '+' : '−'}${Math.abs(e.rev * M).toFixed(1)}%`;
+  else d += ' · ' + EFFNAME[e.e];
+  return d;
+}
+function drawLabels(pts, LT) {
+  const svg = $('svg'), gl = svg.querySelector('.labels'); gl.innerHTML = '';
+  const T = LT.total || 1, narrow = FS > 18;
+  const reached = pts.filter(q => q.e).sort((a, b) => b.p.v - a.p.v).slice(0, narrow ? 4 : 8);
+  const dry = pts.filter(q => !q.e).sort((a, b) => b.p.v - a.p.v).slice(0, narrow ? 2 : 3);
+  const want = [...reached, ...dry];
+  if (SEL) { const s0 = pts.find(q => q.p.isin === SEL); if (s0 && !want.includes(s0)) want.unshift(s0); }
+  const boxes = pts.map(q => ({ id: q.p.isin, b: [q.x - q.r - 3, q.y - q.r - 3, q.x + q.r + 3, q.y + q.r + 3] }));
+  svg.querySelectorAll('.rlabels text').forEach(t => { try { const bb = t.getBBox(); boxes.push({ id: '', b: [bb.x - 2, bb.y - 2, bb.x + bb.width + 2, bb.y + bb.height + 2] }); } catch (e) {} });
+  boxes.push({ id: '', b: [OX - 50, OY - 50, OX + 50, OY + 50] });
+  const hit = (bx, id) => bx[0] < 2 || bx[2] > W - 2 || bx[1] < 2 || bx[3] > HH - 2 || boxes.some(o => o.id !== id && !(bx[2] < o.b[0] || bx[0] > o.b[2] || bx[3] < o.b[1] || bx[1] > o.b[3]));
+  want.forEach(pt => {
+    const d = labelData(pt, T);
+    const t = document.createElementNS(NS, 'text'); t.setAttribute('class', 'plabel' + (pt.e ? '' : ' dry'));
+    t.innerHTML = `<tspan class="n">${esc(shortName(pt.p.s.n))}</tspan>${d ? `<tspan class="d" dx="6">${esc(d)}</tspan>` : ''}`;
+    gl.appendChild(t);
+    let w = 120; try { w = t.getComputedTextLength() + 10; } catch (e) {}
+    const h = FS * 1.25, g2 = pt.r + 6;
+    const cand = [
+      [pt.x + g2, pt.y + FS * .35, 'start', [pt.x + g2, pt.y - h / 2, pt.x + g2 + w, pt.y + h / 2]],
+      [pt.x - g2, pt.y + FS * .35, 'end', [pt.x - g2 - w, pt.y - h / 2, pt.x - g2, pt.y + h / 2]],
+      [pt.x, pt.y - g2 - 2, 'middle', [pt.x - w / 2, pt.y - g2 - h, pt.x + w / 2, pt.y - g2]],
+      [pt.x, pt.y + g2 + FS * .9, 'middle', [pt.x - w / 2, pt.y + g2, pt.x + w / 2, pt.y + g2 + h]],
+    ];
+    let ok = cand.find(cnd => !hit(cnd[3], pt.p.isin)), lead = null;
+    if (!ok) {
+      for (const dist of [26, 46, 70]) {
+        for (const [ux, uy] of [[1, -1], [1, 1], [-1, -1], [-1, 1], [1, 0], [0, -1], [-1, 0], [0, 1]]) {
+          const ax = pt.x + ux * (g2 + dist), ay = pt.y + uy * (g2 + dist * .7);
+          const anchor = ux > 0 ? 'start' : ux < 0 ? 'end' : 'middle';
+          const bx = anchor === 'start' ? [ax, ay - h / 2, ax + w, ay + h / 2] : anchor === 'end' ? [ax - w, ay - h / 2, ax, ay + h / 2] : [ax - w / 2, ay - h / 2, ax + w / 2, ay + h / 2];
+          if (!hit(bx, pt.p.isin)) { ok = [ax, ay + FS * .35, anchor, bx]; lead = [ax, ay]; break; }
+        }
+        if (ok) break;
+      }
+    }
+    if (!ok) { t.remove(); return; }
+    t.setAttribute('x', ok[0].toFixed(1)); t.setAttribute('y', ok[1].toFixed(1)); t.setAttribute('text-anchor', ok[2]);
+    if (lead) {
+      const dx = lead[0] - pt.x, dy = lead[1] - pt.y, dd = Math.hypot(dx, dy) || 1;
+      const ln = document.createElementNS(NS, 'line'); ln.setAttribute('class', 'leader');
+      ln.setAttribute('x1', (pt.x + dx / dd * (pt.r + 4)).toFixed(1)); ln.setAttribute('y1', (pt.y + dy / dd * (pt.r + 4)).toFixed(1));
+      ln.setAttribute('x2', (lead[0] - dx / dd * 3).toFixed(1)); ln.setAttribute('y2', (lead[1] - dy / dd * 3).toFixed(1));
+      gl.insertBefore(ln, t);
+    }
+    boxes.push({ id: '', b: ok[3] });
+  });
+}
+
+function drawMap(LT, animate) {
+  if (!svgBuilt) buildSvg();
+  const svg = $('svg');
+  const sc = Math.min((svg.clientWidth || 1000) / W, (svg.clientHeight || 700) / HH) || 1;
+  FS = Math.max(13, 11.5 / sc); RS = sc < .6 ? 1.35 : 1; svg.style.setProperty('--fs', FS.toFixed(1) + 'px'); svg.classList.toggle('narrow', FS > 18);
+  const { pts, spans } = layout(LT, F);
+  drawRegions(spans);
+  const gP = svg.querySelector('.places');
+  const seen = new Set();
+  pts.forEach(pt => {
+    const id = pt.p.isin; seen.add(id);
+    let el = placeEls[id];
+    if (!el) {
+      el = document.createElementNS(NS, 'g'); el.setAttribute('class', 'place'); el.setAttribute('tabindex', '0'); el.setAttribute('role', 'button');
+      el.dataset.isin = id;
+      el.innerHTML = `<circle class="route rd" pathLength="100" transform="rotate(-90)"/><circle class="route rv" pathLength="100" transform="rotate(-90)"/><circle class="dot" r="1"/>`;
+      el.setAttribute('transform', `translate(${OX} ${OY})`);
+      gP.appendChild(el); placeEls[id] = el;
+    }
+    const c = el.querySelector('.dot'); c.setAttribute('r', pt.r.toFixed(1));
+    const df = pt.p.v ? pt.p.direct / pt.p.v : 0, rr = (pt.r + 3.2).toFixed(1);
+    const rd = el.querySelector('.rd'), rv = el.querySelector('.rv');
+    rd.setAttribute('r', rr); rv.setAttribute('r', rr);
+    rd.setAttribute('stroke', 'var(--f1)'); rv.setAttribute('stroke', 'var(--f3)');
+    rd.setAttribute('stroke-dasharray', `${(df * 100).toFixed(1)} 100`);
+    rv.setAttribute('stroke-dasharray', `${((1 - df) * 100).toFixed(1)} 100`); rv.setAttribute('stroke-dashoffset', `${(-df * 100).toFixed(1)}`);
+    rd.style.display = df > 0.005 ? '' : 'none'; rv.style.display = df < 0.995 ? '' : 'none';
+    const e = pt.e, cls = e ? EFFCLS[e.e] : null;
+    const delay = animate ? Math.round((Math.hypot(pt.x - OX, pt.y - OY) / 1100) * 1100) : 0;
+    c.style.transitionDelay = delay + 'ms';
+    el.classList.toggle('dryp', !e);
+    c.setAttribute('fill', !e ? 'var(--card)' : cls === 'cost' ? 'var(--cost)' : cls === 'rev' ? 'url(#pat-rev)' : 'url(#pat-both)');
+    el.classList.toggle('sel', SEL === id);
+    el.setAttribute('transform', `translate(${pt.x.toFixed(1)} ${pt.y.toFixed(1)})`);
+    const nm = clean(pt.p.s.n), nf = Object.keys(pt.p.via).length;
+    const routes = [pt.p.direct ? 'held directly' : '', nf ? `through ${nf} fund${nf > 1 ? 's' : ''}` : ''].filter(Boolean).join(' and ');
+    el.setAttribute('aria-label', `${nm}, ${inr(pt.p.v)}, ${routes}, ${e ? EFFNAME[e.e] + ' exposure, ' + e.lvl : 'not reached by ' + D.drivers[F].n}`);
+  });
+  drawLabels(pts, LT);
+  for (const id in placeEls) if (!seen.has(id)) { placeEls[id].remove(); delete placeEls[id]; }
+
+  // origin pin
+  const go = svg.querySelector('.origin'); const si = seriesInfo(F);
+  go.innerHTML = `<circle class="origin-ring" cx="${OX}" cy="${OY}" r="26"/><circle class="origin-ring" cx="${OX}" cy="${OY}" r="44" style="opacity:.22"/>
+    <g class="origin-pin"><circle cx="${OX}" cy="${OY}" r="11"/></g>
+    <text class="origin-txt" x="${OX + 22}" y="${OY - FS * 1.6}">${esc(D.drivers[F].n)} ${F === 'usd' ? (M >= 0 ? 'rupee weaker' : 'rupee stronger') + ' ' : ''}${sgn(M, 0)}</text>
+    <text class="origin-sub" x="${OX + 22}" y="${OY - FS * .35}">${si ? `latest ${sgn(si.mv)} · ${si.freq === 'D' ? '20 trading days' : 'month'} to ${fmtDate(si.asof)}${si.stale ? ' · older data' : ''}` : 'what-if only · no live feed'}</text>`;
+
+  // contours: measured solid only when the factor's reach includes company estimates
+  const st = factorStats(LT, F);
+  const anyCompany = st.items.some(x => x.p.s.basis === 'company');
+  contourEls.forEach((p, i) => {
+    p.classList.toggle('tmpl', !anyCompany);
+    const len = p.getTotalLength ? p.getTotalLength() : 1500;
+    p.style.strokeDasharray = anyCompany ? len : '';
+    if (animate && anyCompany) {
+      p.style.transition = 'none'; p.style.strokeDashoffset = len; p.getBoundingClientRect();
+      p.style.transition = ''; p.style.transitionDelay = (180 + i * 260) + 'ms'; p.style.strokeDashoffset = 0;
+    } else { p.style.strokeDashoffset = 0; }
+  });
+  clearTimeout(drawMap.settle);
+  const settle = () => { // the end state never depends on a transition finishing
+    sweepEl.style.transition = 'none'; sweepEl.style.r = '1300px'; sweepEl.setAttribute('r', 1300);
+    contourEls.forEach(p => { p.style.transition = 'none'; p.style.strokeDashoffset = 0; });
+  };
+  if (animate) {
+    sweepEl.style.transition = 'none'; sweepEl.setAttribute('r', 0); sweepEl.style.r = '0px'; sweepEl.getBoundingClientRect();
+    sweepEl.style.transition = ''; requestAnimationFrame(() => { sweepEl.style.r = '1300px'; });
+    setTimeout(() => { sweepEl.style.r = '1300px'; sweepEl.setAttribute('r', 1300); }, 60);
+    drawMap.settle = setTimeout(settle, 2100);
+  } else settle();
+}
+
+// ---------------------------------------------------------------- panel
+function drawPanel(LT) {
+  const T = LT.total || 1;
+  const ks = Object.keys(D.drivers).map(k => [k, factorStats(LT, k)]).filter(x => x[1].total > 0).sort((a, b) => b[1].total - a[1].total);
+  const selIdx = ks.findIndex(x => x[0] === F);
+  $('morefac').hidden = ks.length <= 8;
+  $('morefac').textContent = $('factors').classList.contains('all') ? 'Show fewer factors' : `Show all ${ks.length} factors`;
+  $('factors').innerHTML = ks.map(([k, s], i) => {
+    const dv = D.drivers[k], si = seriesInfo(k);
+    return `<li class="${i >= 8 && i !== selIdx ? 'extra' : ''}"><button type="button" data-f="${k}" aria-pressed="${k === F}" title="${esc(dv.n)}${!dv.series ? ' · what-if only, no live feed' : si && si.stale ? ' · older data' : ''}">
+      <span>${esc(dv.n.replace(' (no price feed)', ''))}</span>
+      <span class="fpct">${pct(s.total / T, 0)}</span>
+      <span class="fbar" aria-hidden="true"><i style="width:${s.cost / T * 100}%;background:var(--cost)"></i><i style="width:${s.mixed / T * 100}%;background:var(--both)"></i><i style="width:${s.benefit / T * 100}%;background:var(--rev)"></i></span></button></li>`;
+  }).join('');
+  const dv = D.drivers[F], si = seriesInfo(F);
+  $('movelbl').textContent = F === 'usd' ? 'If the dollar moves against the rupee' : `If ${dv.n.toLowerCase()} moves`;
+  $('moveout').textContent = sgn(M, 0);
+  $('move').value = M;
+  $('movehint').innerHTML = si ? `<button class="latest" type="button" id="uselatest">Use the latest move: ${sgn(si.mv)} over ${si.freq === 'D' ? '20 trading days' : 'the last month'} to ${fmtDate(si.asof)}${si.stale ? ' (older data)' : ''}</button>` : `<span style="font-size:13px;color:var(--ink3)">No live feed for this factor; this is a what-if.</span>`;
+  const st = factorStats(LT, F);
+  const up = M >= 0;
+  const hurt = (up ? st.cost : st.benefit), help = (up ? st.benefit : st.cost);
+  $('maptitle').textContent = `Where a move in ${F === 'usd' ? 'the rupee' : dv.n.toLowerCase()} reaches your money`;
+  $('reachhead').textContent = `${dv.n} reaches ${pct(st.total / T, 0)} of your money`;
+  $('reachsplit').innerHTML = `<span><b>${st.n}</b> of ${LT.list.length} companies</span>
+    <span><i class="sw cost" style="width:12px;height:10px"></i><b>${pct(hurt / T, 0)}</b> ${M === 0 ? 'cost-exposed' : 'works against them'}</span>
+    <span><i class="sw rev" style="width:12px;height:10px"></i><b>${pct(help / T, 0)}</b> ${M === 0 ? 'revenue-exposed' : 'works for them'}</span>
+    <span><i class="sw both" style="width:12px;height:10px"></i><b>${pct(st.mixed / T, 0)}</b> both ways</span>`;
+  const items = st.items.sort((a, b) => b.p.v - a.p.v);
+  const top = items.slice(0, 9);
+  $('rlist').innerHTML = top.map(({ p, e }) => `<li><i class="sw ${EFFCLS[e.e]}" aria-hidden="true"></i>
+      <div><button type="button" data-sel="${p.isin}" class="nm">${esc(clean(p.s.n))}</button><div class="what">${EFFNAME[e.e]} · ${change(e, p.s, F, M)}</div><div class="rt">${routeText(p)}</div></div>
+      <div class="pc">${pct(p.v / T)}<span class="basis">${p.s.basis === 'company' ? 'company estimate' : 'industry template'}</span></div></li>`).join('') ||
+    `<li style="display:block;color:var(--ink2)">None of your holdings carry this factor.</li>`;
+  $('rmore').textContent = items.length > top.length ? `and ${items.length - top.length} more, ${pct(items.slice(9).reduce((a, x) => a + x.p.v, 0) / T)} of your money. All of them are on the map and in the grid below.` : '';
+}
+
+function routeText(p) {
+  const nf = Object.keys(p.via).length, via = Object.values(p.via).reduce((a, b) => a + b, 0);
+  return [p.direct ? `${inr(p.direct)} direct` : '', nf ? `${inr(via)} via ${nf} fund${nf > 1 ? 's' : ''}` : ''].filter(Boolean).join(' · ');
+}
+function infoCard(isin) {
+  const old = document.querySelector('.info'); if (old) old.remove();
+  if (!isin) return;
+  const LT = lookThrough(), p = LT.pos[isin]; if (!p) return;
+  const T = LT.total || 1, s = p.s, el = placeEls[isin];
+  const routes = [p.direct ? `direct ${inr(p.direct)}` : '', ...Object.keys(p.via).map(f => `${esc(shortFund(D.funds[f].name))} ${inr(p.via[f])}`)].filter(Boolean).join(' · ');
+  const ex = s.ex.slice().sort((a, b) => (a.d === F ? -1 : b.d === F ? 1 : 0));
+  const box = document.createElement('div'); box.className = 'info'; box.setAttribute('role', 'dialog'); box.setAttribute('aria-label', clean(s.n));
+  box.innerHTML = `<button class="x" type="button" aria-label="Close">${ICON_X}</button>
+    <h4>${esc(clean(s.n))}</h4><div class="meta">${esc(s.ind)} · ${s.basis === 'company' ? 'company estimate from annual report' : 'industry template'}</div>
+    <div class="money"><span>Your money</span><b>${inr(p.v)} · ${pct(p.v / T)}</b></div>
+    <div class="meta" style="margin:-4px 0 8px">${routes}</div>
+    <ul>${ex.length ? ex.map(e => `<li><i class="sw ${EFFCLS[e.e]}" style="width:14px;height:14px;margin:2px 0 0"></i><span><b>${esc(D.drivers[e.d].n)}</b> · ${EFFNAME[e.e]}, ${e.lvl}${why(e) ? ' — ' + esc(why(e)) : ''}</span></li>`).join('') : '<li style="display:block">No mapped exposures.</li>'}</ul>`;
+  $('mapbox').appendChild(box);
+  if (el && innerWidth > 720) {
+    const r = el.getBoundingClientRect(), mb = $('mapbox').getBoundingClientRect();
+    let left = r.right - mb.left + 12, top = r.top - mb.top - 20;
+    if (left + 300 > mb.width - 8) left = r.left - mb.left - 312;
+    top = Math.max(8, Math.min(top, mb.height - box.offsetHeight - 8));
+    box.style.left = Math.max(8, left) + 'px'; box.style.top = top + 'px';
+  }
+  box.querySelector('.x').addEventListener('click', () => { SEL = null; infoCard(null); refresh(false); });
+  box.querySelector('.x').focus({ preventScroll: true });
+}
+
+// ---------------------------------------------------------------- sections
+const FUNDCOL = ['#2A7F78', '#6FB3A9', '#155150', '#9CCFC6', '#4E9A91'];
+function fundColors() { const ids = [...new Set(H.filter(h => h.t === 'fund').map(h => h.id))]; const m = {}; ids.forEach((id, i) => m[id] = FUNDCOL[i % FUNDCOL.length]); return m; }
+
+function drawOwn(LT) {
+  const T = LT.total || 1, b = LT.b, inEq = LT.list.reduce((a, p) => a + p.v, 0) + b.outside;
+  const parts = [['Indian shares', inEq, 'var(--shell)'], ['Foreign shares', b.foreign, '#4E9A91'], ['REITs', b.reit, '#9CCFC6'], ['Debt and cash', b.debt + b.cash + b.mf, '#7E918C'], ['Hedged arbitrage', b.arbitrage, '#A9B8B2']].filter(x => x[1] > 0);
+  $('mix').innerHTML = parts.map(x => `<div style="flex:${x[1]};background:${x[2]}" title="${x[0]} ${pct(x[1] / T)}">${x[1] / T > .08 ? esc(x[0]) + ' ' + pct(x[1] / T, 0) : ''}</div>`).join('');
+  $('mixkey').innerHTML = parts.map(x => `<span><i class="sw" style="background:${x[2]};border-color:transparent"></i>${esc(x[0])} <b>${pct(x[1] / T)}</b> · ${inr(x[1])}</span>`).join('');
+  const dup = LT.list.filter(p => (p.direct ? 1 : 0) + Object.keys(p.via).length >= 2).slice(0, 3);
+  $('callout').innerHTML = dup.length ? `<p>You own <b>${esc(clean(dup[0].s.n))}</b> ${(dup[0].direct ? 1 : 0) + Object.keys(dup[0].via).length} ways: ${pct(dup[0].v / T)} of your money${dup[0].direct ? ', directly and through your funds' : ', through your funds'}.${dup.length > 1 ? ` ${dup.slice(1).map(p => `${esc(clean(p.s.n))} ${pct(p.v / T)}`).join(' and ')} also overlap.` : ''}</p>` :
+    `<p>No company reaches you by more than one route. Each one comes from a single fund or a single direct holding.</p>`;
+  const fc = fundColors(), top = LT.list.slice(0, 15), mx = top.length ? top[0].v : 1;
+  $('bars').innerHTML = top.map(p => {
+    const segs = [p.direct ? `<span style="width:${p.direct / mx * 100}%;background:var(--f1)" data-tip="${esc(clean(p.s.n))}: direct ${inr(p.direct)}"></span>` : '',
+      ...Object.keys(p.via).map(f => `<span style="width:${p.via[f] / mx * 100}%;background:${fc[f]}" data-tip="${esc(clean(p.s.n))}: via ${esc(shortFund(D.funds[f].name))} ${inr(p.via[f])}"></span>`)].join('');
+    return `<div class="brow"><span class="nm" title="${esc(clean(p.s.n))}">${esc(clean(p.s.n))}</span><div class="track">${segs}</div><span class="v">${pct(p.v / T)}</span></div>`;
+  }).join('') || '<p class="empty">Add holdings to see this.</p>';
+  const direct = H.filter(h => h.t === 'stock').reduce((a, h) => a + h.v, 0);
+  $('fkey').innerHTML = `<div class="h">Routes</div>` +
+    (direct ? `<div><i style="background:var(--f1)"></i><span>Held directly</span><b>${inr(direct)}</b></div>` : '') +
+    Object.keys(fc).map(f => { const fd = D.funds[f]; const v = H.filter(h => h.id === f).reduce((a, h) => a + h.v, 0);
+      return `<div><i style="background:${fc[f]}"></i><span>${esc(fd.name)}</span><b>${inr(v)}</b><small>portfolio as on ${fmtDate(fd.asof)} · ${fd.holdings.filter(x => x.kind === 'equity_in').length} Indian stocks</small></div>`; }).join('');
+}
+
+let GF = null;
+function drawGrid(LT) {
+  const T = LT.total || 1, cols = LT.list.slice(0, 22);
+  const ks = Object.keys(D.drivers).map(k => [k, factorStats(LT, k)]).filter(x => x[1].total > 0).sort((a, b) => b[1].total - a[1].total);
+  if (innerWidth <= 720) { // phones: one factor at a time, companies as rows, your money always visible
+    const k = GF && ks.some(x => x[0] === GF) ? GF : F;
+    $('fgrid').outerHTML = `<div id="fgrid"><div class="gsel"><label for="gf">Factor</label><select id="gf">${ks.map(([kk, st]) => `<option value="${kk}"${kk === k ? ' selected' : ''}>${esc(D.drivers[kk].n)} · ${pct(st.total / T, 0)}</option>`).join('')}</select></div>
+      <table class="mgrid"><caption class="sr">${esc(D.drivers[k].n)} against your biggest companies</caption><thead><tr><th scope="col"><span class="sr">Effect</span></th><th scope="col">Company</th><th scope="col" class="num">Your money</th></tr></thead><tbody>${cols.map(p => {
+        const e = expOf(p.s, k);
+        return `<tr><td class="c"><i class="${e ? 'cell-' + EFFCLS[e.e] : ''}" style="opacity:${e ? (e.lvl === 'high' ? 1 : e.lvl === 'medium' ? .78 : .55) : 1}"></i></td><td><b style="font-weight:600">${esc(shortName(p.s.n))}</b><span class="w">${e ? EFFNAME[e.e] + ', ' + e.lvl + (why(e) ? ' · ' + esc(why(e)) : '') : 'not reached'}</span></td><td class="num">${pct(p.v / T)}</td></tr>`;
+      }).join('')}</tbody></table></div>`;
+    $('gf').addEventListener('change', ev => { GF = ev.target.value; drawGrid(lookThrough()); });
+    return;
+  }
+  if ($('fgrid').tagName !== 'TABLE') $('fgrid').outerHTML = '<table class="fgrid" id="fgrid"></table>';
+  const head = `<thead><tr><th scope="col"><span class="sr">Factor</span></th>${cols.map(p => `<th scope="col"><span title="${esc(clean(p.s.n))}">${esc(shortName(p.s.n))}</span></th>`).join('')}<th scope="col" style="vertical-align:bottom;padding-left:10px">Your money</th></tr></thead>`;
+  const body = ks.map(([k, s]) => `<tr><th scope="row"><button type="button" data-f="${k}" data-go="1">${esc(D.drivers[k].n)}</button></th>${cols.map(p => {
+    const e = expOf(p.s, k); if (!e) return `<td class="c"></td>`;
+    return `<td class="c cell-${EFFCLS[e.e]} l-${e.lvl}" data-tip="${esc(clean(p.s.n))} · ${esc(D.drivers[k].n)}: ${EFFNAME[e.e]}, ${e.lvl}${why(e) ? ' — ' + esc(why(e)) : ''}"><span class="sr">${EFFNAME[e.e]} ${e.lvl}</span></td>`;
+  }).join('')}<td class="tot">${pct(s.total / T, 0)}</td></tr>`).join('');
+  const foot = `<tfoot><tr><td></td>${cols.map(p => `<td>${pct(p.v / T, 1)}</td>`).join('')}<td></td></tr></tfoot>`;
+  $('fgrid').innerHTML = `<caption class="sr">Factors by your biggest companies</caption>${head}<tbody>${body}</tbody>${foot}`;
+}
+
+function drawCal() {
+  const ks = Object.keys(D.drivers).map(k => [k, seriesInfo(k)]).filter(x => x[1]).sort((a, b) => (a[1].stale - b[1].stale) || Math.abs(b[1].mv) - Math.abs(a[1].mv));
+  const gen = new Date(L.generated); const end = new Date(gen.getTime() + 6 * 864e5);
+  const start = new Date('2026-05-25T00:00:00');
+  const W2 = 1180, left = 250, right = 110, lane = 46, top = 34, Hc = top + ks.length * lane + 26;
+  const X = d => left + (d - start) / (end - start) * (W2 - left - right);
+  let s = `<svg viewBox="0 0 ${W2} ${Hc}" role="img" aria-label="Timeline of the latest moves and the dates their data is current to">`;
+  s += `<g class="axis">`;
+  for (let m = 5; m <= 10; m++) { const d = new Date(2026, m, 1); if (d < start || d > end) continue; const x = X(d); s += `<line x1="${x}" y1="${top - 8}" x2="${x}" y2="${Hc - 6}"/><text x="${x + 4}" y="${top - 14}">${d.toLocaleDateString('en-IN', { month: 'short' })}</text>`; }
+  s += `</g>`;
+  ks.forEach(([k, si], i) => {
+    const y = top + i * lane + lane / 2, a = new Date(si.asof + 'T00:00:00');
+    const b0 = si.freq === 'D' ? new Date(a.getTime() - 28 * 864e5) : new Date(a.getFullYear(), a.getMonth() - 1, a.getDate());
+    const st = si.stale;
+    s += `<g class="lane${st ? ' stale' : ''}" data-f="${k}" data-mv="${Math.round(si.mv)}" tabindex="0" role="button" aria-label="${esc(D.drivers[k].n)} ${sgn(si.mv)}, to ${fmtDate(si.asof)}${st ? ', older data' : ''}. Put on the map.">
+      <rect class="lane-bg" x="0" y="${y - lane / 2 + 2}" width="${W2}" height="${lane - 4}" rx="8"/>
+      <text class="lane-name" x="14" y="${y - 2}">${esc(D.drivers[k].n)}</text>
+      <text class="lane-sub" x="14" y="${y + 14}">${esc(D.drivers[k].unit)}${st ? ` · ${si.age} days old` : ''}</text>
+      <line x1="${X(b0)}" y1="${y}" x2="${X(a)}" y2="${y}" stroke="${st ? 'var(--ink3)' : 'var(--contour)'}" stroke-width="${st ? 2 : 4}" stroke-linecap="round" ${st ? 'stroke-dasharray="2 6"' : ''}/>
+      <circle cx="${X(a)}" cy="${y}" r="${st ? 5 : 7}" fill="${st ? 'var(--paper)' : 'var(--contour)'}" stroke="${st ? 'var(--ink3)' : 'var(--card)'}" stroke-width="2"/>
+      <text class="lane-mv" x="${X(a) + 14}" y="${y + 6}">${sgn(si.mv)}</text></g>`;
+  });
+  const tx = X(gen);
+  s += `<g class="today"><line x1="${tx}" y1="${top - 8}" x2="${tx}" y2="${Hc - 16}" stroke-dasharray="4 4"/><text x="${tx}" y="${Hc - 2}" text-anchor="middle">data run ${fmtDate(L.generated.slice(0, 10))}</text></g>`;
+  $('cal').innerHTML = s + `</svg>`;
+}
+
+function drawHoldings() {
+  if (!H.length) { $('holdings').innerHTML = `<div class="empty">No holdings yet. Search above, paste a list, or load the sample to see the map at work.</div>`; return; }
+  const tot = H.reduce((a, h) => a + h.v, 0);
+  const label = h => h.t === 'fund' ? D.funds[h.id].name : clean(bySym[h.id].n);
+  $('holdings').innerHTML = `<table class="htable"><caption class="sr">Your holdings</caption><thead><tr><th scope="col">Holding</th><th scope="col" class="num">Value</th><th scope="col" class="num">Share</th><th scope="col"><span class="sr">Remove</span></th></tr></thead><tbody>` +
+    H.map((h, i) => `<tr><td>${esc(label(h))} <span class="kind">${h.t === 'fund' ? 'mutual fund' : h.id}</span></td>
+      <td class="num"><label class="sr" for="v${i}">Value of ${esc(label(h))}</label><input id="v${i}" type="text" inputmode="numeric" value="${Math.round(h.v).toLocaleString('en-IN')}" data-i="${i}"></td>
+      <td class="num">${pct(h.v / tot)}</td><td class="num"><button class="rm" type="button" data-del="${i}" aria-label="Remove ${esc(label(h))}">${ICON_X}</button></td></tr>`).join('') +
+    `</tbody><tfoot><tr><td><b>Total</b></td><td class="num"><b>${inr(tot)}</b></td><td></td><td></td></tr></tfoot></table>`;
+}
+
+function drawSources(LT) {
+  const T = LT.total || 1; let comp = 0, tmpl = 0;
+  LT.list.forEach(p => p.s.basis === 'company' ? comp += p.v : tmpl += p.v);
+  const b = LT.b, rest = b.foreign + b.reit + b.debt + b.cash + b.arbitrage + b.mf + b.outside;
+  $('cov').innerHTML = `<i style="flex:${comp};background:var(--shell)"></i><i style="flex:${tmpl};background:var(--f3)"></i><i style="flex:${rest};background:var(--dry)"></i>`;
+  $('covrows').innerHTML = `<div><b>${pct(comp / T, 0)}</b><span><b style="font-size:15px">Company estimates.</b> Cost and revenue shares estimated from each company's annual report and segment disclosures (${Object.values(D.stocks).filter(s => s.basis === 'company').length} companies).</span></div>
+    <div><b>${pct(tmpl / T, 0)}</b><span><b style="font-size:15px">Industry templates.</b> What is typical for the company's AMFI industry: a direction and a rough level, not a measured share.</span></div>
+    <div><b>${pct(rest / T, 0)}</b><span><b style="font-size:15px">Not mapped.</b> Foreign shares ${inr(b.foreign)}, REITs ${inr(b.reit)}, debt and money market ${inr(b.debt + b.mf)}, cash ${inr(b.cash)}, hedged arbitrage ${inr(b.arbitrage)}, Indian stocks outside the Nifty 500 ${inr(b.outside)}.</span></div>`;
+  const fs = [...new Set(H.filter(h => h.t === 'fund').map(h => h.id))].map(id => D.funds[id]);
+  $('srcs').innerHTML = `<p><b>Companies and industries.</b> NSE Nifty 200 and Nifty 500 constituent lists (niftyindices.com); AMFI industry classification.</p>
+    ${fs.length ? `<p><b>Fund portfolios.</b> ${fs.map(f => `${esc(f.name)}, as on ${fmtDate(f.asof)} 2026 (<a href="${esc(f.src)}" target="_blank" rel="noopener">fund's own disclosure</a>)`).join('; ')}. Arbitrage positions are left out: each is offset by a short future in the same fund.</p>` : ''}
+    <p><b>Market moves.</b> Daily data run of ${fmtDate(L.generated.slice(0, 10))} 2026: ECB reference rates (rupee), EIA via FRED (Brent, Henry Hub gas), LBMA (gold), IMF primary commodity prices (monthly metals and farm goods).</p>
+    <p><b>What the what-if means.</b> It multiplies a company's cost or revenue share by the move. It ignores price increases, hedging and demand, and it is not a forecast of any share price.</p>`;
+}
+
+function summary(LT) {
+  $('sum').innerHTML = H.length ? `${isSample() ? 'Sample portfolio' : 'Your portfolio'} · <b>${inr(LT.total)}</b><br>${H.length} holdings · ${LT.list.length} companies inside` : 'No holdings yet';
+  $('cta').textContent = isSample() ? 'Use my portfolio' : 'Edit portfolio';
+  $('samplebar').innerHTML = H.length ? `${isSample() ? 'Showing a <b>sample portfolio</b>' : 'Showing <b>your portfolio</b>'} · ${inr(LT.total)} · ${LT.list.length} companies inside${isSample() ? ' · <a href="#portfolio">use your own</a>' : ''}` : '';
+}
+
+function refresh(animate) {
+  const LT = lookThrough();
+  if (!factorStats(LT, F).total) { const best = Object.keys(D.drivers).map(k => [k, factorStats(LT, k).total]).sort((a, b) => b[1] - a[1])[0]; if (best && best[1]) F = best[0]; }
+  summary(LT); drawPanel(LT); drawMap(LT, animate && !reduced); drawOwn(LT); drawGrid(LT); drawHoldings(); drawSources(LT);
+  if (SEL && LT.pos[SEL]) infoCard(SEL); else if (SEL) { SEL = null; infoCard(null); }
+}
+function setFactor(k, m) { F = k; if (m != null) M = Math.max(-30, Math.min(30, m)); SEL = null; infoCard(null); refresh(true); }
+
+// ---------------------------------------------------------------- input
+let SUG = [], SI = -1, PICK = null;
+function search(q) {
+  q = q.trim().toLowerCase(); if (!q) return [];
+  const f = Object.entries(D.funds).filter(([, x]) => x.name.toLowerCase().includes(q)).map(([id, x]) => ({ t: 'fund', id, l: x.name, s: 'mutual fund' }));
+  const s = Object.values(D.stocks).filter(x => x.sym.toLowerCase().startsWith(q) || x.n.toLowerCase().includes(q))
+    .sort((a, b) => (b.sym.toLowerCase() === q) - (a.sym.toLowerCase() === q) || b.n200 - a.n200).slice(0, 8)
+    .map(x => ({ t: 'stock', id: x.sym, l: clean(x.n), s: x.sym + ' · ' + x.ind }));
+  return f.concat(s).slice(0, 10);
+}
+function showSugg() {
+  const box = $('sugg');
+  if (!SUG.length) { box.hidden = true; $('q').setAttribute('aria-expanded', 'false'); return; }
+  box.innerHTML = SUG.map((x, i) => `<div role="option" id="opt${i}" data-si="${i}" class="${i === SI ? 'on' : ''}" aria-selected="${i === SI}"><span>${esc(x.l)}</span><small>${esc(x.s)}</small></div>`).join('');
+  box.hidden = false; $('q').setAttribute('aria-expanded', 'true');
+  if (SI >= 0) $('q').setAttribute('aria-activedescendant', 'opt' + SI); else $('q').removeAttribute('aria-activedescendant');
+}
+function pick(i) { PICK = SUG[i]; $('q').value = PICK.l; SUG = []; showSugg(); $('amt').focus(); }
+const num = s => +String(s).replace(/[^\d.]/g, '') || 0;
+function addPicked() {
+  const v = num($('amt').value), msg = $('addmsg'); msg.className = 'msg';
+  if (!PICK) { const r = search($('q').value); if (r.length) PICK = r[0]; }
+  if (!PICK) { msg.textContent = 'Pick a stock or fund from the list first.'; msg.className = 'msg err'; $('q').focus(); return; }
+  if (!(v > 0)) { msg.textContent = 'Enter a value in rupees, for example 50000.'; msg.className = 'msg err'; $('amt').focus(); return; }
+  if (isSample()) H = [];
+  const ex = H.find(h => h.t === PICK.t && h.id === PICK.id); ex ? ex.v += v : H.push({ t: PICK.t, id: PICK.id, v });
+  msg.textContent = `Added ${PICK.l}, ${inr(v)}.`; PICK = null; $('q').value = ''; $('amt').value = ''; save(); refresh(true); $('q').focus();
+}
+function resolve(tok) {
+  const t = tok.trim(); if (!t) return null; const up = t.toUpperCase(), lo = t.toLowerCase();
+  if (bySym[up]) return { t: 'stock', id: up };
+  if (byIsin[up]) return { t: 'stock', id: byIsin[up].sym };
+  if (D.funds[lo]) return { t: 'fund', id: lo };
+  const f = Object.entries(D.funds).find(([, x]) => x.name.toLowerCase().includes(lo)); if (f) return { t: 'fund', id: f[0] };
+  const s = Object.values(D.stocks).find(x => x.n.toLowerCase().includes(lo)); return s ? { t: 'stock', id: s.sym } : null;
+}
+
+// ---------------------------------------------------------------- wiring
+function wire() {
+  const tip = $('tip');
+  const showTip = (txt, x, y) => { tip.innerHTML = txt; tip.classList.add('on'); const w = tip.offsetWidth, h = tip.offsetHeight; tip.style.left = Math.min(innerWidth - w - 8, x + 14) + 'px'; tip.style.top = Math.max(8, y - h - 12) + 'px'; };
+  const hideTip = () => tip.classList.remove('on');
+  document.addEventListener('pointermove', e => {
+    const t = e.target.closest('[data-tip]');
+    if (t) return showTip(t.dataset.tip, e.clientX, e.clientY);
+    const pl = e.target.closest('.place');
+    if (pl) { const p = lookThrough().pos[pl.dataset.isin]; if (!p) return; const ex = expOf(p.s, F);
+      return showTip(`<b>${esc(clean(p.s.n))}</b> · ${inr(p.v)}<br>${ex ? EFFNAME[ex.e] + ', ' + ex.lvl + (why(ex) ? ' — ' + esc(why(ex)) : '') : 'not reached by ' + esc(D.drivers[F].n.toLowerCase())}`, e.clientX, e.clientY); }
+    hideTip();
+  });
+  $('svg').addEventListener('click', e => { const pl = e.target.closest('.place'); if (!pl) return; SEL = SEL === pl.dataset.isin ? null : pl.dataset.isin; refresh(false); });
+  $('svg').addEventListener('keydown', e => { const pl = e.target.closest('.place'); if (pl && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); SEL = pl.dataset.isin; refresh(false); } });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && SEL) { SEL = null; infoCard(null); refresh(false); } });
+  $('factors').addEventListener('click', e => { const b = e.target.closest('[data-f]'); if (b) setFactor(b.dataset.f); });
+  $('morefac').addEventListener('click', () => { const on = $('factors').classList.toggle('all'); $('morefac').setAttribute('aria-expanded', on); refresh(false); });
+  $('rlist').addEventListener('click', e => { const b = e.target.closest('[data-sel]'); if (b) { SEL = b.dataset.sel; refresh(false); } });
+  $('move').addEventListener('input', e => { M = +e.target.value; refresh(false); });
+  $('movehint').addEventListener('click', e => { if (e.target.closest('#uselatest')) { const si = seriesInfo(F); if (si) { M = Math.round(si.mv) || (si.mv > 0 ? 1 : -1); refresh(true); } } });
+  $('fgrid').addEventListener('click', e => { const b = e.target.closest('[data-f]'); if (b) { setFactor(b.dataset.f); $('map').scrollIntoView({ behavior: reduced ? 'auto' : 'smooth' }); } });
+  const lane = e => { const g = e.target.closest('.lane'); if (!g) return; setFactor(g.dataset.f, +g.dataset.mv || 1); $('map').scrollIntoView({ behavior: reduced ? 'auto' : 'smooth' }); };
+  $('cal').addEventListener('click', lane);
+  $('cal').addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); lane(e); } });
+  $('q').addEventListener('input', e => { PICK = null; SUG = search(e.target.value); SI = -1; showSugg(); });
+  $('q').addEventListener('keydown', e => {
+    if (e.key === 'ArrowDown') { SI = Math.min(SUG.length - 1, SI + 1); showSugg(); e.preventDefault(); }
+    else if (e.key === 'ArrowUp') { SI = Math.max(0, SI - 1); showSugg(); e.preventDefault(); }
+    else if (e.key === 'Enter') { e.preventDefault(); SUG.length ? pick(Math.max(0, SI)) : addPicked(); }
+    else if (e.key === 'Escape') { SUG = []; showSugg(); }
+  });
+  $('sugg').addEventListener('mousedown', e => { const d = e.target.closest('[data-si]'); if (d) { e.preventDefault(); pick(+d.dataset.si); } });
+  $('q').addEventListener('blur', () => setTimeout(() => { SUG = []; showSugg(); }, 150));
+  $('amt').addEventListener('keydown', e => { if (e.key === 'Enter') addPicked(); });
+  $('add').addEventListener('click', addPicked);
+  $('sample').addEventListener('click', () => { H = JSON.parse(JSON.stringify(SAMPLE)); save(); refresh(true); $('addmsg').textContent = 'Sample portfolio loaded.'; });
+  $('clear').addEventListener('click', () => { H = []; save(); refresh(false); $('addmsg').textContent = 'Cleared. Add your first holding above.'; $('q').focus(); });
+  $('amt').addEventListener('blur', e => { const v = num(e.target.value); e.target.value = v ? Math.round(v).toLocaleString('en-IN') : ''; });
+  $('holdings').addEventListener('change', e => { const i = e.target.dataset.i; if (i != null) { H[+i].v = Math.max(0, num(e.target.value)); H = H.filter(h => h.v > 0); save(); refresh(false); } });
+  $('holdings').addEventListener('click', e => { const b = e.target.closest('[data-del]'); if (b) { H.splice(+b.dataset.del, 1); save(); refresh(false); } });
+  $('csvgo').addEventListener('click', () => {
+    const lines = $('csv').value.split(/\n/).map(l => l.trim()).filter(Boolean), next = [], bad = [], msg = $('csvmsg');
+    for (const l of lines) { const m = l.match(/^(.*?)[,\t;]\s*([\d,.]+)\s*$/), r = m && resolve(m[1]), v = m && +m[2].replace(/,/g, '');
+      if (r && v > 0) { const ex = next.find(h => h.t === r.t && h.id === r.id); ex ? ex.v += v : next.push({ ...r, v }); } else bad.push(l); }
+    if (!lines.length) { msg.className = 'msg err'; msg.textContent = 'Paste at least one line, for example: INFY, 150000'; return; }
+    if (next.length) { H = next; save(); refresh(true); }
+    msg.className = bad.length ? 'msg err' : 'msg';
+    msg.textContent = `${next.length} holding${next.length === 1 ? '' : 's'} loaded.` + (bad.length ? ` Not recognised: ${bad.slice(0, 3).join(' | ')}${bad.length > 3 ? '…' : ''}. Use a Nifty 500 symbol, an ISIN or one of the five fund names.` : '');
+  });
+  let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { const LT = lookThrough(); drawMap(LT, false); drawGrid(LT); if (SEL) infoCard(SEL); }, 150); });
+}
+
+Promise.all([
+  fetch('./data/demo/demo.json').then(r => { if (!r.ok) throw new Error('demo data ' + r.status); return r.json(); }),
+  fetch('./data/latest.json').then(r => r.ok ? r.json() : null).catch(() => null)
+]).then(([d, l]) => {
+  D = d; L = l || { generated: new Date().toISOString(), moves: {}, vols: {} };
+  for (const isin in D.stocks) { const s = D.stocks[isin]; bySym[s.sym.toUpperCase()] = s; byIsin[isin] = s; }
+  H = (restore() || JSON.parse(JSON.stringify(SAMPLE))).filter(h => h.t === 'fund' ? D.funds[h.id] : bySym[h.id]);
+  wire(); refresh(true); drawCal();
+}).catch(err => {
+  $('maptitle').textContent = 'The map data did not load';
+  document.querySelector('.maphead .lede').textContent = 'Open this page from the website or a local web server, not as a file on disk. (' + err.message + ')';
+});
+})();
+</script>
+</body>
+</html>
