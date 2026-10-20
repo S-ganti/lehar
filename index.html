@@ -18,7 +18,7 @@
   --shell:#0F3B3A; --shell2:#155150; --onshell:#F2F5EF; --onshell2:rgba(242,245,239,.78);
   --contour:#1E6F69; --band1:#B5DBC6; --band2:#CBE6D6; --band3:#DEEFE4; --dry:#B9C7BF;
   --cost:#B8401C; --rev:#1E5E9E; --both:#6747B0; --origin:#E07A3F;
-  --f1:#0E2D2B; --f2:#2A7F78; --f3:#6FB3A9; --f4:#2F5F8F; --f5:#8FB3D9; --f6:#A8C9A0;
+  --f1:#0E2D2B; --f2:#2A7F78; --f3:#6FB3A9; --route-mist:#9CCFC6; --route-sea:#4E9A91; --route-sage:#A8C9A0;
   --ease:cubic-bezier(.16,1,.3,1);
   --narrow:"wdth" 78; --wide:"wdth" 110;
 }
@@ -169,6 +169,7 @@ p{margin:0}
 .brow .nm{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:550}
 .brow .track{height:20px;display:flex;border-radius:4px;overflow:hidden}
 .brow .track span{display:block;height:100%;transition:filter .15s}
+.brow .track span+span{box-shadow:inset 2px 0 0 var(--paper)}
 .brow .track span:hover{filter:brightness(1.15)}
 .brow .v{text-align:right;font-weight:650}
 .fkey{display:grid;gap:8px;font-size:14px;align-content:start}
@@ -212,6 +213,17 @@ p{margin:0}
 .lane-sub{font-size:12px;fill:var(--ink3)}
 .lane-mv{font-size:16px;font-weight:700;fill:var(--ink);font-variation-settings:"wdth" 80}
 .lane.stale .lane-mv,.lane.stale .lane-name{fill:var(--ink3)}
+.mlist{list-style:none;margin:0;padding:0}
+.mrow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px 12px;align-items:center;padding:12px 4px;border-top:1px solid var(--line)}
+.mrow:last-child{border-bottom:1px solid var(--line)}
+.mrow .mn b{display:block;font-size:15px;font-weight:600}
+.mrow .mn small{display:block;font-size:13.5px;color:var(--ink3);line-height:1.35}
+.mrow .mv{font-size:16px;font-weight:700;font-variation-settings:var(--narrow);text-align:right}
+.mrow .mt{grid-column:1/-1;position:relative;height:6px;border-radius:3px;background:var(--paper2)}
+.mrow .mt i{position:absolute;top:0;bottom:0;border-radius:3px;background:var(--contour)}
+.mrow.stale .mt i{background:repeating-linear-gradient(90deg,var(--ink3) 0 2px,transparent 2px 6px)}
+.mrow.stale b,.mrow.stale .mv{color:var(--ink3)}
+.mnote{font-size:13.5px;color:var(--ink3);margin:12px 0 0}
 .axis text{font-size:12px;fill:var(--ink3)}
 .axis line{stroke:var(--line)}
 .today line{stroke:var(--origin);stroke-width:1.5}
@@ -546,10 +558,10 @@ const AX = W - 44 - OX, BY = OY - 40; // quarter-ellipse field: smooth onset arc
 const RINGS = { high: [0.14, 0.35], medium: [0.38, 0.57], low: [0.6, 0.77], dry: [0.81, 0.97] };
 const CONTOURS = [[0.365, 'high', '≥15% of costs or revenue'], [0.585, 'medium', '5–15%'], [0.79, 'low', 'under 5%, or template']];
 const xy = (th, f) => [OX + f * AX * Math.cos(th), OY - f * BY * Math.sin(th)];
-function contourPath(f, phase, rev) {
+function contourPath(f, phase) {
   let d = '';
   for (let i = 0; i <= 90; i++) {
-    const th = rev ? A1 - (A1 - A0) * i / 90 : A0 + (A1 - A0) * i / 90;
+    const th = A0 + (A1 - A0) * i / 90;
     const wob = 1 + 0.035 * Math.sin(th * 7 + phase) + 0.02 * Math.sin(th * 13 + phase * 2);
     const [x, y] = xy(th, f * wob); d += (i ? 'L' : 'M') + x.toFixed(1) + ' ' + y.toFixed(1);
   }
@@ -584,12 +596,6 @@ function buildSvg() {
   }
   g('regions'); g('contours'); g('places'); g('rlabels'); g('labels'); g('clabels'); g('origin');
   sweepEl = svg.querySelector('#sweep');
-  const cl = svg.querySelector('.clabels');
-  const defs = svg.querySelector('defs');
-  CONTOURS.forEach((c, i) => {
-    defs.insertAdjacentHTML('beforeend', `<path id="ctr${i}" d="${contourPath(c[0], i * 1.7, true)}"/>`);
-    cl.insertAdjacentHTML('beforeend', `<text class="contour-label" dy="17"><textPath href="#ctr${i}" startOffset="${[52, 55, 58][i]}%" text-anchor="middle">${c[2]}</textPath></text>`);
-  });
   contourEls = CONTOURS.map((c, i) => {
     const p = document.createElementNS(NS, 'path'); p.setAttribute('d', contourPath(c[0], i * 1.7)); p.setAttribute('class', 'contour'); p.id = 'ct' + i;
     svg.querySelector('.contours').appendChild(p);
@@ -663,7 +669,43 @@ function labelData(pt, T) {
   else d += ' · ' + EFFNAME[e.e];
   return d;
 }
-function drawLabels(pts, LT) {
+// contour lettering: straight text on the clearest stretch of each line, never steeper than 30 degrees
+function drawContourLabels(pts) {
+  const svg = $('svg'), cl = svg.querySelector('.clabels'); cl.innerHTML = '';
+  if (svg.classList.contains('narrow')) return [];
+  const block = pts.map(q => [q.x - q.r - 4, q.y - q.r - 4, q.x + q.r + 4, q.y + q.r + 4]);
+  svg.querySelectorAll('.rlabels text').forEach(t => { try { const bb = t.getBBox(); block.push([bb.x - 2, bb.y - 2, bb.x + bb.width + 2, bb.y + bb.height + 2]); } catch (e) {} });
+  block.push([OX - 50, OY - 50, OX + 50, OY + 50]);
+  const ov = (a, b) => !(a[2] < b[0] || a[0] > b[2] || a[3] < b[1] || a[1] > b[3]);
+  const out = [];
+  CONTOURS.forEach((c, i) => {
+    const t = document.createElementNS(NS, 'text'); t.setAttribute('class', 'contour-label'); t.textContent = c[2]; cl.appendChild(t);
+    let w = 160; try { w = t.getComputedTextLength(); } catch (e) {}
+    const h = FS * 1.15, ph = i * 1.7;
+    const at = a => xy(a, c[0] * (1 + 0.035 * Math.sin(a * 7 + ph) + 0.02 * Math.sin(a * 13 + ph * 2)));
+    let best = null;
+    for (let st = 0; st <= 70; st++) {
+      const th = A1 - 0.03 - (A1 - A0) * st / 100;
+      const [x0, y0] = at(th + 0.012), [x1, y1] = at(th - 0.012), dl = Math.hypot(x1 - x0, y1 - y0) || 1;
+      const ux = (x1 - x0) / dl, uy = (y1 - y0) / dl, rot = Math.atan2(uy, ux) * 180 / Math.PI;
+      if (Math.abs(rot) > 30) continue;
+      const [px, py] = at(th), cx = px - uy * h * .8, cy = py + ux * h * .8;   // just inside the line, toward the origin
+      const k = Math.max(2, Math.ceil(w / h)), segs = [];
+      for (let j = 0; j <= k; j++) { const d = -w / 2 + w * j / k, sx = cx + ux * d, sy = cy + uy * d; segs.push([sx - h / 2, sy - h / 2, sx + h / 2, sy + h / 2]); }
+      if (segs.some(b => b[0] < 4 || b[2] > W - 4 || b[1] < 4 || b[3] > HH - 4)) continue;
+      const hits = segs.reduce((a, b) => a + block.filter(o => ov(b, o)).length + out.filter(o => ov(b, o)).length, 0);
+      const score = hits * 10 + Math.abs(rot) * .02 + Math.abs(st - 18) * .01;
+      if (!best || score < best.score) best = { score, cx, cy, rot, segs };
+    }
+    if (!best) { t.remove(); return; }
+    t.setAttribute('x', best.cx.toFixed(1)); t.setAttribute('y', best.cy.toFixed(1));
+    t.setAttribute('text-anchor', 'middle'); t.setAttribute('dominant-baseline', 'central');
+    t.setAttribute('transform', `rotate(${best.rot.toFixed(1)} ${best.cx.toFixed(1)} ${best.cy.toFixed(1)})`);
+    out.push(...best.segs);
+  });
+  return out;
+}
+function drawLabels(pts, LT, extra) {
   const svg = $('svg'), gl = svg.querySelector('.labels'); gl.innerHTML = '';
   const T = LT.total || 1, narrow = FS > 18;
   const reached = pts.filter(q => q.e).sort((a, b) => b.p.v - a.p.v).slice(0, narrow ? 4 : 8);
@@ -673,6 +715,7 @@ function drawLabels(pts, LT) {
   const boxes = pts.map(q => ({ id: q.p.isin, b: [q.x - q.r - 3, q.y - q.r - 3, q.x + q.r + 3, q.y + q.r + 3] }));
   svg.querySelectorAll('.rlabels text').forEach(t => { try { const bb = t.getBBox(); boxes.push({ id: '', b: [bb.x - 2, bb.y - 2, bb.x + bb.width + 2, bb.y + bb.height + 2] }); } catch (e) {} });
   boxes.push({ id: '', b: [OX - 50, OY - 50, OX + 50, OY + 50] });
+  (extra || []).forEach(b => boxes.push({ id: '', b }));
   const hit = (bx, id) => bx[0] < 2 || bx[2] > W - 2 || bx[1] < 2 || bx[3] > HH - 2 || boxes.some(o => o.id !== id && !(bx[2] < o.b[0] || bx[0] > o.b[2] || bx[3] < o.b[1] || bx[1] > o.b[3]));
   want.forEach(pt => {
     const d = labelData(pt, T);
@@ -750,7 +793,7 @@ function drawMap(LT, animate) {
     const routes = [pt.p.direct ? 'held directly' : '', nf ? `through ${nf} fund${nf > 1 ? 's' : ''}` : ''].filter(Boolean).join(' and ');
     el.setAttribute('aria-label', `${nm}, ${inr(pt.p.v)}, ${routes}, ${e ? EFFNAME[e.e] + ' exposure, ' + e.lvl : 'not reached by ' + D.drivers[F].n}`);
   });
-  drawLabels(pts, LT);
+  drawLabels(pts, LT, drawContourLabels(pts));
   for (const id in placeEls) if (!seen.has(id)) { placeEls[id].remove(); delete placeEls[id]; }
 
   // origin pin
@@ -852,12 +895,12 @@ function infoCard(isin) {
 }
 
 // ---------------------------------------------------------------- sections
-const FUNDCOL = ['#2A7F78', '#6FB3A9', '#155150', '#9CCFC6', '#4E9A91'];
+const FUNDCOL = ['var(--f2)', 'var(--f3)', 'var(--route-mist)', 'var(--route-sea)', 'var(--route-sage)'];
 function fundColors() { const ids = [...new Set(H.filter(h => h.t === 'fund').map(h => h.id))]; const m = {}; ids.forEach((id, i) => m[id] = FUNDCOL[i % FUNDCOL.length]); return m; }
 
 function drawOwn(LT) {
   const T = LT.total || 1, b = LT.b, inEq = LT.list.reduce((a, p) => a + p.v, 0) + b.outside;
-  const parts = [['Indian shares', inEq, 'var(--shell)'], ['Foreign shares', b.foreign, '#4E9A91'], ['REITs', b.reit, '#9CCFC6'], ['Debt and cash', b.debt + b.cash + b.mf, '#7E918C'], ['Hedged arbitrage', b.arbitrage, '#A9B8B2']].filter(x => x[1] > 0);
+  const parts = [['Indian shares', inEq, 'var(--shell)'], ['Foreign shares', b.foreign, 'var(--route-sea)'], ['REITs', b.reit, 'var(--route-mist)'], ['Debt and cash', b.debt + b.cash + b.mf, '#7E918C'], ['Hedged arbitrage', b.arbitrage, '#A9B8B2']].filter(x => x[1] > 0);
   $('mix').innerHTML = parts.map(x => `<div style="flex:${x[1]};background:${x[2]}" title="${x[0]} ${pct(x[1] / T)}">${x[1] / T > .08 ? esc(x[0]) + ' ' + pct(x[1] / T, 0) : ''}</div>`).join('');
   $('mixkey').innerHTML = parts.map(x => `<span><i class="sw" style="background:${x[2]};border-color:transparent"></i>${esc(x[0])} <b>${pct(x[1] / T)}</b> · ${inr(x[1])}</span>`).join('');
   const dup = LT.list.filter(p => (p.direct ? 1 : 0) + Object.keys(p.via).length >= 2).slice(0, 3);
@@ -904,6 +947,16 @@ function drawCal() {
   const ks = Object.keys(D.drivers).map(k => [k, seriesInfo(k)]).filter(x => x[1]).sort((a, b) => (a[1].stale - b[1].stale) || Math.abs(b[1].mv) - Math.abs(a[1].mv));
   const gen = new Date(L.generated); const end = new Date(gen.getTime() + 6 * 864e5);
   const start = new Date('2026-05-25T00:00:00');
+  if (innerWidth <= 720) {
+    const P = d => Math.max(0, Math.min(100, (d - start) / (end - start) * 100));
+    $('cal').innerHTML = `<ol class="mlist">${ks.map(([k, si]) => {
+      const a = new Date(si.asof + 'T00:00:00'), b0 = si.freq === 'D' ? new Date(a.getTime() - 28 * 864e5) : new Date(a.getFullYear(), a.getMonth() - 1, a.getDate()), st = si.stale;
+      return `<li class="lane mrow${st ? ' stale' : ''}" data-f="${k}" data-mv="${Math.round(si.mv)}" tabindex="0" role="button" aria-label="${esc(D.drivers[k].n)} ${sgn(si.mv)}, to ${fmtDate(si.asof)}${st ? ', older data' : ''}. Put on the map.">
+        <span class="mn"><b>${esc(D.drivers[k].n)}</b><small>${esc(D.drivers[k].unit)} · ${si.freq === 'D' ? '20 trading days' : 'month'} to ${fmtDate(si.asof)}${st ? ` · ${si.age} days old` : ''}</small></span>
+        <span class="mv">${sgn(si.mv)}</span><span class="mt" aria-hidden="true"><i style="left:${P(b0).toFixed(1)}%;width:${Math.max(2, P(a) - P(b0)).toFixed(1)}%"></i></span></li>`;
+    }).join('')}</ol><p class="mnote">Bars show each measurement window between ${fmtDate('2026-05-25')} and the data run of ${fmtDate(L.generated.slice(0, 10))}. Older data is dotted. Tap a row to put it on the map.</p>`;
+    return;
+  }
   const W2 = 1180, left = 250, right = 110, lane = 46, top = 34, Hc = top + ks.length * lane + 26;
   const X = d => left + (d - start) / (end - start) * (W2 - left - right);
   let s = `<svg viewBox="0 0 ${W2} ${Hc}" role="img" aria-label="Timeline of the latest moves and the dates their data is current to">`;
@@ -1054,7 +1107,7 @@ function wire() {
     msg.className = bad.length ? 'msg err' : 'msg';
     msg.textContent = `${next.length} holding${next.length === 1 ? '' : 's'} loaded.` + (bad.length ? ` Not recognised: ${bad.slice(0, 3).join(' | ')}${bad.length > 3 ? '…' : ''}. Use a Nifty 500 symbol, an ISIN or one of the five fund names.` : '');
   });
-  let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { const LT = lookThrough(); drawMap(LT, false); drawGrid(LT); if (SEL) infoCard(SEL); }, 150); });
+  let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => { const LT = lookThrough(); drawMap(LT, false); drawGrid(LT); drawCal(); if (SEL) infoCard(SEL); }, 150); });
 }
 
 Promise.all([

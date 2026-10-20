@@ -43,13 +43,11 @@ Refresh steps and the checks to run are in `scripts/demo/README.md`. Fund disclo
 
 `data/latest.json` is a snapshot, not a live feed. Wiring a daily refresh into this repo is still to do.
 
-## Known issues (shipped as is, 20 Oct 2026)
+## Fixed since first release (21 Oct 2026)
 
-From the second finish review; the decision was to ship and fix later.
-
-- **Contour labels can overprint company labels.** The lettering along the isochrones ("≥15% of costs or revenue") is not part of the map's label collision avoidance; on desktop it can run through the Asian Paints and Reliance labels, and the 5–15% label can sit near vertical. Fix: add contour labels to the collision set, or place each on a clear stretch of its line with rotation capped at about ±30°.
-- **Third fund's route colour is too close to "held directly".** In "What you really own", the third fund in a portfolio (HDFC Mid Cap in the sample) gets #155150, which reads as the direct-holding ink. Fix: use a mid-light teal step for the third fund, or a pattern.
-- **"What moved" is unreadable on phones.** The timeline is one SVG scaled to the screen, so at 390 px its labels are about 4 px. Fix: a stacked row layout under 720 px, or the chart at a readable scale with horizontal scroll.
+- Contour labels are now straight text on the clearest stretch of each line (rotation capped at 30°) and are part of the map's label collision set, so they no longer print over company labels.
+- Fund route colours follow the documented teal steps; the third fund no longer looks like "held directly".
+- "What moved" is a stacked list on phones (720 px and below), with readable text and tappable rows.
 
 ## Not yet decided
 

@@ -423,6 +423,11 @@
           "#B1D3CD",
           "#D9F6F0"
         ]
+      },
+      "route-sage": {
+        "role": "tertiary",
+        "displayName": "Fund Route Sage",
+        "canonical": "oklch(80.1% 0.067 140)"
       }
     },
     "typographyMeta": {

@@ -32,6 +32,7 @@ colors:
   f3: "#6FB3A9"
   route-sea: "#4E9A91"
   route-mist: "#9CCFC6"
+  route-sage: "#A8C9A0"
 typography:
   display:
     fontFamily: "'Anek Latin', system-ui, sans-serif"
@@ -201,7 +202,7 @@ A cool green-grey cartographic paper and teal ink, with three IMD-style data hue
 - **Hairline / Rule** (line, line2): row dividers and region edges; stronger borders on inputs and ghost buttons.
 
 ### Fund routes
-Holdings are told apart by route. Held directly is Deep Ink (f1); funds take teal steps in order: f2, f3, route-mist, route-sea. The map's place rings split dark (direct) and f3 (through funds).
+Holdings are told apart by route. Held directly is Deep Ink (f1); funds take teal steps in order: f2, f3, route-mist, route-sea, route-sage, each segment split from the next by a 2px paper gap. The map's place rings split dark (direct) and f3 (through funds).
 
 ### Named Rules
 **The Quarantine Rule.** Cost, revenue and both-ways hues appear only on data marks (cells, bars, swatches, places). Chrome, headings and buttons never use them. The one exception the build makes is Excess Blue as the link colour.
@@ -294,7 +295,7 @@ Origin pin bottom-left (orange, card-coloured stroke, two faint rings) labelled 
 A separated-border table of 30px cells with 3px gaps: empty cells are Survey Card with a hairline inset, filled cells take the data pattern, and strength is carried by opacity (1, 0.78, 0.55). Column heads run vertically.
 
 ### Onset Calendar ("What moved")
-An SVG timeline of lanes: each move is a line ending on its as-of date, solid teal 4px for current series, dotted Faint Ink 2px for stale ones, with a dashed orange "data run" line for today.
+An SVG timeline of lanes: each move is a line ending on its as-of date, solid teal 4px for current series, dotted Faint Ink 2px for stale ones, with a dashed orange "data run" line for today. At 720px and below it becomes stacked rows: factor name and window on the left, the move on the right, and a 6px track under each row showing the measurement window (dotted when stale). Every row is a button that puts its factor on the map.
 
 ## Do's and Don'ts
 
@@ -302,6 +303,7 @@ An SVG timeline of lanes: each move is a line ending on its as-of date, solid te
 - **Do** pair every data hue with its pattern and a text label: cost solid, revenue hatched, both cross-hatched.
 - **Do** draw contours solid for measured company data and dotted for template-only reach.
 - **Do** put a paper halo stroke under every label drawn on the map.
+- **Do** letter each contour with straight text on the clearest stretch of its line, just inside it, rotated no more than 30 degrees; the label joins the collision set so place labels route around it.
 - **Do** use Anek Latin's width axis for hierarchy: width 78 tracked caps for regions and column heads, width 110 only for the wordmark.
 - **Do** separate content with hairlines (rgba(14,45,43,.14)) and keep sections flat on Map Paper.
 - **Do** keep figures tabular and right-aligned.
@@ -313,13 +315,10 @@ An SVG timeline of lanes: each move is a line ending on its as-of date, solid te
 - **Don't** use shell2 (#155150) or any colour close to Deep Ink as a fund-route colour; routes must stay distinguishable from direct holdings.
 - **Don't** let a contour label sit on top of a place label; place names take priority.
 
-## Known gaps (shipped, not part of the system)
+## Known gaps
 
-The final review disposition was "fix"; the user chose to ship with these open:
-- Contour labels can overprint place labels on the map.
-- The third fund-route colour in the build is #155150 (shell2), too close to the direct-holding ink (f1); the rule above is the intended fix.
-- The "What moved" timeline is unreadable under 720px wide.
+The three gaps shipped on 20 Oct 2026 (contour labels over place labels, the third fund route close to Deep Ink, an unreadable "What moved" on phones) were fixed on 21 Oct 2026.
 
-Drift in the build, not canonized: tokens --f4, --f5 and --f6 are declared but unused; fund-route and asset-mix colours (#4E9A91, #9CCFC6, #7E918C, #A9B8B2) are hard-coded in the script rather than read from tokens.
+Drift in the build, not canonized: the asset-mix greys for debt and arbitrage (#7E918C, #A9B8B2) are hard-coded in the script rather than read from tokens.
 
 Where the build departs from the direction contract: the portfolio editor is an in-page section reached from the primary button, not a drawer; industries are radial wedges around the origin rather than geographic-style regions; and Onset Orange, not specified in the contract, is the primary button colour as well as the origin.
