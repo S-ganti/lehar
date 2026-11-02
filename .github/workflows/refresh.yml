@@ -1,0 +1,41 @@
+name: daily-data
+
+on:
+  schedule:
+    - cron: "30 13 * * *"   # 13:30 UTC = 19:00 IST, after Indian market close
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-data
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch prices and write data/latest.json
+        run: python scripts/refresh.py
+
+      - name: Check the data the page reads
+        run: python scripts/test_refresh.py
+
+      - name: Commit refreshed data
+        run: |
+          git config user.name "lehar-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/latest.json data/series
+          if git diff --cached --quiet; then
+            echo "No data changes."
+          else
+            git commit -m "data: $(date -u +%F) refresh [skip ci]"
+            git push
+          fi

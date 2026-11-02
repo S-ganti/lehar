@@ -153,6 +153,33 @@ p{margin:0}
 
 /* sections below */
 .sec{padding:64px 28px 56px;max-width:1240px;margin:0 auto;position:relative}
+.evline{margin-top:10px;font-size:14px;color:var(--ink2);max-width:62ch}
+.evline a{color:var(--contour);text-underline-offset:3px}
+.evs{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));border-top:1px solid var(--line2)}
+.ev{padding:20px 22px 22px;border-left:1px solid var(--line);display:flex;flex-direction:column;gap:10px;min-width:0}
+.ev:first-child{border-left:0;padding-left:0}
+.ev .k{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+.ev .tag{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-variation-settings:var(--narrow);color:var(--contour)}
+.ev.usual .tag{color:var(--ink3)}
+.ev .when{font-size:13.5px;color:var(--ink3);white-space:nowrap}
+.ev h3{font-size:15px;font-weight:650;line-height:1.2}
+.ev .fig{font-size:26px;font-weight:700;line-height:1.1;font-variation-settings:var(--narrow)}
+.ev .fig small{font-size:15px;font-weight:600;color:var(--ink2);font-variation-settings:normal}
+.ev .say{font-size:15px;line-height:1.45}
+.ev .reach{display:grid;gap:6px;font-size:13.5px;color:var(--ink2)}
+.ev .reach b{color:var(--ink)}
+.ev .bar{height:6px;border-radius:3px;background:var(--paper3);overflow:hidden;display:flex}
+.ev .bar i{display:block;height:100%}
+.ev ul{list-style:none;margin:0;padding:0;font-size:13.5px}
+.ev li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 10px;padding:5px 0;border-top:1px solid var(--line)}
+.ev li .n{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ev li .c{grid-column:1/2;color:var(--ink2)}
+.ev li .pc{grid-row:1/3;grid-column:2;align-self:center;font-weight:650}
+.ev .how{font-size:13.5px;color:var(--ink2);line-height:1.45}
+.ev .evgo{align-self:flex-start;margin-top:auto;font-size:15px;font-weight:650;color:var(--contour);background:none;border:0;padding:4px 0;text-decoration:underline;text-decoration-color:var(--line2);text-underline-offset:4px}
+.ev .evgo:hover{text-decoration-color:var(--contour)}
+.ev.none{color:var(--ink2)}
+.ev.none .fig{color:var(--ink2)}
 .sec>h2{font-size:clamp(26px,2.4vw,34px);line-height:1.1;margin-bottom:8px}
 .sec>.lede{color:var(--ink2);max-width:66ch;margin-bottom:28px}
 .band-row{border-top:1px solid var(--line)}
@@ -283,6 +310,8 @@ footer p{max-width:80ch}
   .legend{padding:8px 16px 14px}
   .panel-scroll{padding:18px 16px}
   .sec{padding:48px 16px 40px}
+  .ev,.ev:first-child{border-left:0;border-top:1px solid var(--line);padding:18px 0 20px}
+  .evs .ev:first-child{border-top:0}
   .brow{grid-template-columns:118px minmax(0,1fr) 56px;gap:8px;font-size:13.5px}
   .htable input{width:104px}
   .htable .kind{display:none}
@@ -298,7 +327,7 @@ footer p{max-width:80ch}
     <b>Lehar</b>
   </a>
   <nav class="nav" aria-label="Sections">
-    <a href="#map">Map</a><a href="#own">What you own</a><a href="#grid">All factors</a><a href="#moved">What moved</a><a href="#sources">Sources</a>
+    <a href="#map">Map</a><a href="#events">What changed</a><a href="#own">What you own</a><a href="#grid">All factors</a><a href="#moved">What moved</a><a href="#sources">Sources</a>
   </nav>
   <span class="sp"></span>
   <div class="sum" id="sum" aria-live="polite"></div>
@@ -313,6 +342,7 @@ footer p{max-width:80ch}
         <h1 id="maptitle">Where a move in crude oil reaches your money</h1>
         <p class="lede">Each dot is a company you own, directly or inside your funds, sized by your money and grouped by industry. Pick a factor: the contours show how strongly it reaches each one.</p>
         <p class="samplebar" id="samplebar"></p>
+        <p class="evline" id="evline"></p>
       </div>
     </div>
     <div class="map" id="mapbox">
@@ -339,8 +369,8 @@ footer p{max-width:80ch}
       <button class="morefac" type="button" id="morefac" aria-controls="factors" aria-expanded="false"></button>
       <div class="mover">
         <div class="row"><label for="move" id="movelbl">If crude oil moves</label><output id="moveout" for="move">+10%</output></div>
-        <input type="range" id="move" min="-30" max="30" step="1" value="10" aria-describedby="movehint">
-        <div class="scale"><span>−30%</span><span>0</span><span>+30%</span></div>
+        <input type="range" id="move" min="-50" max="50" step="1" value="10" aria-describedby="movehint">
+        <div class="scale"><span>−50%</span><span>0</span><span>+50%</span></div>
         <div id="movehint" style="margin-top:6px"></div>
       </div>
       <div class="reach" aria-live="polite">
@@ -353,6 +383,13 @@ footer p{max-width:80ch}
   </aside>
 </section>
 
+<section class="sec" id="events" aria-labelledby="evh">
+  <h2 id="evh">What changed, and whether it reaches you</h2>
+  <p class="lede" id="evlede"></p>
+  <div class="evs" id="evs"></div>
+</section>
+
+<div class="band-row"></div>
 <section class="sec" id="own" aria-labelledby="ownh">
   <h2 id="ownh">What you really own</h2>
   <p class="lede">Your funds opened into the companies they hold (each fund's portfolio as on 30 Sep 2026), added to your direct stocks.</p>
@@ -453,7 +490,7 @@ const shortFund = n => n.replace(/ Fund$/, '').replace(/^HDFC /, 'HDFC ');
 const ICON_X = '<svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 3l8 8M11 3l-8 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>';
 const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-let D, L, H = [], F = 'crude', M = 10, SEL = null;
+let D, L, H = [], F = 'crude', M = 10, SEL = null, MCTX = null; // MCTX: where the current move came from, when an event card set it
 const LS = 'lehar-holdings-v1';
 const SAMPLE = [
   { t: 'fund', id: 'ppfcf', v: 800000 }, { t: 'fund', id: 'hdfcn50', v: 500000 }, { t: 'fund', id: 'hdfcmid', v: 300000 },
@@ -801,7 +838,7 @@ function drawMap(LT, animate) {
   go.innerHTML = `<circle class="origin-ring" cx="${OX}" cy="${OY}" r="26"/><circle class="origin-ring" cx="${OX}" cy="${OY}" r="44" style="opacity:.22"/>
     <g class="origin-pin"><circle cx="${OX}" cy="${OY}" r="11"/></g>
     <text class="origin-txt" x="${OX + 22}" y="${OY - FS * 1.6}">${esc(D.drivers[F].n)} ${F === 'usd' ? (M >= 0 ? 'rupee weaker' : 'rupee stronger') + ' ' : ''}${sgn(M, 0)}</text>
-    <text class="origin-sub" x="${OX + 22}" y="${OY - FS * .35}">${si ? `latest ${sgn(si.mv)} · ${si.freq === 'D' ? '20 trading days' : 'month'} to ${fmtDate(si.asof)}${si.stale ? ' · older data' : ''}` : 'what-if only · no live feed'}</text>`;
+    <text class="origin-sub" x="${OX + 22}" y="${OY - FS * .35}">${MCTX && MCTX.k === F && MCTX.m === M ? esc(MCTX.text) : si ? `latest ${sgn(si.mv)} · ${si.freq === 'D' ? '20 trading days' : 'month'} to ${fmtDate(si.asof)}${si.stale ? ' · older data' : ''}` : 'what-if only · no live feed'}</text>`;
 
   // contours: measured solid only when the factor's reach includes company estimates
   const st = factorStats(LT, F);
@@ -946,7 +983,7 @@ function drawGrid(LT) {
 function drawCal() {
   const ks = Object.keys(D.drivers).map(k => [k, seriesInfo(k)]).filter(x => x[1]).sort((a, b) => (a[1].stale - b[1].stale) || Math.abs(b[1].mv) - Math.abs(a[1].mv));
   const gen = new Date(L.generated); const end = new Date(gen.getTime() + 6 * 864e5);
-  const start = new Date('2026-05-25T00:00:00');
+  const start = new Date(gen.getTime() - 160 * 864e5); start.setHours(0, 0, 0, 0);
   if (innerWidth <= 720) {
     const P = d => Math.max(0, Math.min(100, (d - start) / (end - start) * 100));
     $('cal').innerHTML = `<ol class="mlist">${ks.map(([k, si]) => {
@@ -954,7 +991,7 @@ function drawCal() {
       return `<li class="lane mrow${st ? ' stale' : ''}" data-f="${k}" data-mv="${Math.round(si.mv)}" tabindex="0" role="button" aria-label="${esc(D.drivers[k].n)} ${sgn(si.mv)}, to ${fmtDate(si.asof)}${st ? ', older data' : ''}. Put on the map.">
         <span class="mn"><b>${esc(D.drivers[k].n)}</b><small>${esc(D.drivers[k].unit)} · ${si.freq === 'D' ? '20 trading days' : 'month'} to ${fmtDate(si.asof)}${st ? ` · ${si.age} days old` : ''}</small></span>
         <span class="mv">${sgn(si.mv)}</span><span class="mt" aria-hidden="true"><i style="left:${P(b0).toFixed(1)}%;width:${Math.max(2, P(a) - P(b0)).toFixed(1)}%"></i></span></li>`;
-    }).join('')}</ol><p class="mnote">Bars show each measurement window between ${fmtDate('2026-05-25')} and the data run of ${fmtDate(L.generated.slice(0, 10))}. Older data is dotted. Tap a row to put it on the map.</p>`;
+    }).join('')}</ol><p class="mnote">Bars show each measurement window between ${fmtDate(start.toISOString().slice(0, 10))} and the data run of ${fmtDate(L.generated.slice(0, 10))}. Older data is dotted. Tap a row to put it on the map.</p>`;
     return;
   }
   const W2 = 1180, left = 250, right = 110, lane = 46, top = 34, Hc = top + ks.length * lane + 26;
@@ -1002,8 +1039,91 @@ function drawSources(LT) {
   const fs = [...new Set(H.filter(h => h.t === 'fund').map(h => h.id))].map(id => D.funds[id]);
   $('srcs').innerHTML = `<p><b>Companies and industries.</b> NSE Nifty 200 and Nifty 500 constituent lists (niftyindices.com); AMFI industry classification.</p>
     ${fs.length ? `<p><b>Fund portfolios.</b> ${fs.map(f => `${esc(f.name)}, as on ${fmtDate(f.asof)} 2026 (<a href="${esc(f.src)}" target="_blank" rel="noopener">fund's own disclosure</a>)`).join('; ')}. Arbitrage positions are left out: each is offset by a short future in the same fund.</p>` : ''}
-    <p><b>Market moves.</b> Daily data run of ${fmtDate(L.generated.slice(0, 10))} 2026: ECB reference rates (rupee), EIA via FRED (Brent, Henry Hub gas), LBMA (gold), IMF primary commodity prices (monthly metals and farm goods).</p>
+    <p><b>Market moves.</b> Daily data run of ${fmtDate(L.generated.slice(0, 10))} 2026: ECB reference rates via Frankfurter (rupee), EIA via FRED (Brent, Henry Hub gas), COMEX front-month gold via Yahoo, IMF primary commodity prices via FRED (monthly metals and farm goods). The page refreshes this data every evening.</p>
     <p><b>What the what-if means.</b> It multiplies a company's cost or revenue share by the move. It ignores price increases, hedging and demand, and it is not a forecast of any share price.</p>`;
+}
+
+// ---------------------------------------------------------------- event cards
+// Price facts come from data/latest.json; what they reach is worked out here from the holdings.
+function evCards(LT) {
+  if (!L || !L.levels) return [];
+  const s2k = {}; for (const k in D.drivers) if (D.drivers[k].series) s2k[D.drivers[k].series] = k;
+  const gen = new Date(L.generated);
+  const mk = (e, event) => {
+    const k = s2k[e.series], st = factorStats(LT, k);
+    const avgMode = event && e.kinds.some(x => x !== 'move');
+    let m = Math.round(avgMode ? e.vs_avg : e.move); if (m === 0) m = (avgMode ? e.vs_avg : e.move) >= 0 ? 1 : -1;
+    m = Math.max(-50, Math.min(50, m));
+    const win = e.freq === 'D' ? '20 trading days' : 'month on month';
+    const when = e.freq === 'D' ? `data to ${evDate(e)}` : evDate(e);
+    const ctx = avgMode ? `vs its one-year average · ${when}` : `${win} · ${when}`;
+    return { k, e, st, m, event, ctx };
+  };
+  const evs = (L.events || []).filter(e => s2k[e.series]).map(e => mk(e, true));
+  const seen = new Set(evs.map(c => c.e.series));
+  const quiet = Object.entries(L.levels).filter(([sr, lv]) => s2k[sr] && !seen.has(sr) && L.vols[sr] &&
+      (gen - new Date(lv.asof + 'T00:00:00')) / 864e5 <= (L.vols[sr].freq === 'D' ? 10 : 75))
+    .map(([sr, lv]) => mk({ series: sr, freq: L.vols[sr].freq, kinds: [], move: L.moves[sr], usual: lv.usual, z: lv.z, vs_avg: lv.vs_avg, avg_1y: lv.avg_1y,
+      from: lv.from, to: { date: lv.asof, v: lv.v }, unit: lv.unit, src: L.vols[sr].src }, false))
+    .filter(c => c.st.total > 0).sort((a, b) => b.e.z - a.e.z);
+  evs.sort((a, b) => (b.st.total > 0) - (a.st.total > 0) || b.st.total - a.st.total);
+  return evs.concat(quiet.slice(0, Math.max(1, 4 - evs.length)));
+}
+const evDate = e => e.freq === 'D' ? fmtDate(e.to.date) : new Date(e.to.date + 'T00:00:00').toLocaleDateString('en-IN', { month: 'short', year: 'numeric' }) + ' average';
+function evLevel(v, unit) {
+  const n = v >= 1000 ? Math.round(v).toLocaleString('en-IN') : v.toFixed(2);
+  if (unit.startsWith('USD/')) return `$${n}<small>/${unit.slice(4)}</small>`;
+  if (unit.startsWith('₹')) return `₹${n}<small> per dollar</small>`;
+  if (unit.startsWith('US cents')) return `${n}¢<small>/lb</small>`;
+  return n;
+}
+const evPlain = (v, unit) => evLevel(v, unit).replace(/<[^>]+>/g, '');
+function evText(c) {
+  const e = c.e, usd = c.k === 'usd', a1 = Math.abs(e.vs_avg).toFixed(0), mv = Math.abs(e.move).toFixed(1);
+  const win = e.freq === 'D' ? 'in 20 trading days' : 'on the month', uwin = e.freq === 'D' ? '20-day' : 'monthly', us = e.usual.toFixed(e.usual < 3 ? 1 : 0);
+  const tag = e.kinds.includes('high') ? (usd ? `Weakest rupee in ${e.span_years} years` : `${e.span_years}-year high`)
+    : e.kinds.includes('low') ? (usd ? `Strongest rupee in ${e.span_years} years` : `${e.span_years}-year low`)
+    : e.kinds.includes('level') ? (usd ? `Rupee far ${e.vs_avg > 0 ? 'weaker' : 'stronger'} than usual` : `Far ${e.vs_avg > 0 ? 'above' : 'below'} its one-year average`)
+    : e.kinds.includes('move') ? 'Unusually large move' : 'Also moved';
+  const avg = usd ? `The rupee is ${a1}% ${e.vs_avg > 0 ? 'weaker' : 'stronger'} than its average of the past year (${evPlain(e.avg_1y, e.unit)}).`
+    : `${a1}% ${e.vs_avg >= 0 ? 'above' : 'below'} its average of the past year (${evPlain(e.avg_1y, e.unit)}).`;
+  const ext = e.kinds.includes('high') || e.kinds.includes('low')
+    ? (usd ? `The ${e.kinds.includes('high') ? 'weakest' : 'strongest'} the rupee has been in the ${e.span_years} years of data here. `
+           : `The ${e.kinds.includes('high') ? 'highest' : 'lowest'} ${e.freq === 'D' ? 'close' : 'monthly price'} in the ${e.span_years} years of data here. `) : '';
+  const move = usd ? `${e.move > 0 ? 'Weaker' : 'Stronger'} by ${mv}% ${win}` : `${e.move >= 0 ? 'Up' : 'Down'} ${mv}% ${win}`;
+  const say = c.event && !e.kinds.includes('move') ? `${ext}${avg} ${move}; its usual ${uwin} swing is about ${us}%.`
+    : `${ext}${move}, against a usual ${uwin} swing of about ${us}%. ${avg}`;
+  return { tag, say };
+}
+function evImpact(e, k, m) {
+  const dir = m >= 0 ? 'up' : 'down';
+  if (e.share != null && e.e !== 'benefit' && k !== 'usd') return `costs ${dir} ~${Math.abs(e.share * m).toFixed(1)}%` +
+    (e.rev ? `, revenue ${dir} ~${Math.abs(e.rev * m).toFixed(1)}%` : e.e === 'mixed' ? ', selling prices usually follow' : '');
+  if (e.rev != null) return `revenue ${m >= 0 ? 'up' : 'down'} ~${Math.abs(e.rev * m).toFixed(1)}%`;
+  return (e.e === 'cost' ? (m >= 0 ? 'cost pressure' : 'cost relief') : e.e === 'benefit' ? (m >= 0 ? 'tailwind' : 'headwind') : 'cuts both ways') + ', size not measured';
+}
+function drawEvents(LT) {
+  const T = LT.total || 1, cards = evCards(LT), nev = cards.filter(c => c.event).length;
+  const run = L && L.generated ? new Date(L.generated).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }) : '';
+  $('evlede').textContent = `Data run of ${run}. A move counts as unusual when it is well beyond that price's usual swing, when the price is far from its average of the past year, or at a five-year high or low. What each company feels is its cost or revenue share times the change: arithmetic, not a forecast.`;
+  const top = cards.find(c => c.event && c.st.total > 0);
+  $('evline').innerHTML = !cards.length ? '' : nev ? `${nev} unusual move${nev > 1 ? 's' : ''} in the latest data.${top ? ` The one reaching most of your money: <b>${esc(top.k === 'usd' ? 'the rupee' : D.drivers[top.k].n.toLowerCase())}</b>, ${pct(top.st.total / T, 0)}.` : ''} <a href="#events">What changed</a>`
+    : `No unusual moves in the latest data. <a href="#events">What moved</a>`;
+  $('evs').innerHTML = cards.map(c => {
+    const { tag, say } = evText(c), st = c.st, dv = D.drivers[c.k];
+    const items = st.items.slice().sort((a, b) => b.p.v - a.p.v).slice(0, 3);
+    return `<article class="ev${c.event ? '' : ' usual'}${st.total ? '' : ' none'}" aria-labelledby="ev-${c.k}">
+      <div class="k"><span class="tag">${tag}</span><span class="when">${evDate(c.e)}</span></div>
+      <h3 id="ev-${c.k}">${esc(c.k === 'usd' ? 'Rupee vs dollar' : dv.n)}</h3>
+      <div class="fig">${evLevel(c.e.to.v, c.e.unit)}</div>
+      <p class="say">${say}</p>
+      <div class="reach">${st.total ? `<span class="bar" aria-hidden="true"><i style="width:${st.cost / T * 100}%;background:var(--cost)"></i><i style="width:${st.mixed / T * 100}%;background:var(--both)"></i><i style="width:${st.benefit / T * 100}%;background:var(--rev)"></i></span>
+        <span>Reaches <b>${pct(st.total / T, 0)}</b> of your money · ${st.n} compan${st.n === 1 ? 'y' : 'ies'}</span>` : `<span>None of your holdings carry it.</span>`}</div>
+      ${items.length ? `<ul>${items.map(({ p, e }) => `<li title="${esc(change(e, p.s, c.k, c.m).replace(/<[^>]+>/g, ''))}"><span class="n">${esc(shortName(p.s.n))}</span><span class="c">${EFFNAME[e.e]} · ${evImpact(e, c.k, c.m)}</span><span class="pc">${pct(p.v / T)}</span></li>`).join('')}</ul>` : ''}
+      ${dv.how ? `<p class="how">${esc(dv.how)}</p>` : ''}
+      ${st.total ? `<button class="evgo" type="button" data-evk="${c.k}">Show ${c.m > 0 ? '+' : '−'}${Math.abs(c.m)}% on the map</button>` : ''}
+    </article>`;
+  }).join('') || `<p class="empty">No price data has loaded yet.</p>`;
 }
 
 function summary(LT) {
@@ -1015,10 +1135,10 @@ function summary(LT) {
 function refresh(animate) {
   const LT = lookThrough();
   if (!factorStats(LT, F).total) { const best = Object.keys(D.drivers).map(k => [k, factorStats(LT, k).total]).sort((a, b) => b[1] - a[1])[0]; if (best && best[1]) F = best[0]; }
-  summary(LT); drawPanel(LT); drawMap(LT, animate && !reduced); drawOwn(LT); drawGrid(LT); drawHoldings(); drawSources(LT);
+  summary(LT); drawEvents(LT); drawPanel(LT); drawMap(LT, animate && !reduced); drawOwn(LT); drawGrid(LT); drawHoldings(); drawSources(LT);
   if (SEL && LT.pos[SEL]) infoCard(SEL); else if (SEL) { SEL = null; infoCard(null); }
 }
-function setFactor(k, m) { F = k; if (m != null) M = Math.max(-30, Math.min(30, m)); SEL = null; infoCard(null); refresh(true); }
+function setFactor(k, m) { F = k; if (m != null) M = Math.max(-50, Math.min(50, m)); SEL = null; infoCard(null); refresh(true); }
 
 // ---------------------------------------------------------------- input
 let SUG = [], SI = -1, PICK = null;
@@ -1076,7 +1196,10 @@ function wire() {
   $('factors').addEventListener('click', e => { const b = e.target.closest('[data-f]'); if (b) setFactor(b.dataset.f); });
   $('morefac').addEventListener('click', () => { const on = $('factors').classList.toggle('all'); $('morefac').setAttribute('aria-expanded', on); refresh(false); });
   $('rlist').addEventListener('click', e => { const b = e.target.closest('[data-sel]'); if (b) { SEL = b.dataset.sel; refresh(false); } });
-  $('move').addEventListener('input', e => { M = +e.target.value; refresh(false); });
+  $('move').addEventListener('input', e => { M = +e.target.value; MCTX = null; refresh(false); });
+  $('evs').addEventListener('click', e => { const b = e.target.closest('[data-evk]'); if (!b) return;
+    const c = evCards(lookThrough()).find(x => x.k === b.dataset.evk); if (!c) return;
+    MCTX = { k: c.k, m: c.m, text: c.ctx }; setFactor(c.k, c.m); $('map').scrollIntoView({ behavior: reduced ? 'auto' : 'smooth' }); });
   $('movehint').addEventListener('click', e => { if (e.target.closest('#uselatest')) { const si = seriesInfo(F); if (si) { M = Math.round(si.mv) || (si.mv > 0 ? 1 : -1); refresh(true); } } });
   $('fgrid').addEventListener('click', e => { const b = e.target.closest('[data-f]'); if (b) { setFactor(b.dataset.f); $('map').scrollIntoView({ behavior: reduced ? 'auto' : 'smooth' }); } });
   const lane = e => { const g = e.target.closest('.lane'); if (!g) return; setFactor(g.dataset.f, +g.dataset.mv || 1); $('map').scrollIntoView({ behavior: reduced ? 'auto' : 'smooth' }); };
@@ -1112,11 +1235,13 @@ function wire() {
 
 Promise.all([
   fetch('./data/demo/demo.json').then(r => { if (!r.ok) throw new Error('demo data ' + r.status); return r.json(); }),
-  fetch('./data/latest.json').then(r => r.ok ? r.json() : null).catch(() => null)
+  fetch('./data/latest.json?h=' + Math.floor(Date.now() / 36e5)).then(r => r.ok ? r.json() : null).catch(() => null)
 ]).then(([d, l]) => {
   D = d; L = l || { generated: new Date().toISOString(), moves: {}, vols: {} };
   for (const isin in D.stocks) { const s = D.stocks[isin]; bySym[s.sym.toUpperCase()] = s; byIsin[isin] = s; }
   H = (restore() || JSON.parse(JSON.stringify(SAMPLE))).filter(h => h.t === 'fund' ? D.funds[h.id] : bySym[h.id]);
+  const c0 = evCards(lookThrough()).find(c => c.event && c.st.total > 0);
+  if (c0) { F = c0.k; M = c0.m; MCTX = { k: c0.k, m: c0.m, text: c0.ctx }; }
   wire(); refresh(true); drawCal();
 }).catch(err => {
   $('maptitle').textContent = 'The map data did not load';

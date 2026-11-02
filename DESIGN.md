@@ -294,6 +294,9 @@ Origin pin bottom-left (orange, card-coloured stroke, two faint rings) labelled 
 ### Exposure Grid
 A separated-border table of 30px cells with 3px gaps: empty cells are Survey Card with a hairline inset, filled cells take the data pattern, and strength is carried by opacity (1, 0.78, 0.55). Column heads run vertically.
 
+### Event Columns ("What changed")
+A row of ruled columns on Map Paper, not boxed cards: hairline dividers between columns; below 720px wide the columns stack, each with a hairline above. Each column reads top to bottom: a tracked-caps tag in Isochrone Teal (Faint Ink for "Also moved"), the date, the factor as a title, the price as a Figure, one plain sentence of facts (level against its one-year average, the move against its usual swing), a 6px reach bar in the cost / both / revenue hues with "Reaches N% of your money", the three biggest companies with their cost or revenue arithmetic, the factor's one-line mechanism in Ink 2, and a teal text button that puts the move on the map. A column whose factor reaches none of the holdings drops to Ink 2 and loses its button.
+
 ### Onset Calendar ("What moved")
 An SVG timeline of lanes: each move is a line ending on its as-of date, solid teal 4px for current series, dotted Faint Ink 2px for stale ones, with a dashed orange "data run" line for today. At 720px and below it becomes stacked rows: factor name and window on the left, the move on the right, and a 6px track under each row showing the measurement window (dotted when stale). Every row is a button that puts its factor on the map.
 

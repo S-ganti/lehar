@@ -42,7 +42,7 @@ DRIVERS = {
                "note": "Iron ore used as the closest free series for the steel chain. Indian steel prices also move on domestic demand and duties."},
     "copper": {"n": "Copper", "series": "copper", "unit": "Copper, monthly", "note": ""},
     "alum":   {"n": "Aluminium", "series": "alum", "unit": "Aluminium, monthly", "note": ""},
-    "gold":   {"n": "Gold and silver", "series": "gold", "unit": "LBMA gold, USD/oz",
+    "gold":   {"n": "Gold and silver", "series": "gold", "unit": "COMEX gold, USD/oz",
                "note": "In India the landed price also includes import duty (15% since 13 May 2026)."},
     "edoil":  {"n": "Edible oils", "series": "palm", "unit": "Palm oil, monthly",
                "note": "Palm oil series; soy and sunflower oil usually move with it."},
@@ -61,6 +61,25 @@ DRIVERS = {
     "other":  {"n": "Other inputs (no price feed)", "series": None, "unit": "",
                "note": "Inputs with no free price series: APIs from China, chips, lithium, titanium dioxide, palladium, cotton, pulp and others."},
 }
+
+# One line on how each factor reaches companies, for the event cards. General mechanism, not a view on any stock.
+HOW = {
+ "crude": "India imports most of its crude. A rise lifts costs for heavy users of fuel and petrochemicals (airlines, paints, tyres, plastics, chemicals) and lifts revenue for oil producers; refiners and fuel retailers depend on the gap between crude and product prices.",
+ "gas": "Gas feeds fertiliser, city-gas distribution, ceramics, glass and power. The series is the US Henry Hub price; India's imported LNG often follows oil or Asian spot prices instead.",
+ "coal": "Coal fuels most of India's power and is a large cost for cement, aluminium smelting and (as coking coal) steel. Coal producers earn more when it rises.",
+ "steel": "Iron ore and steel are costs for autos, capital goods, construction and pipes; steelmakers and miners earn more when prices rise, though their own ore and coal bills rise too.",
+ "copper": "Copper is a cost for cables, wires, electrical equipment and consumer durables, and revenue for refiners and miners.",
+ "alum": "Aluminium is revenue for smelters and a cost for packaging, autos and cable makers; smelters' own power and alumina costs move as well.",
+ "gold": "Jewellers hold gold as inventory and pass most of a rise on to buyers; gold-loan lenders can lend more against the same gold. India's landed price also carries import duty.",
+ "edoil": "Edible oils are a large cost for packaged foods, snacks and soaps. India imports most of its edible oil, so the rupee matters too.",
+ "rubber": "Natural rubber is one of the largest raw materials for tyre makers, alongside crude-based synthetic rubber and carbon black.",
+ "sugar": "Sugar is revenue for mills (and their cane ethanol) and a cost for confectionery, beverages and dairy. Indian sugar prices are largely set by policy.",
+ "grains": "Wheat and grains are costs for biscuits, flour-based foods and animal feed. Indian prices follow government procurement more than world prices.",
+ "softs": "Cocoa, coffee and tea are costs for chocolate and beverage makers and revenue for plantation companies.",
+ "usd": "A weaker rupee raises the rupee cost of imports (crude, electronics, edible oil, gold) and of dollar debt, and raises the rupee value of exports, so IT services and pharma exporters earn more."
+}
+for _k, _t in HOW.items():
+    DRIVERS[_k]["how"] = _t
 
 # Dashboard commodity id -> driver
 COM_DRIVER = {}
