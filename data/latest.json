@@ -1,10 +1,10 @@
 {
- "generated": "2026-11-02T22:23:45+00:00",
+ "generated": "2026-11-03T20:11:51+00:00",
  "moves": {
   "crude": 8.02,
   "natgas": -13.21,
-  "gold": -4.82,
-  "usdinr": -1.44,
+  "gold": -6.15,
+  "usdinr": -1.73,
   "copper": 0.99,
   "alum": 1.01,
   "ironore": 0.83,
@@ -34,17 +34,17 @@
   },
   "gold": {
    "freq": "D",
-   "monthly": 0.0619,
-   "asof": "2026-11-02",
-   "n": 1257,
+   "monthly": 0.0621,
+   "asof": "2026-11-03",
+   "n": 1258,
    "src": "COMEX gold front month (Yahoo)",
    "method": "EWMA(0.94) daily"
   },
   "usdinr": {
    "freq": "D",
-   "monthly": 0.0123,
-   "asof": "2026-11-02",
-   "n": 1356,
+   "monthly": 0.0121,
+   "asof": "2026-11-03",
+   "n": 1357,
    "src": "USD/INR (ECB via Frankfurter)",
    "method": "EWMA(0.94) daily"
   },
@@ -151,32 +151,32 @@
    "z_level": 0.91
   },
   "gold": {
-   "v": 3956.6,
-   "asof": "2026-11-02",
+   "v": 3929.7,
+   "asof": "2026-11-03",
    "from": {
-    "date": "2026-10-05",
-    "v": 4156.8
+    "date": "2026-10-06",
+    "v": 4187.1
    },
    "unit": "USD/oz",
    "usual": 4.58,
-   "z": 1.1,
-   "avg_1y": 4466.36,
-   "vs_avg": -11.41,
-   "z_level": 2.71
+   "z": 1.42,
+   "avg_1y": 4466.15,
+   "vs_avg": -12.01,
+   "z_level": 2.86
   },
   "usdinr": {
-   "v": 94.91,
-   "asof": "2026-11-02",
+   "v": 94.75,
+   "asof": "2026-11-03",
    "from": {
-    "date": "2026-10-05",
-    "v": 96.3
+    "date": "2026-10-06",
+    "v": 96.42
    },
    "unit": "₹ per USD",
    "usual": 1.09,
-   "z": 1.34,
-   "avg_1y": 93.43,
-   "vs_avg": 1.59,
-   "z_level": 1.45
+   "z": 1.61,
+   "avg_1y": 93.45,
+   "vs_avg": 1.39,
+   "z_level": 1.27
   },
   "copper": {
    "v": 14473.06,
@@ -380,6 +380,31 @@
    },
    "unit": "USD/bbl",
    "src": "Brent (EIA via FRED)"
+  },
+  {
+   "series": "usdinr",
+   "freq": "D",
+   "kinds": [
+    "move"
+   ],
+   "move": -1.73,
+   "usual": 1.09,
+   "z": 1.61,
+   "z_level": 1.27,
+   "avg_1y": 93.45,
+   "vs_avg": 1.39,
+   "extreme": null,
+   "span_years": 5,
+   "from": {
+    "date": "2026-10-06",
+    "v": 96.42
+   },
+   "to": {
+    "date": "2026-11-03",
+    "v": 94.75
+   },
+   "unit": "₹ per USD",
+   "src": "USD/INR (ECB via Frankfurter)"
   }
  ],
  "degraded_sources": [],
