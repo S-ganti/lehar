@@ -1,9 +1,9 @@
 {
- "generated": "2026-11-06T20:00:17+00:00",
+ "generated": "2026-11-07T18:08:28+00:00",
  "moves": {
   "crude": -14.68,
   "natgas": -13.2,
-  "gold": -3.41,
+  "gold": -3.35,
   "usdinr": -2.9,
   "copper": 0.99,
   "alum": 1.01,
@@ -20,7 +20,7 @@
    "freq": "D",
    "monthly": 0.215,
    "asof": "2026-11-03",
-   "n": 1337,
+   "n": 1336,
    "src": "Brent (EIA via FRED)",
    "method": "EWMA(0.94) daily"
   },
@@ -28,13 +28,13 @@
    "freq": "D",
    "monthly": 0.2301,
    "asof": "2026-11-03",
-   "n": 1321,
+   "n": 1320,
    "src": "Henry Hub (EIA via FRED)",
    "method": "EWMA(0.94) daily"
   },
   "gold": {
    "freq": "D",
-   "monthly": 0.068,
+   "monthly": 0.0679,
    "asof": "2026-11-06",
    "n": 1261,
    "src": "COMEX gold front month (Yahoo)",
@@ -44,7 +44,7 @@
    "freq": "D",
    "monthly": 0.0131,
    "asof": "2026-11-06",
-   "n": 1358,
+   "n": 1357,
    "src": "USD/INR (ECB via Frankfurter)",
    "method": "EWMA(0.94) daily"
   },
@@ -130,8 +130,8 @@
     "v": 125.44
    },
    "unit": "USD/bbl",
-   "usual": 10.06,
-   "z": 1.66,
+   "usual": 10.07,
+   "z": 1.65,
    "avg_1y": 91.29,
    "vs_avg": 17.25,
    "z_level": 1.66
@@ -144,14 +144,14 @@
     "v": 3.03
    },
    "unit": "USD/MMBtu",
-   "usual": 31.35,
+   "usual": 31.38,
    "z": 0.52,
    "avg_1y": 3.52,
    "vs_avg": -25.37,
    "z_level": 1.07
   },
   "gold": {
-   "v": 4072.6,
+   "v": 4074.9,
    "asof": "2026-11-06",
    "from": {
     "date": "2026-10-09",
@@ -159,10 +159,10 @@
    },
    "unit": "USD/oz",
    "usual": 4.58,
-   "z": 0.77,
-   "avg_1y": 4467.35,
-   "vs_avg": -8.84,
-   "z_level": 2.06
+   "z": 0.76,
+   "avg_1y": 4467.36,
+   "vs_avg": -8.78,
+   "z_level": 2.05
   },
   "usdinr": {
    "v": 93.92,
@@ -172,7 +172,7 @@
     "v": 96.73
    },
    "unit": "₹ per USD",
-   "usual": 1.09,
+   "usual": 1.1,
    "z": 2.71,
    "avg_1y": 93.52,
    "vs_avg": 0.43,
@@ -313,7 +313,7 @@
     "move"
    ],
    "move": -2.9,
-   "usual": 1.09,
+   "usual": 1.1,
    "z": 2.71,
    "z_level": 0.39,
    "avg_1y": 93.52,
@@ -388,8 +388,8 @@
     "move"
    ],
    "move": -14.68,
-   "usual": 10.06,
-   "z": 1.66,
+   "usual": 10.07,
+   "z": 1.65,
    "z_level": 1.66,
    "avg_1y": 91.29,
    "vs_avg": 17.25,
