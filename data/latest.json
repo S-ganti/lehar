@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-07T18:08:28+00:00",
+ "generated": "2026-11-08T18:25:31+00:00",
  "moves": {
   "crude": -14.68,
   "natgas": -13.2,
@@ -20,7 +20,7 @@
    "freq": "D",
    "monthly": 0.215,
    "asof": "2026-11-03",
-   "n": 1336,
+   "n": 1335,
    "src": "Brent (EIA via FRED)",
    "method": "EWMA(0.94) daily"
   },
@@ -28,7 +28,7 @@
    "freq": "D",
    "monthly": 0.2301,
    "asof": "2026-11-03",
-   "n": 1320,
+   "n": 1319,
    "src": "Henry Hub (EIA via FRED)",
    "method": "EWMA(0.94) daily"
   },
@@ -44,7 +44,7 @@
    "freq": "D",
    "monthly": 0.0131,
    "asof": "2026-11-06",
-   "n": 1357,
+   "n": 1356,
    "src": "USD/INR (ECB via Frankfurter)",
    "method": "EWMA(0.94) daily"
   },
@@ -144,7 +144,7 @@
     "v": 3.03
    },
    "unit": "USD/MMBtu",
-   "usual": 31.38,
+   "usual": 31.4,
    "z": 0.52,
    "avg_1y": 3.52,
    "vs_avg": -25.37,
