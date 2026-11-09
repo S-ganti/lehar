@@ -1,10 +1,10 @@
 {
- "generated": "2026-11-08T18:25:31+00:00",
+ "generated": "2026-11-09T23:03:56+00:00",
  "moves": {
   "crude": -14.68,
   "natgas": -13.2,
-  "gold": -3.35,
-  "usdinr": -2.9,
+  "gold": -0.98,
+  "usdinr": -1.93,
   "copper": 0.99,
   "alum": 1.01,
   "ironore": 0.83,
@@ -20,7 +20,7 @@
    "freq": "D",
    "monthly": 0.215,
    "asof": "2026-11-03",
-   "n": 1335,
+   "n": 1334,
    "src": "Brent (EIA via FRED)",
    "method": "EWMA(0.94) daily"
   },
@@ -28,22 +28,22 @@
    "freq": "D",
    "monthly": 0.2301,
    "asof": "2026-11-03",
-   "n": 1319,
+   "n": 1318,
    "src": "Henry Hub (EIA via FRED)",
    "method": "EWMA(0.94) daily"
   },
   "gold": {
    "freq": "D",
-   "monthly": 0.0679,
-   "asof": "2026-11-06",
-   "n": 1261,
+   "monthly": 0.0689,
+   "asof": "2026-11-09",
+   "n": 1262,
    "src": "COMEX gold front month (Yahoo)",
    "method": "EWMA(0.94) daily"
   },
   "usdinr": {
    "freq": "D",
-   "monthly": 0.0131,
-   "asof": "2026-11-06",
+   "monthly": 0.0127,
+   "asof": "2026-11-09",
    "n": 1356,
    "src": "USD/INR (ECB via Frankfurter)",
    "method": "EWMA(0.94) daily"
@@ -130,7 +130,7 @@
     "v": 125.44
    },
    "unit": "USD/bbl",
-   "usual": 10.07,
+   "usual": 10.08,
    "z": 1.65,
    "avg_1y": 91.29,
    "vs_avg": 17.25,
@@ -151,32 +151,32 @@
    "z_level": 1.07
   },
   "gold": {
-   "v": 4074.9,
-   "asof": "2026-11-06",
+   "v": 4149.5,
+   "asof": "2026-11-09",
    "from": {
-    "date": "2026-10-09",
-    "v": 4216.3
+    "date": "2026-10-12",
+    "v": 4190.6
    },
    "unit": "USD/oz",
    "usual": 4.58,
-   "z": 0.76,
-   "avg_1y": 4467.36,
-   "vs_avg": -8.78,
-   "z_level": 2.05
+   "z": 0.22,
+   "avg_1y": 4467.98,
+   "vs_avg": -7.13,
+   "z_level": 1.65
   },
   "usdinr": {
-   "v": 93.92,
-   "asof": "2026-11-06",
+   "v": 93.93,
+   "asof": "2026-11-09",
    "from": {
-    "date": "2026-10-09",
-    "v": 96.73
+    "date": "2026-10-12",
+    "v": 95.78
    },
    "unit": "₹ per USD",
    "usual": 1.1,
-   "z": 2.71,
-   "avg_1y": 93.52,
-   "vs_avg": 0.43,
-   "z_level": 0.39
+   "z": 1.79,
+   "avg_1y": 93.54,
+   "vs_avg": 0.41,
+   "z_level": 0.38
   },
   "copper": {
    "v": 14473.06,
@@ -307,31 +307,6 @@
  },
  "events": [
   {
-   "series": "usdinr",
-   "freq": "D",
-   "kinds": [
-    "move"
-   ],
-   "move": -2.9,
-   "usual": 1.1,
-   "z": 2.71,
-   "z_level": 0.39,
-   "avg_1y": 93.52,
-   "vs_avg": 0.43,
-   "extreme": null,
-   "span_years": 5,
-   "from": {
-    "date": "2026-10-09",
-    "v": 96.73
-   },
-   "to": {
-    "date": "2026-11-06",
-    "v": 93.92
-   },
-   "unit": "₹ per USD",
-   "src": "USD/INR (ECB via Frankfurter)"
-  },
-  {
    "series": "copper",
    "freq": "M",
    "kinds": [
@@ -355,6 +330,31 @@
    },
    "unit": "USD/t",
    "src": "Copper (IMF via FRED)"
+  },
+  {
+   "series": "usdinr",
+   "freq": "D",
+   "kinds": [
+    "move"
+   ],
+   "move": -1.93,
+   "usual": 1.1,
+   "z": 1.79,
+   "z_level": 0.38,
+   "avg_1y": 93.54,
+   "vs_avg": 0.41,
+   "extreme": null,
+   "span_years": 5,
+   "from": {
+    "date": "2026-10-12",
+    "v": 95.78
+   },
+   "to": {
+    "date": "2026-11-09",
+    "v": 93.93
+   },
+   "unit": "₹ per USD",
+   "src": "USD/INR (ECB via Frankfurter)"
   },
   {
    "series": "wheat",
@@ -388,7 +388,7 @@
     "move"
    ],
    "move": -14.68,
-   "usual": 10.07,
+   "usual": 10.08,
    "z": 1.65,
    "z_level": 1.66,
    "avg_1y": 91.29,
