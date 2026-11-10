@@ -1,10 +1,10 @@
 {
- "generated": "2026-11-09T23:03:56+00:00",
+ "generated": "2026-11-10T20:31:34+00:00",
  "moves": {
   "crude": -14.68,
   "natgas": -13.2,
-  "gold": -0.98,
-  "usdinr": -1.93,
+  "gold": -3.28,
+  "usdinr": -1.42,
   "copper": 0.99,
   "alum": 1.01,
   "ironore": 0.83,
@@ -34,17 +34,17 @@
   },
   "gold": {
    "freq": "D",
-   "monthly": 0.0689,
-   "asof": "2026-11-09",
-   "n": 1262,
+   "monthly": 0.0678,
+   "asof": "2026-11-10",
+   "n": 1263,
    "src": "COMEX gold front month (Yahoo)",
    "method": "EWMA(0.94) daily"
   },
   "usdinr": {
    "freq": "D",
-   "monthly": 0.0127,
-   "asof": "2026-11-09",
-   "n": 1356,
+   "monthly": 0.0123,
+   "asof": "2026-11-10",
+   "n": 1357,
    "src": "USD/INR (ECB via Frankfurter)",
    "method": "EWMA(0.94) daily"
   },
@@ -151,32 +151,32 @@
    "z_level": 1.07
   },
   "gold": {
-   "v": 4149.5,
-   "asof": "2026-11-09",
+   "v": 4040.2,
+   "asof": "2026-11-10",
    "from": {
-    "date": "2026-10-12",
-    "v": 4190.6
+    "date": "2026-10-13",
+    "v": 4177.3
    },
    "unit": "USD/oz",
    "usual": 4.58,
-   "z": 0.22,
-   "avg_1y": 4467.98,
-   "vs_avg": -7.13,
-   "z_level": 1.65
+   "z": 0.74,
+   "avg_1y": 4467.97,
+   "vs_avg": -9.57,
+   "z_level": 2.25
   },
   "usdinr": {
    "v": 93.93,
-   "asof": "2026-11-09",
+   "asof": "2026-11-10",
    "from": {
-    "date": "2026-10-12",
-    "v": 95.78
+    "date": "2026-10-13",
+    "v": 95.28
    },
    "unit": "₹ per USD",
    "usual": 1.1,
-   "z": 1.79,
-   "avg_1y": 93.54,
-   "vs_avg": 0.41,
-   "z_level": 0.38
+   "z": 1.31,
+   "avg_1y": 93.56,
+   "vs_avg": 0.39,
+   "z_level": 0.36
   },
   "copper": {
    "v": 14473.06,
@@ -330,31 +330,6 @@
    },
    "unit": "USD/t",
    "src": "Copper (IMF via FRED)"
-  },
-  {
-   "series": "usdinr",
-   "freq": "D",
-   "kinds": [
-    "move"
-   ],
-   "move": -1.93,
-   "usual": 1.1,
-   "z": 1.79,
-   "z_level": 0.38,
-   "avg_1y": 93.54,
-   "vs_avg": 0.41,
-   "extreme": null,
-   "span_years": 5,
-   "from": {
-    "date": "2026-10-12",
-    "v": 95.78
-   },
-   "to": {
-    "date": "2026-11-09",
-    "v": 93.93
-   },
-   "unit": "₹ per USD",
-   "src": "USD/INR (ECB via Frankfurter)"
   },
   {
    "series": "wheat",
