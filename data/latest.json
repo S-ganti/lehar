@@ -1,9 +1,9 @@
 {
- "generated": "2026-11-13T20:34:27+00:00",
+ "generated": "2026-11-14T18:47:14+00:00",
  "moves": {
   "crude": -27.19,
   "natgas": -6.83,
-  "gold": -7.21,
+  "gold": -7.05,
   "usdinr": -0.75,
   "copper": 0.99,
   "alum": 1.01,
@@ -20,7 +20,7 @@
    "freq": "D",
    "monthly": 0.2532,
    "asof": "2026-11-11",
-   "n": 1338,
+   "n": 1337,
    "src": "Brent (EIA via FRED)",
    "method": "EWMA(0.94) daily"
   },
@@ -28,7 +28,7 @@
    "freq": "D",
    "monthly": 0.2252,
    "asof": "2026-11-11",
-   "n": 1322,
+   "n": 1321,
    "src": "Henry Hub (EIA via FRED)",
    "method": "EWMA(0.94) daily"
   },
@@ -44,7 +44,7 @@
    "freq": "D",
    "monthly": 0.0125,
    "asof": "2026-11-13",
-   "n": 1358,
+   "n": 1357,
    "src": "USD/INR (ECB via Frankfurter)",
    "method": "EWMA(0.94) daily"
   },
@@ -130,7 +130,7 @@
     "v": 126.55
    },
    "unit": "USD/bbl",
-   "usual": 10.1,
+   "usual": 10.11,
    "z": 3.3,
    "avg_1y": 92.01,
    "vs_avg": 0.14,
@@ -151,7 +151,7 @@
    "z_level": 0.57
   },
   "gold": {
-   "v": 3879.7,
+   "v": 3886.3,
    "asof": "2026-11-13",
    "from": {
     "date": "2026-10-16",
@@ -159,10 +159,10 @@
    },
    "unit": "USD/oz",
    "usual": 4.59,
-   "z": 1.67,
-   "avg_1y": 4465.2,
-   "vs_avg": -13.11,
-   "z_level": 3.13
+   "z": 1.63,
+   "avg_1y": 4465.23,
+   "vs_avg": -12.97,
+   "z_level": 3.1
   },
   "usdinr": {
    "v": 94.25,
@@ -313,7 +313,7 @@
     "move"
    ],
    "move": -27.19,
-   "usual": 10.1,
+   "usual": 10.11,
    "z": 3.3,
    "z_level": 0.01,
    "avg_1y": 92.01,
@@ -388,12 +388,12 @@
     "move",
     "level"
    ],
-   "move": -7.21,
+   "move": -7.05,
    "usual": 4.59,
-   "z": 1.67,
-   "z_level": 3.13,
-   "avg_1y": 4465.2,
-   "vs_avg": -13.11,
+   "z": 1.63,
+   "z_level": 3.1,
+   "avg_1y": 4465.23,
+   "vs_avg": -12.97,
    "extreme": null,
    "span_years": 5,
    "from": {
@@ -402,7 +402,7 @@
    },
    "to": {
     "date": "2026-11-13",
-    "v": 3879.7
+    "v": 3886.3
    },
    "unit": "USD/oz",
    "src": "COMEX gold front month (Yahoo)"
