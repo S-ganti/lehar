@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-14T18:47:14+00:00",
+ "generated": "2026-11-15T19:25:39+00:00",
  "moves": {
   "crude": -27.19,
   "natgas": -6.83,
@@ -20,7 +20,7 @@
    "freq": "D",
    "monthly": 0.2532,
    "asof": "2026-11-11",
-   "n": 1337,
+   "n": 1336,
    "src": "Brent (EIA via FRED)",
    "method": "EWMA(0.94) daily"
   },
@@ -28,7 +28,7 @@
    "freq": "D",
    "monthly": 0.2252,
    "asof": "2026-11-11",
-   "n": 1321,
+   "n": 1320,
    "src": "Henry Hub (EIA via FRED)",
    "method": "EWMA(0.94) daily"
   },
@@ -44,7 +44,7 @@
    "freq": "D",
    "monthly": 0.0125,
    "asof": "2026-11-13",
-   "n": 1357,
+   "n": 1356,
    "src": "USD/INR (ECB via Frankfurter)",
    "method": "EWMA(0.94) daily"
   },
@@ -131,7 +131,7 @@
    },
    "unit": "USD/bbl",
    "usual": 10.11,
-   "z": 3.3,
+   "z": 3.29,
    "avg_1y": 92.01,
    "vs_avg": 0.14,
    "z_level": 0.01
@@ -144,7 +144,7 @@
     "v": 3.22
    },
    "unit": "USD/MMBtu",
-   "usual": 31.35,
+   "usual": 31.38,
    "z": 0.26,
    "avg_1y": 3.51,
    "vs_avg": -14.5,
@@ -314,7 +314,7 @@
    ],
    "move": -27.19,
    "usual": 10.11,
-   "z": 3.3,
+   "z": 3.29,
    "z_level": 0.01,
    "avg_1y": 92.01,
    "vs_avg": 0.14,
