@@ -1,10 +1,10 @@
 {
- "generated": "2026-11-17T21:50:46+00:00",
+ "generated": "2026-11-18T21:29:43+00:00",
  "moves": {
-  "crude": -27.19,
-  "natgas": -6.83,
-  "gold": -6.99,
-  "usdinr": -1.53,
+  "crude": -19.34,
+  "natgas": 0.0,
+  "gold": -10.14,
+  "usdinr": -1.09,
   "copper": 0.99,
   "alum": 1.01,
   "ironore": 0.83,
@@ -18,33 +18,33 @@
  "vols": {
   "crude": {
    "freq": "D",
-   "monthly": 0.2532,
-   "asof": "2026-11-11",
-   "n": 1335,
+   "monthly": 0.2281,
+   "asof": "2026-11-17",
+   "n": 1339,
    "src": "Brent (EIA via FRED)",
    "method": "EWMA(0.94) daily"
   },
   "natgas": {
    "freq": "D",
-   "monthly": 0.2252,
-   "asof": "2026-11-11",
-   "n": 1319,
+   "monthly": 0.2213,
+   "asof": "2026-11-17",
+   "n": 1323,
    "src": "Henry Hub (EIA via FRED)",
    "method": "EWMA(0.94) daily"
   },
   "gold": {
    "freq": "D",
-   "monthly": 0.0671,
-   "asof": "2026-11-17",
-   "n": 1268,
+   "monthly": 0.0764,
+   "asof": "2026-11-18",
+   "n": 1269,
    "src": "COMEX gold front month (Yahoo)",
    "method": "EWMA(0.94) daily"
   },
   "usdinr": {
    "freq": "D",
-   "monthly": 0.0134,
-   "asof": "2026-11-17",
-   "n": 1357,
+   "monthly": 0.013,
+   "asof": "2026-11-18",
+   "n": 1358,
    "src": "USD/INR (ECB via Frankfurter)",
    "method": "EWMA(0.94) daily"
   },
@@ -52,7 +52,7 @@
    "freq": "M",
    "monthly": 0.0407,
    "asof": "2026-09-01",
-   "n": 61,
+   "n": 60,
    "src": "Copper (IMF via FRED)",
    "method": "rolling 36m std of monthly returns"
   },
@@ -60,7 +60,7 @@
    "freq": "M",
    "monthly": 0.0458,
    "asof": "2026-09-01",
-   "n": 61,
+   "n": 60,
    "src": "Aluminium (IMF via FRED)",
    "method": "rolling 36m std of monthly returns"
   },
@@ -68,7 +68,7 @@
    "freq": "M",
    "monthly": 0.0513,
    "asof": "2026-09-01",
-   "n": 61,
+   "n": 60,
    "src": "Iron ore (IMF via FRED)",
    "method": "rolling 36m std of monthly returns"
   },
@@ -76,7 +76,7 @@
    "freq": "M",
    "monthly": 0.0674,
    "asof": "2026-09-01",
-   "n": 61,
+   "n": 60,
    "src": "Australian thermal coal (IMF via FRED)",
    "method": "rolling 36m std of monthly returns"
   },
@@ -84,7 +84,7 @@
    "freq": "M",
    "monthly": 0.0486,
    "asof": "2026-09-01",
-   "n": 61,
+   "n": 60,
    "src": "Palm oil (IMF via FRED)",
    "method": "rolling 36m std of monthly returns"
   },
@@ -92,7 +92,7 @@
    "freq": "M",
    "monthly": 0.0695,
    "asof": "2026-09-01",
-   "n": 61,
+   "n": 60,
    "src": "Rubber (IMF via FRED)",
    "method": "rolling 36m std of monthly returns"
   },
@@ -100,7 +100,7 @@
    "freq": "M",
    "monthly": 0.0652,
    "asof": "2026-09-01",
-   "n": 61,
+   "n": 60,
    "src": "Sugar (IMF via FRED)",
    "method": "rolling 36m std of monthly returns"
   },
@@ -108,7 +108,7 @@
    "freq": "M",
    "monthly": 0.0659,
    "asof": "2026-09-01",
-   "n": 61,
+   "n": 60,
    "src": "Wheat (IMF via FRED)",
    "method": "rolling 36m std of monthly returns"
   },
@@ -116,67 +116,67 @@
    "freq": "M",
    "monthly": 0.1509,
    "asof": "2026-09-01",
-   "n": 61,
+   "n": 60,
    "src": "Cocoa (IMF via FRED)",
    "method": "rolling 36m std of monthly returns"
   }
  },
  "levels": {
   "crude": {
-   "v": 92.14,
-   "asof": "2026-11-11",
+   "v": 92.94,
+   "asof": "2026-11-17",
    "from": {
-    "date": "2026-10-14",
-    "v": 126.55
+    "date": "2026-10-20",
+    "v": 115.22
    },
    "unit": "USD/bbl",
    "usual": 10.12,
-   "z": 3.29,
-   "avg_1y": 92.01,
-   "vs_avg": 0.14,
-   "z_level": 0.01
+   "z": 2.23,
+   "avg_1y": 92.49,
+   "vs_avg": 0.48,
+   "z_level": 0.05
   },
   "natgas": {
-   "v": 3.0,
-   "asof": "2026-11-11",
-   "from": {
-    "date": "2026-10-14",
-    "v": 3.22
-   },
-   "unit": "USD/MMBtu",
-   "usual": 31.4,
-   "z": 0.26,
-   "avg_1y": 3.51,
-   "vs_avg": -14.5,
-   "z_level": 0.57
-  },
-  "gold": {
-   "v": 3853.1,
+   "v": 3.1,
    "asof": "2026-11-17",
    "from": {
     "date": "2026-10-20",
-    "v": 4142.6
+    "v": 3.1
+   },
+   "unit": "USD/MMBtu",
+   "usual": 31.35,
+   "z": 0.0,
+   "avg_1y": 3.5,
+   "vs_avg": -11.43,
+   "z_level": 0.45
+  },
+  "gold": {
+   "v": 3729.1,
+   "asof": "2026-11-18",
+   "from": {
+    "date": "2026-10-21",
+    "v": 4150.0
    },
    "unit": "USD/oz",
    "usual": 4.59,
-   "z": 1.61,
-   "avg_1y": 4462.92,
-   "vs_avg": -13.66,
-   "z_level": 3.27
+   "z": 2.38,
+   "avg_1y": 4461.59,
+   "vs_avg": -16.42,
+   "z_level": 4.0
   },
   "usdinr": {
-   "v": 93.48,
-   "asof": "2026-11-17",
+   "v": 93.44,
+   "asof": "2026-11-18",
    "from": {
-    "date": "2026-10-20",
-    "v": 94.93
+    "date": "2026-10-21",
+    "v": 94.47
    },
    "unit": "₹ per USD",
    "usual": 1.1,
-   "z": 1.4,
-   "avg_1y": 93.67,
-   "vs_avg": -0.2,
-   "z_level": 0.18
+   "z": 1.0,
+   "avg_1y": 93.68,
+   "vs_avg": -0.26,
+   "z_level": 0.24
   },
   "copper": {
    "v": 14473.06,
@@ -186,11 +186,11 @@
     "v": 14331.26
    },
    "unit": "USD/t",
-   "usual": 4.28,
-   "z": 0.23,
+   "usual": 4.26,
+   "z": 0.24,
    "avg_1y": 12842.63,
    "vs_avg": 12.7,
-   "z_level": 2.85
+   "z_level": 2.87
   },
   "alum": {
    "v": 3283.05,
@@ -200,11 +200,11 @@
     "v": 3250.12
    },
    "unit": "USD/t",
-   "usual": 4.52,
+   "usual": 4.4,
    "z": 0.23,
    "avg_1y": 3203.59,
    "vs_avg": 2.48,
-   "z_level": 0.55
+   "z_level": 0.57
   },
   "ironore": {
    "v": 100.44,
@@ -214,7 +214,7 @@
     "v": 99.62
    },
    "unit": "USD/dmt",
-   "usual": 6.98,
+   "usual": 6.92,
    "z": 0.12,
    "avg_1y": 105.26,
    "vs_avg": -4.58,
@@ -228,7 +228,7 @@
     "v": 140.51
    },
    "unit": "USD/t",
-   "usual": 12.92,
+   "usual": 12.9,
    "z": 0.75,
    "avg_1y": 132.45,
    "vs_avg": 16.15,
@@ -242,11 +242,11 @@
     "v": 1131.59
    },
    "unit": "USD/t",
-   "usual": 6.09,
+   "usual": 5.91,
    "z": 0.02,
    "avg_1y": 1075.26,
    "vs_avg": 5.38,
-   "z_level": 0.89
+   "z_level": 0.91
   },
   "natrub": {
    "v": 125.08,
@@ -256,11 +256,11 @@
     "v": 124.88
    },
    "unit": "US cents/lb",
-   "usual": 7.21,
+   "usual": 7.23,
    "z": 0.02,
    "avg_1y": 112.3,
    "vs_avg": 11.38,
-   "z_level": 1.55
+   "z_level": 1.54
   },
   "sugar": {
    "v": 17.94,
@@ -271,10 +271,10 @@
    },
    "unit": "US cents/lb",
    "usual": 6.85,
-   "z": 0.97,
+   "z": 0.96,
    "avg_1y": 15.1,
    "vs_avg": 18.76,
-   "z_level": 2.6
+   "z_level": 2.59
   },
   "wheat": {
    "v": 246.85,
@@ -284,11 +284,11 @@
     "v": 237.86
    },
    "unit": "USD/t",
-   "usual": 6.8,
-   "z": 0.56,
+   "usual": 6.78,
+   "z": 0.57,
    "avg_1y": 197.23,
    "vs_avg": 25.16,
-   "z_level": 3.41
+   "z_level": 3.42
   },
   "cocoa": {
    "v": 5918.98,
@@ -298,39 +298,14 @@
     "v": 5990.5
    },
    "unit": "USD/t",
-   "usual": 12.7,
+   "usual": 12.77,
    "z": 0.1,
    "avg_1y": 4888.77,
    "vs_avg": 21.07,
-   "z_level": 1.6
+   "z_level": 1.59
   }
  },
  "events": [
-  {
-   "series": "crude",
-   "freq": "D",
-   "kinds": [
-    "move"
-   ],
-   "move": -27.19,
-   "usual": 10.12,
-   "z": 3.29,
-   "z_level": 0.01,
-   "avg_1y": 92.01,
-   "vs_avg": 0.14,
-   "extreme": null,
-   "span_years": 5,
-   "from": {
-    "date": "2026-10-14",
-    "v": 126.55
-   },
-   "to": {
-    "date": "2026-11-11",
-    "v": 92.14
-   },
-   "unit": "USD/bbl",
-   "src": "Brent (EIA via FRED)"
-  },
   {
    "series": "gold",
    "freq": "D",
@@ -338,24 +313,49 @@
     "move",
     "level"
    ],
-   "move": -6.99,
+   "move": -10.14,
    "usual": 4.59,
-   "z": 1.61,
-   "z_level": 3.27,
-   "avg_1y": 4462.92,
-   "vs_avg": -13.66,
+   "z": 2.38,
+   "z_level": 4.0,
+   "avg_1y": 4461.59,
+   "vs_avg": -16.42,
+   "extreme": null,
+   "span_years": 5,
+   "from": {
+    "date": "2026-10-21",
+    "v": 4150.0
+   },
+   "to": {
+    "date": "2026-11-18",
+    "v": 3729.1
+   },
+   "unit": "USD/oz",
+   "src": "COMEX gold front month (Yahoo)"
+  },
+  {
+   "series": "crude",
+   "freq": "D",
+   "kinds": [
+    "move"
+   ],
+   "move": -19.34,
+   "usual": 10.12,
+   "z": 2.23,
+   "z_level": 0.05,
+   "avg_1y": 92.49,
+   "vs_avg": 0.48,
    "extreme": null,
    "span_years": 5,
    "from": {
     "date": "2026-10-20",
-    "v": 4142.6
+    "v": 115.22
    },
    "to": {
     "date": "2026-11-17",
-    "v": 3853.1
+    "v": 92.94
    },
-   "unit": "USD/oz",
-   "src": "COMEX gold front month (Yahoo)"
+   "unit": "USD/bbl",
+   "src": "Brent (EIA via FRED)"
   }
  ],
  "degraded_sources": [],
